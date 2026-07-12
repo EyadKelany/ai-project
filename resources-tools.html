@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Tools & Platforms - Frameworks, libraries, APIs, and development tools for building and deploying artificial intelligence applications.">
+  <title>Tools & Platforms — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Development Tools</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Tools & Platforms</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Frameworks, libraries, APIs, and development tools for building and deploying AI applications</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frameworks & Libraries -->
+    <section class="section" aria-labelledby="frameworks-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Core Frameworks</span>
+          <h2 id="frameworks-title">ML/DL Frameworks & Libraries</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- TensorFlow -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9 3h2V6h-2v3zm-4 0h2V6H7v3zm9 8H9v-2h10v2zm-4 0H7v-2h10v2z"/></svg>
+            </div>
+            <h3>TensorFlow</h3>
+            <p>Google's open-source platform for machine learning. End-to-end ecosystem for research and production.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Official guides, tutorials, and API reference</p>
+                <a href="https://www.tensorflow.org/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>TensorFlow.js</h4>
+                <p>ML in JavaScript for browser and Node.js</p>
+                <a href="https://www.tensorflow.org/js" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>TensorFlow Lite</h4>
+                <p>ML for mobile and embedded devices</p>
+                <a href="https://www.tensorflow.org/lite" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://www.tensorflow.org/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit TensorFlow →</a>
+          </article>
+
+          <!-- PyTorch -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>PyTorch</h3>
+            <p>Facebook's open-source ML library. Popular for research and production with dynamic computation graphs.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Official tutorials, examples, and API reference</p>
+                <a href="https://pytorch.org/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>PyTorch Lightning</h4>
+                <p>Lightweight PyTorch wrapper for high-performance AI research</p>
+                <a href="https://pytorch-lightning.ai/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>TorchServe</h4>
+                <p>Flexible and easy to use tool for serving PyTorch models</p>
+                <a href="https://pytorch.org/serve/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://pytorch.org/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit PyTorch →</a>
+          </article>
+
+          <!-- Keras -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Keras</h3>
+            <p>High-level neural networks API, running on top of TensorFlow, CNTK, or Theano.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Official documentation and guides</p>
+                <a href="https://keras.io/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+            <a href="https://keras.io/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit Keras →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM Frameworks -->
+    <section class="section" aria-labelledby="llm-frameworks-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">LLM & Generative AI</span>
+          <h2 id="llm-frameworks-title">LLM Frameworks & Tools</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Hugging Face -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.71 11.29a1 1 0 0 0-1.42 0l-2.34 2.34a1 1 0 0 1-1.42 0l-.76-.76a4.96 4.96 0 0 0-6.93 0l-.76.76a1 1 0 0 1-1.42 0l-2.34 2.34a1 1 0 0 0 0 1.42l2.34 2.34a1 1 0 0 1 1.42 0l.76.76a4.96 4.96 0 0 0 6.93 0l.76-.76a1 1 0 0 1 1.42 0l2.34-2.34a1 1 0 0 0 0-1.42zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+            </div>
+            <h3>Hugging Face Transformers</h3>
+            <p>State-of-the-art Machine Learning for PyTorch, TensorFlow, and JAX.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Transformers Library</h4>
+                <p>Thousands of pre-trained models for NLP, computer vision, audio, and more</p>
+                <a href="https://huggingface.co/docs/transformers/index" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Hub</h4>
+                <p>Platform for sharing and discovering models, datasets, and demos</p>
+                <a href="https://huggingface.co/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Spaces</h4>
+                <p>Host and share ML demos and apps</p>
+                <a href="https://huggingface.co/spaces" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://huggingface.co/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit Hugging Face →</a>
+          </article>
+
+          <!-- LangChain -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>LangChain</h3>
+            <p>Framework for developing applications powered by language models.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Guides, tutorials, and API reference</p>
+                <a href="https://python.langchain.com/docs/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Templates</h4>
+                <p>Ready-to-use chains and agents for common use cases</p>
+                <a href="https://python.langchain.com/docs/modules/model_io/models/llms/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://python.langchain.com/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit LangChain →</a>
+          </article>
+
+          <!-- LlamaIndex -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>LlamaIndex</h3>
+            <p>Data framework for LLM applications to ingest, structure, and access private or domain-specific data.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Getting started guides and API reference</p>
+                <a href="https://docs.llamaindex.ai/en/stable/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+            <a href="https://www.llamaindex.ai/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit LlamaIndex →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MLOps Tools -->
+    <section class="section" aria-labelledby="mlops-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">MLOps & Deployment</span>
+          <h2 id="mlops-title">MLOps Tools & Platforms</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- MLflow -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>MLflow</h3>
+            <p>Open source platform for managing the ML lifecycle, including experimentation, reproducibility, and deployment.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Guides, tutorials, and API reference</p>
+                <a href="https://mlflow.org/docs/latest/index.html" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+            <a href="https://mlflow.org/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit MLflow →</a>
+          </article>
+
+          <!-- Weights & Biases -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Weights & Biases</h3>
+            <p>Tools for machine learning practitioners to track experiments, visualize results, and collaborate.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Documentation</h4>
+                <p>Guides, tutorials, and API reference</p>
+                <a href="https://docs.wandb.ai/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+            <a href="https://wandb.ai/site" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Visit Weights & Biases →</a>
+          </article>
+
+          <!-- Docker/Kubernetes -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Containerization & Orchestration</h3>
+            <p>Tools for containerizing and orchestrating ML workloads at scale.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Docker</h4>
+                <p>Platform for developing, shipping, and running applications in containers</p>
+                <a href="https://www.docker.com/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Kubernetes</h4>
+                <p>Open-source system for automating deployment, scaling, and management of containerized applications</p>
+                <a href="https://kubernetes.io/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Kubeflow</h4>
+                <p>Machine Learning Toolkit for Kubernetes</p>
+                <a href="https://www.kubeflow.org/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://www.docker.com/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Learn Docker/K8s →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloud AI Services -->
+    <section class="section" aria-labelledby="cloud-services-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Cloud AI Services</span>
+          <h2 id="cloud-services-title">Managed AI Platforms & APIs</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- AWS AI Services -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AWS AI Services</h3>
+            <p>Amazon's comprehensive suite of AI services and tools.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Amazon SageMaker</h4>
+                <p>Build, train, and deploy ML models at scale</p>
+                <a href="https://aws.amazon.com/sagemaker/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Amazon Rekognition</h4>
+                <p>Add image and video analysis to your applications</p>
+                <a href="https://aws.amazon.com/rekognition/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Amazon Comprehend</h4>
+                <p>Natural language processing (NLP) using machine learning</p>
+                <a href="https://aws.amazon.com/comprehend/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://aws.amazon.com/machine-learning/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore AWS AI →</a>
+          </article>
+
+          <!-- Google Cloud AI -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Google Cloud AI</h3>
+            <p>Google's suite of AI and machine learning products.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Vertex AI</h4>
+                <p>Unified ML platform for training and deploying models</p>
+                <a href="https://cloud.google.com/vertex-ai" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Cloud Vision API</h4>
+                <p>Pre-trained ML models for image labeling, face and landmark detection</p>
+                <a href="https://cloud.google.com/vision" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Cloud Natural Language API</h4>
+                <p>Natural language understanding technologies</p>
+                <a href="https://cloud.google.com/natural-language" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://cloud.google.com/ai" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore Google Cloud AI →</a>
+          </article>
+
+          <!-- Azure AI -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Microsoft Azure AI</h3>
+            <p>Azure's portfolio of AI services and tools for every scenario.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Azure Machine Learning</h4>
+                <p>Cloud-based environment for training, deploying, and managing ML models</p>
+                <a href="https://azure.microsoft.com/en-us/services/machine-learning/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Azure Cognitive Services</h4>
+                <p>Add cognitive capabilities to your applications with AI services</p>
+                <a href="https://azure.microsoft.com/en-us/services/cognitive-services/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+            <a href="https://azure.microsoft.com/en-us/products/ai-services/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore Azure AI →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Curated tools, platforms, and resources for developers and researchers.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Explore</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="index.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Home</a></li>
+            <li><a href="faq.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Questions & Answers</a></li>
+            <li><a href="resources.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Resources Hub</a></li>
+            <li><a href="resources-learning.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Learning Resources</a></li>
+            <li><a href="resources-models.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Models & Datasets</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Frameworks</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="https://www.tensorflow.org/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">TensorFlow</a></li>
+            <li><a href="https://pytorch.org/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">PyTorch</a></li>
+            <li><a href="https://huggingface.co/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Hugging Face</a></li>
+            <li><a href="https://python.langchain.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">LangChain</a></li>
+            <li><a href="https://www.llamaindex.ai/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">LlamaIndex</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">MLOps</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="https://mlflow.org/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">MLflow</a></li>
+            <li><a href="https://wandb.ai/site" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Weights & Biases</a></li>
+            <li><a href="https://www.docker.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Docker</a></li>
+            <li><a href="https://kubernetes.io/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Kubernetes</a></li>
+            <li><a href="https://www.kubeflow.org/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Kubeflow</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.state.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.state.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--fg-muted);">Made by Eyad Kelany</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

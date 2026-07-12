@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Learning Resources - Courses, tutorials, books, and structured learning paths for artificial intelligence and machine learning.">
+  <title>Learning Resources — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Structured Learning Paths</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Learning Resources</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Curated courses, tutorials, books, and learning paths for all skill levels</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Paths -->
+    <section class="section" aria-labelledby="learning-paths-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">By Skill Level</span>
+          <h2 id="learning-paths-title">Structured Learning Paths</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Beginner Path -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Beginner Path</h3>
+            <p>For those new to programming and AI concepts. Start here if you're building foundational knowledge.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Programming Fundamentals</h4>
+                <p>Python for Everybody (University of Michigan) - Free on Coursera</p>
+                <a href="https://www.py4e.com/" target="_blank" class="resource-link">Learn Python →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Math Refresher</h4>
+                <p>Essence of Linear Algebra (3Blue1Brown) - YouTube series</p>
+                <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" target="_blank" class="resource-link">Watch Series →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Introduction to AI</h4>
+                <p>AI For Everyone (Andrew Ng) - Non-technical introduction</p>
+                <a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" class="resource-link">Take Course →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Machine Learning Basics</h4>
+                <p>Machine Learning Specialization (Andrew Ng, DeepLearning.AI)</p>
+                <a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" class="resource-link">Start Learning →</a>
+              </div>
+            </div>
+            <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">View Full Path →</a>
+          </article>
+
+          <!-- Intermediate Path -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3>Intermediate Path</h3>
+            <p>For those with programming experience. Focus on ML/DL fundamentals and practical implementation.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Deep Learning Specialization</h4>
+                <p>Deep Learning Specialization (Andrew Ng, DeepLearning.AI)</p>
+                <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" class="resource-link">Start Learning →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Practical Deep Learning Book</h4>
+                <p>Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow (Aurélien Géron)</p>
+                <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" class="resource-link">Get Book →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Stanford CS229</h4>
+                <p>Machine Learning (Stanford) - Lecture notes and videos</p>
+                <a href="https://cs229.stanford.edu/" target="_blank" class="resource-link">Access Materials →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Fast.ai Practical DL</h4>
+                <p>Practical Deep Learning for Coders (fast.ai) - Free, code-first approach</p>
+                <a href="https://course.fast.ai/" target="_blank" class="resource-link">Start Course →</a>
+              </div>
+            </div>
+            <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">View Full Path →</a>
+          </article>
+
+          <!-- Advanced Path -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Advanced & Specialized</h3>
+            <p>For practitioners looking to specialize in cutting-edge areas.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>LLMs & Generative AI</h4>
+                <p>Generative AI with LLMs (Stanford CS324) - Lecture notes</p>
+                <a href="https://stanford-cs324.github.io/winter2022/" target="_blank" class="resource-link">Access Course →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Reinforcement Learning</h4>
+                <p>Deep RL Bootcamp (Berkeley) - Lectures and assignments</p>
+                <a href="http://rail.eecs.berkeley.edu/deeprlcourse/" target="_blank" class="resource-link">Access Materials →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MLOps & Production</h4>
+                <p>Machine Learning Engineering for Production (MLOps) Specialization</p>
+                <a href="https://www.coursera.org/specializations/ml-engineering" target="_blank" class="resource-link">Start Learning →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Research Papers Reading Group</h4>
+                <p>Papers With Code - Trending ML papers with implementations</p>
+                <a href="https://paperswithcode.com/" target="_blank" class="resource-link">Explore Papers →</a>
+              </div>
+            </div>
+            <a href="#" class="btn btn-outline" style="margin-top: 1.5rem;">View Full Path →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Resources -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="free-resources-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Free & Open Resources</span>
+          <h2 id="free-resources-title">High-Quality Free Learning Materials</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Interactive Courses -->
+          <article class="card fade-in reveal">
+            <h3>Interactive Courses & Platforms</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>freeCodeCamp</h4>
+                <p>3000+ hours of free coding curriculum including ML/Data Science tracks</p>
+                <a href="https://www.freecodecamp.org/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Kaggle Learn</h4>
+                <p>Micro-courses on Python, Pandas, ML, Deep Learning, etc.</p>
+                <a href="https://www.kaggle.com/learn" target="_blank" class="resource-link">Start Learning →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Google's Machine Learning Crash Course</h4>
+                <p>Free Google course with TensorFlow exercises</p>
+                <a href="https://developers.google.com/machine-learning/crash-course" target="_blank" class="resource-link">Start Course →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MIT OpenCourseWare</h4>
+                <p>Free lecture notes, exams, and videos from MIT courses</p>
+                <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/" target="_blank" class="resource-link">Explore Courses →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Books & Tutorials -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <h3>Books & Tutorials</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Deep Learning Book</h4>
+                <p>Deep Learning by Goodfellow, Bengio, and Courville (Free online)</p>
+                <a href="https://www.deeplearningbook.org/" target="_blank" class="resource-link">Read Online →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Dive into Deep Learning</h4>
+                <p>Interactive book with code in PyTorch, TensorFlow, JAX</p>
+                <a href="https://d2l.ai/" target="_blank" class="resource-link">Start Reading →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Machine Learning Yearning</h4>
+                <p>Andrew Ng's advice on structuring ML projects (Free)</p>
+                <a href="https://www.deeplearning.ai/machine-learning-yearning/" target="_blank" class="resource-link">Read Online →</a>
+              </div>
+              <div class="resource-item">
+                <h4>PyTorch Tutorials</h4>
+                <p>Official PyTorch tutorials from basics to advanced</p>
+                <a href="https://pytorch.org/tutorials/" target="_blank" class="resource-link">Start Learning →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Communities & Practice -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <h3>Practice & Communities</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Kaggle Competitions</h4>
+                <p>Practice ML skills with real-world datasets and competitions</p>
+                <a href="https://www.kaggle.com/competitions" target="_blank" class="resource-link">Compete →</a>
+              </div>
+              <div class="resource-item">
+                <h4>GitHub Student Developer Pack</h4>
+                <p>Free access to developer tools for students</p>
+                <a href="https://education.github.com/pack" target="_blank" class="resource-link">Get Pack →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Hugging Face Courses</h4>
+                <p>Free NLP and ML courses with hands-on exercises</p>
+                <a href="https://huggingface.co/learn" target="_blank" class="resource-link">Explore Courses →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MLOps.community</h4>
+                <p>Free resources, templates, and community for MLOps practitioners</p>
+                <a href="https://mlops.community/" target="_blank" class="resource-link">Join Community →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certification Paths -->
+    <section class="section" aria-labelledby="certifications-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Certifications & Credentials</span>
+          <h2 id="certifications-title">Recognized AI Certifications</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <article class="card fade-in reveal">
+            <h3>Cloud Provider Certifications</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>AWS Machine Learning Specialty</h4>
+                <p>Validate expertise in ML on AWS platform</p>
+                <a href="https://aws.amazon.com/certification/certified-machine-learning-specialty/" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Google Cloud Professional ML Engineer</h4>
+                <p>Design, build, and productionize ML models on GCP</p>
+                <a href="https://cloud.google.com/certification/machine-learning-engineer" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Microsoft Certified: Azure AI Engineer Associate</h4>
+                <p>Implement AI solutions using Azure Cognitive Services</p>
+                <a href="https://learn.microsoft.com/en-us/certifications/azure-ai-engineer/" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card fade-in reveal" style="--i: 1;">
+            <h3>Vendor-Neutral Certifications</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>TensorFlow Developer Certificate</h4>
+                <p>Demonstrate proficiency in building models with TensorFlow</p>
+                <a href="https://www.tensorflow.org/certificate" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+              <div class="resource-item">
+                <h4>DeepLearning.AI Specializations</h4>
+                <p>Industry-recognized certificates in AI, ML, DL, etc.</p>
+                <a href="https://www.deeplearning.ai/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>IBM Data Science Professional Certificate</h4>
+                <p>Build a foundation in Data Science and ML</p>
+                <a href="https://www.coursera.org/professional-certificates/ibm-data-science" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card fade-in reveal" style="--i: 2;">
+            <h3>University Credentials</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Stanford Online AI Courses</h4>
+                <p>Professional and graduate certificates in AI</p>
+                <a href="https://online.stanford.edu/courses/sohs-ytavi" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MIT xPro AI Programs</h4>
+                <p>Professional certificate programs in AI and ML</p>
+                <a href="https://xpro.mit.edu/programs/artificial-intelligence" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Harvard Online CS50's Introduction to AI</h4>
+                <p>Introduction to AI with Python</p>
+                <a href="https://online-learning.harvard.edu/course/cs50s-introduction-artificial-intelligence-python" target="_blank" class="resource-link">Enroll →</aoll>
+            </div>
+          </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Curated resources, tools, and learning paths for the AI community.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learning</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Beginner Path</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Intermediate Path</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Advanced Path</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Free Resources</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Certifications</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="resources-tools.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Tools & Platforms</a></li>
+            <li><a href="resources-models.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Models & Datasets</a></li>
+            <li><a href="resources-research.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Research & Papers</a></li>
+            <li><a href="resources-communities.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Communities</a></li>
+            <li><a href="resources-career.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Career & Jobs</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Explore</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="index.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Home</a></li>
+            <li><a href="faq.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Questions & Answers</a></li>
+            <li><a href="resources.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Resources Overview</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--fg-muted);">Made by Eyad Kelany</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
