@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Tools & Platforms - Vector databases, orchestration frameworks, evaluation tools, inference engines, MLOps, and development platforms.">
+  <title>Tools & Platforms — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">Tools & Platforms</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">The modern AI stack — vector databases, orchestration, evaluation, inference, MLOps, and development platforms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="stack-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">The AI Stack</span>
+          <h2 id="stack-title">Modern AI Development Stack</h2>
+          <p class="lead">Layer-by-layer breakdown of tools for building, deploying, and monitoring AI applications.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              Data & Embeddings
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Vector DBs:</strong> Chroma, Pinecone, Weaviate, Qdrant, Milvus, LanceDB, pgvector</li>
+              <li><strong>Embedding Models:</strong> E5, BGE, Jina, Nomic, Cohere, OpenAI, Voyage</li>
+              <li><strong>Data Processing:</strong> Unstructured, LlamaIndex, LangChain loaders, Databricks</li>
+              <li><strong>Feature Stores:</strong> Feast, Tecton, Hopsworks</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#frameworks" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Orchestration & Agents
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Frameworks:</strong> LangGraph, LangChain, AutoGen, CrewAI, Semantic Kernel, DSPy</li>
+              <li><strong>Agent Patterns:</strong> ReAct, Plan-and-Execute, Multi-agent, Reflection, Tool use</li>
+              <li><strong>State Mgmt:</strong> LangGraph checkpointer, Temporal, Prefect, Dagster</li>
+              <li><strong>Eval/Testing:</strong> LangSmith, Langfuse, Phoenix, Promptfoo, DeepEval</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#frameworks" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Model Serving & Inference
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>High-throughput:</strong> vLLM, TGI, TensorRT-LLM, Triton, BentoML</li>
+              <li><strong>Local/Edge:</strong> llama.cpp, Ollama, LM Studio, MLX, MLC-LLM</li>
+              <li><strong>API/Managed:</strong> Together, Fireworks, Replicate, OpenRouter, Baseten, Modal</li>
+              <li><strong>Optimization:</strong> Quantization (AWQ, GPTQ, GGUF), Speculative decoding, Continuous batching</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#deployment" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              Fine-Tuning & Training
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>PEFT/LoRA:</strong> PEFT, TRL, Unsloth, Axolotl, LLaMA-Factory</li>
+              <li><strong>Full Fine-tune:</strong> LitGPT, Megatron-LM, DeepSpeed, FSDP, YaRN</li>
+              <li><strong>Distillation:</strong> DistilBERT, TinyBERT, knowledge distillation pipelines</li>
+              <li><strong>Data:</strong> Argilla, Label Studio, Prodigy, Doccano, Kili</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#frameworks" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Evaluation & Observability
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Tracing:</strong> Langfuse, LangSmith, Phoenix, Helicone, Weave, W&B</li>
+              <li><strong>RAG Eval:</strong> RAGAS, LlamaIndex eval, TruLens, DeepEval</li>
+              <li><strong>Guardrails:</strong> Guardrails AI, NeMo Guardrails, Llama Guard, ShieldGemma</li>
+              <li><strong>Benchmarks:</strong> HELM, lm-eval-harness, SWE-bench, MMLU, GPQA, FrontierMath</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#evaluation" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              MLOps & Platforms
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Experiment Tracking:</strong> MLflow, W&B, ClearML, Neptune, Comet, Dagshub</li>
+              <li><strong>Orchestration:</strong> Kubeflow, Airflow, Prefect, Dagster, Flyte, Metaflow</li>
+              <li><strong>Feature/Model Registry:</strong> Feast, MLflow, Vertex AI, SageMaker, Neptune</li>
+              <li><strong>Cloud Platforms:</strong> Vertex AI, SageMaker, Azure ML, Databricks, Snowflake Cortex</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#deployment" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Security & Guardrails
+            </h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>PII/Redaction:</strong> Presidio, GLiNER, spaCy, Microsoft Presidio</li>
+              <li><strong>Content Safety:</strong> Llama Guard, ShieldGemma, Perspective API, OpenAI Moderation</li>
+              <li><strong>Prompt Security:</strong> Garak, PromptInject, Rebuff, Lakera, Protect AI</li>
+              <li><strong>Governance:</strong> Model cards, audit logs, lineage, access control, CVE scanning</li>
+            </ul>
+            <div class="tags">
+              <a href="resources.html#frameworks" class="tag" style="text-decoration: none;">Explore Tools</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="quickref-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Quick Reference</span>
+          <h2 id="quickref-title">Tool Selection Guide</h2>
+          <p class="lead">Match your use case to the right tool category.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">RAG Application</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Vector Store</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Chroma (dev), Pinecone (prod), Qdrant (self-host)</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Embeddings</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">BGE, E5, Jina, Cohere, OpenAI</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Chunking</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">LangChain, LlamaIndex, Semantic Chunker</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Retrieval</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Hybrid (BM25 + vector), Re-ranking (Cohere, BGE)</td></tr>
+                <tr><td style="padding: 0.5rem 0; color: var(--fg-muted);">Evaluation</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">RAGAS, TruLens, DeepEval</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">Agent Development</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Framework</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">LangGraph (complex), CrewAI (role-based), AutoGen (multi-agent)</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">State Mgmt</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">LangGraph checkpointer, Redis, PostgreSQL</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Tools</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">LangChain tools, Composio, Arcade, custom functions</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Testing</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">LangSmith, Langfuse, Promptfoo, AgentEval</td></tr>
+                <tr><td style="padding: 0.5rem 0; color: var(--fg-muted);">Observability</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Langfuse, Phoenix, Weave, Helicone</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">Local LLM Development</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Quick Start</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Ollama, LM Studio, GPT4All</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Performance</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">llama.cpp, vLLM, TGI, MLC-LLM</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Apple Silicon</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">MLX, llama.cpp (Metal), Ollama</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Quantization</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">GGUF (Q4_K_M), AWQ, GPTQ, bitsandbytes</td></tr>
+                <tr><td style="padding: 0.5rem 0; color: var(--fg-muted);">API Compat</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">OpenAI-compatible endpoints (all above)</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">Production Serving</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <tbody>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">High Throughput</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">vLLM, TGI, TensorRT-LLM, Triton</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Managed Cloud</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Together, Fireworks, Replicate, Baseten, Modal</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Kubernetes</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">KServe, KubeRay, vLLM Operator, TGI Launcher</td></tr>
+                <tr style="border-bottom: 1px solid var(--border);"><td style="padding: 0.5rem 0; color: var(--fg-muted);">Optimization</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Speculative decoding, PD disaggregation, KV cache offload</td></tr>
+                <tr><td style="padding: 0.5rem 0; color: var(--fg-muted);">Monitoring</td><td style="padding: 0.5rem 0; text-align: right; color: var(--accent);">Prometheus/Grafana, Datadog, Langfuse</td></tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Tools Questions</h2>
+          <p class="lead">Browse the most frequently asked questions about AI tools and platforms.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=vector-db" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">Which vector database should I choose for my RAG application?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Chroma, Pinecone, Weaviate, Qdrant, Milvus, pgvector, LanceDB — comparison by scale, features, and ops.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Tools</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=llm-ops" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What tools do I need for LLM observability and evaluation in production?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Langfuse, LangSmith, Phoenix, RAGAS, DeepEval, guardrails, cost tracking, latency monitoring.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Tools</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Production</span>
+            </div>
+          </a>
+          <a href="faq.html?q=local-llm" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How can I run LLMs locally on my machine?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Ollama, llama.cpp, LM Studio, quantization guide, hardware requirements, API compatibility.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Practical</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Beginner</span>
+            </div>
+          </a>
+          <a href="faq.html?q=fine-tuning-vs-rag" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">When should I use fine-tuning vs RAG vs prompt engineering?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Decision framework comparing cost, effort, and use cases for each technique at different stack levels.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=tools" class="btn btn-primary btn-lg">View All 15+ Tools Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Build with the Best Tools</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Explore the Complete Tool Directory</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">100+ curated tools across 8 categories — vector DBs, orchestration, serving, eval, MLOps, and more.</p>
+            <a href="resources.html" class="btn btn-primary btn-lg">Browse All Resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

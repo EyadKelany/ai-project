@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Career & Learning - Job roles, career paths, salaries, learning curricula, certifications, portfolios, and breaking into AI.">
+  <title>Career & Learning — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">Career & Learning</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Job roles, career paths, salaries, learning curricula, certifications, portfolios, and breaking into AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="path-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Career Roadmap</span>
+          <h2 id="path-title">AI Career Paths</h2>
+          <p class="lead">From research to engineering to product — find your path and the skills to get there.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">1</div>
+            <h3>Technical Roles</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">ML Engineer, Research Scientist, AI Engineer, MLOps, Data Scientist — core technical tracks.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=ai-career-path" style="color: var(--accent);">Career Paths Overview</a></li>
+              <li>• <a href="faq.html?q=ml-engineer-vs-researcher" style="color: var(--accent);">ML Engineer vs Researcher</a></li>
+              <li>• <a href="https://www.levels.fyi/" target="_blank" rel="noopener" style="color: var(--accent);">Salary Data (Levels.fyi)</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">2</div>
+            <h3>Product & Strategy</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">AI Product Manager, AI Strategist, Solutions Architect, Technical Program Manager.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=ai-product-manager" style="color: var(--accent);">AI PM Guide</a></li>
+              <li>• <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights" target="_blank" rel="noopener" style="color: var(--accent);">McKinsey AI Insights</a></li>
+              <li>• <a href="https://a16z.com/" target="_blank" rel="noopener" style="color: var(--accent);">a16z AI Content</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">3</div>
+            <h3>Specialized & Emerging</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">AI Safety Researcher, Prompt Engineer, LLM Ops, AI Ethicist, Robotics Engineer, Domain Expert + AI.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=ai-safety-career" style="color: var(--accent);">AI Safety Careers</a></li>
+              <li>• <a href="https://80000hours.org/career-guide/artificial-intelligence/" target="_blank" rel="noopener" style="color: var(--accent);">80k Hours AI Guide</a></li>
+              <li>• <a href="https://github.com/NirDiamant/GenAI_Agents" target="_blank" rel="noopener" style="color: var(--accent);">GenAI Agents Course</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="roles-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Role Deep Dives</span>
+          <h2 id="roles-title">AI Job Roles Breakdown</h2>
+          <p class="lead">What each role does, required skills, typical background, and compensation ranges.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              ML Research Scientist
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Novel algorithms, architectures, theory. Publishes at NeurIPS/ICML/ICLR. PhD typically required.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> Deep math (optimization, probability, linear algebra), PyTorch/JAX, paper implementation, research taste</li>
+              <li><strong>Background:</strong> PhD (CS, Math, Physics), strong publication record</li>
+              <li><strong>Comp (US):</strong> $250k–$600k+ (base + equity + bonus)</li>
+              <li><strong>Top employers:</strong> DeepMind, OpenAI, Anthropic, FAIR, Google Brain, MSR, NVIDIA Research</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=research-scientist" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://github.com/vermashrestha/Awesome-ML-Research" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Resources</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              ML Engineer (Applied)
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Productionize models: pipelines, serving, monitoring, optimization, MLOps. Strong SWE + ML.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> Python, Docker/K8s, TFX/Kubeflow, MLflow, feature stores, distributed training, ONNX/TensorRT</li>
+              <li><strong>Background:</strong> CS/Eng degree, SWE experience, ML coursework or self-taught</li>
+              <li><strong>Comp (US):</strong> $200k–$450k</li>
+              <li><strong>Top employers:</strong> Uber, Airbnb, Netflix, Meta, Google, Amazon, fintech, autonomous vehicles</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ml-engineer" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://github.com/vermashrestha/Awesome-MLOps" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">MLOps Resources</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              AI Engineer / LLM Engineer
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Build applications on foundation models: prompting, RAG, agents, fine-tuning, eval, deployment.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> LangGraph/LangChain, vector DBs, OpenAI/Anthropic APIs, eval frameworks, prompt engineering, fine-tuning (LoRA)</li>
+              <li><strong>Background:</strong> Full-stack SWE, ML literacy, product mindset, fast learner</li>
+              <li><strong>Comp (US):</strong> $180k–$350k</li>
+              <li><strong>Demand:</strong> Exploding — every company needs LLM integration</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-engineer" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://github.com/daanelson/llm-engineering" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">LLM Eng Handbook</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              AI Product Manager
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Define AI product strategy, work with research/eng, manage non-deterministic systems, responsible AI.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> ML literacy (not coding), experiment design, eval metrics, UX for AI, regulation awareness, stakeholder management</li>
+              <li><strong>Background:</strong> PM experience + ML coursework/cert, or former ML eng transitioning</li>
+              <li><strong>Comp (US):</strong> $200k–$400k</li>
+              <li><strong>Key diff from traditional PM:</strong> Probabilistic outputs, data flywheels, eval-driven dev, safety/ethics</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-product-manager" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://www.andreessenhorowitz.com/ai-product-management/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">a16z Guide</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              MLOps / Platform Engineer
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Build the infrastructure: training clusters, serving platforms, feature stores, CI/CD for ML.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> Kubernetes, Ray, Kubeflow, MLflow, Feast, Terraform, GPU scheduling, distributed systems</li>
+              <li><strong>Background:</strong> DevOps/SRE + ML interest, or ML eng moving to infrastructure</li>
+              <li><strong>Comp (US):</strong> $180k–$350k</li>
+              <li><strong>Trend:</strong> Platform teams enabling 100+ ML engineers</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=mlops-engineer" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://github.com/vermashrestha/Awesome-MLOps" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Awesome MLOps</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Data Scientist (ML-heavy)
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Experimentation, causal inference, modeling tabular data, business impact, stakeholder communication.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> XGBoost/LightGBM, SQL, A/B testing, causal inference, stats, storytelling, Tableau/Looker</li>
+              <li><strong>Background:</strong> Quantitative (Stats, Econ, Physics, CS), strong business intuition</li>
+              <li><strong>Comp (US):</strong> $150k–$280k</li>
+              <li><strong>Evolution:</strong> Moving toward ML engineering for production work</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=data-scientist" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://github.com/eugeneyan/applied-ml" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Applied ML</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              AI Safety / Alignment Researcher
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Interpretability, scalable oversight, robustness, governance. High impact, competitive entry.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Skills:</strong> Mechanistic interpretability (SAEs), RLHF/RLAIF, debate, weak-to-strong, eval design, red-teaming</li>
+              <li><strong>Background:</strong> PhD or exceptional portfolio (MATS, ARENA, independent research)</li>
+              <li><strong>Comp (US):</strong> $200k–$500k (varies widely by org)</li>
+              <li><strong>Orgs:</strong> Anthropic, OpenAI, DeepMind, Apollo, METR, FAR AI, CAIS, CHAI, GovAI</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-safety-career" class="tag" style="text-decoration: none;">Full Guide</a>
+              <a href="https://www.alignmentforum.org/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Alignment Forum</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="learning-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Education</span>
+          <h2 id="learning-title">Learning Curricula</h2>
+          <p class="lead">Structured paths from zero to job-ready — pick your starting point.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">🎓 Complete Beginner (0–6 months)</h3>
+            <ol style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--fg-muted); padding-left: 1.5rem;">
+              <li>Python + NumPy/Pandas (freeCodeCamp, 20h)</li>
+              <li>ML Foundations — Andrew Ng Coursera (3 courses, ~3 months)</li>
+              <li>Hands-On ML with Scikit-Learn/Keras (Géron, Ch 1–8)</li>
+              <li>Kaggle: Titanic → House Prices → Spaceship Titanic</li>
+              <li>Fast.ai Practical Deep Learning (free, top-down)</li>
+              <li>Build 3 portfolio projects end-to-end</li>
+            </ol>
+            <div class="tags" style="margin-top: 1.5rem;">
+              <a href="faq.html?q=learning-path" class="tag" style="text-decoration: none;">Detailed Curriculum</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">🚀 SWE → AI Engineer (2–4 months)</h3>
+            <ol style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--fg-muted); padding-left: 1.5rem;">
+              <li>LLM Fundamentals: tokenization, transformers, APIs (1 week)</li>
+              <li>Prompt Engineering: CoT, few-shot, structured output, DSPy (1 week)</li>
+              <li>RAG: LangGraph/LlamaIndex, vector DBs, eval (RAGAS) (2 weeks)</li>
+              <li>Agents: ReAct, tools, memory, multi-agent (2 weeks)</li>
+              <li>Fine-tuning: LoRA/QLoRA with Unsloth, eval (2 weeks)</li>
+              <li>Deploy: vLLM/Ollama, observability, guardrails (1 week)</li>
+              <li>Capstone: Ship a real AI product</li>
+            </ol>
+            <div class="tags" style="margin-top: 1.5rem;">
+              <a href="detail-generative.html" class="tag" style="text-decoration: none;">GenAI Deep Dive</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="margin-bottom: 1rem;">🔬 Research Track (6–12+ months)</h3>
+            <ol style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--fg-muted); padding-left: 1.5rem;">
+              <li>Math: Linear Algebra (3B1B), Calculus, Probability (StatQuest)</li>
+              <li>Deep Learning: fast.ai + Dive into Deep Learning (D2L) book</li>
+              <li>Transformers: Annotated Transformer, nanoGPT, BERT/GPT from scratch</li>
+              <li>Reproduce 3–5 papers (ICLR/NeurIPS/ICML recent)</li>
+              <li>Original project → ArXiv/Workshop/Conference submission</li>
+              <li>MATS/ARENA/SERI MATS programs, research internships</li>
+            </ol>
+            <div class="tags" style="margin-top: 1.5rem;">
+              <a href="https://github.com/vermashrestha/Awesome-ML-Research" target="_blank" rel="noopener" class="tag" style="text-decoration: none;">Research Resources</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Career Questions</h2>
+          <p class="lead">Browse the most frequently asked questions about AI careers and learning.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=ai-career-path" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are the main career paths in AI and how do I choose?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Research Scientist, ML Engineer, AI Engineer, Data Scientist, MLOps, AI PM, Safety Researcher — with skill requirements and salary ranges.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Career</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Beginner</span>
+            </div>
+          </a>
+          <a href="faq.html?q=learning-path" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What's a good self-study curriculum to learn AI/ML in 2024?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Phase-based curriculum: prerequisites → ML foundations → deep learning → LLMs/GenAI → production → specialization. Free resources only.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Learning</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Beginner</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ml-engineer-vs-researcher" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">ML Engineer vs Research Scientist — what's the difference?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Day-to-day work, required background, career trajectory, compensation, and how to transition between them.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Career</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Intermediate</span>
+            </div>
+          </a>
+          <a href="faq.html?q=breaking-into-ai" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How do I break into AI without a PhD?</h3>
+            <li><p style="margin-bottom: 1rem; color: var(--fg-muted);">Portfolio projects, open source contributions, Kaggle, certifications, networking, SWE→AI transition, alternative credentials.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Career</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=career" class="btn btn-primary btn-lg">View All 15+ Career Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Start Your Journey</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Build Your AI Career</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">From learning fundamentals to landing your dream role — structured guidance every step.</p>
+            <a href="faq.html?category=career" class="btn btn-primary btn-lg">Browse Career Q&As</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

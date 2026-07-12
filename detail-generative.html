@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generative AI - LLMs, diffusion models, prompt engineering, RAG, fine-tuning, agents, and multimodal models.">
+  <title>Generative AI — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">Generative AI</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Large Language Models, diffusion, prompt engineering, RAG, fine-tuning, agents, and multimodal generation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="path-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Learning Path</span>
+          <h2 id="path-title">Generative AI Learning Path</h2>
+          <p class="lead">From understanding LLMs to building production GenAI applications.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">1</div>
+            <h3>LLM Fundamentals</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">How LLMs work: tokenization, transformers, pre-training, SFT, RLHF, inference, sampling.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=llm-work" style="color: var(--accent);">How LLMs Work</a></li>
+              <li>• <a href="faq.html?q=transformers-explained" style="color: var(--accent);">Transformers Deep Dive</a></li>
+              <li>• <a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener" style="color: var(--accent);">Build nanoGPT</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">2</div>
+            <h3>Prompt Engineering & RAG</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Effective prompting patterns, structured output, RAG architecture, evaluation.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=prompt-engineering" style="color: var(--accent);">Prompt Engineering Guide</a></li>
+              <li>• <a href="faq.html?q=rag" style="color: var(--accent);">RAG Deep Dive</a></li>
+              <li>• <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener" style="color: var(--accent);">RAGAS Evaluation</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">3</div>
+            <h3>Advanced: Agents & Fine-tuning</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Agent architectures, tool use, multi-agent systems, LoRA/QLoRA, distillation.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=agents" style="color: var(--accent);">AI Agents Guide</a></li>
+              <li>• <a href="faq.html?q=fine-tuning-vs-rag" style="color: var(--accent);">Fine-tuning Decisions</a></li>
+              <li>• <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener" style="color: var(--accent);">Fast Fine-tuning</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="topics-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Core Topics</span>
+          <h2 id="topics-title">Generative AI Deep Dives</h2>
+          <p class="lead">Technical guides for each major area of generative AI.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              LLM Architecture & Training
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">From tokenization to RLHF — the complete pipeline of modern LLM development.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Tokenization:</strong> BPE, Unigram, WordPiece — subword vocabularies, 32k–256k tokens</li>
+              <li><strong>Pre-training:</strong> Next-token prediction on trillion-token corpora, mixed precision, 3D parallelism</li>
+              <li><strong>Post-training:</strong> SFT (instruction tuning), RLHF/DPO/ORPO (preference alignment)</li>
+              <li><strong>Inference:</strong> KV cache, speculative decoding, continuous batching, PagedAttention</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=llm-work" class="tag" style="text-decoration: none;">How LLMs Work</a>
+              <a href="faq.html?q=scaling-laws" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Scaling Laws</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Prompt Engineering Mastery
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Programming in natural language — structured patterns that reliably produce quality outputs.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Core patterns:</strong> Zero/few-shot, Chain-of-Thought, Self-consistency, Tree-of-Thought</li>
+              <li><strong>Structured output:</strong> JSON schemas, function calling, Instructor/Pydantic validation</li>
+              <li><strong>Advanced:</strong> DSPy (programmatic optimization), soft prompts, prompt chaining</li>
+              <li><strong>Testing:</strong> Prompt regression tests, eval harnesses, A/B testing prompts</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=prompt-engineering" class="tag" style="text-decoration: none;">Prompt Engineering Guide</a>
+              <a href="https://github.com/stanfordnlp/dspy" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">DSPy</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              RAG: Retrieval-Augmented Generation
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Grounding LLM generation in external knowledge for factual, citeable, up-to-date answers.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Pipeline:</strong> Chunk → Embed → Index → Retrieve → Re-rank → Generate</li>
+              <li><strong>Chunking:</strong> Fixed, semantic, hierarchical, document-aware strategies</li>
+              <li><strong>Advanced:</strong> HyDE, query rewriting, multi-hop, GraphRAG, agentic RAG</li>
+              <li><strong>Evaluation:</strong> Faithfulness, Answer Relevancy, Context Precision/Recall (RAGAS)</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=rag" class="tag" style="text-decoration: none;">RAG Deep Dive</a>
+              <a href="https://github.com/explodinggradients/ragas" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">RAGAS</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Fine-Tuning & PEFT
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Adapting pre-trained models to specific domains, styles, or tasks efficiently.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Full fine-tune:</strong> All params, massive compute, best for domain adaptation (code, legal, medical)</li>
+              <li><strong>LoRA/QLoRA:</strong> Low-rank adapters, <1% trainable params, 4-bit quantization (QLoRA)</li>
+              <li><strong>Tools:</strong> Unsloth (2-5x faster), TRL, Axolotl, LLaMA-Factory, PEFT</li>
+              <li><strong>When to use:</strong> Style/format consistency, new skills, compression, specialized knowledge</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=fine-tuning-vs-rag" class="tag" style="text-decoration: none;">When to Fine-tune</a>
+              <a href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Unsloth</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              AI Agents & Tool Use
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Autonomous systems that plan, act, observe, and iterate to achieve goals.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Architectures:</strong> ReAct, Plan-and-Execute, Reflection, Multi-agent (AutoGen, CrewAI, LangGraph)</li>
+              <li><strong>Tools:</strong> Search, code execution, APIs, browsers, databases, file systems</li>
+              <li><strong>Memory:</strong> Short-term (context), long-term (vector store), episodic (past runs)</li>
+              <li><strong>Evaluation:</strong> SWE-bench, MLE-bench, WebShop, OSWorld, agent-specific benchmarks</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=agents" class="tag" style="text-decoration: none;">AI Agents Guide</a>
+              <a href="https://langgraph.langchain.com" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">LangGraph</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Diffusion Models & Image Gen
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Probabilistic models that learn to denoise — powering Midjourney, DALL-E, Stable Diffusion, Flux.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Forward process:</strong> Gradually add Gaussian noise until pure noise</li>
+              <li><strong>Reverse process:</strong> Neural net predicts noise → denoise step by step</li>
+              <li><strong>Guidance:</strong> Classifier-free guidance (CFG), textual inversion, LoRA, ControlNet</li>
+              <li><strong>Modern:</strong> Latent diffusion (SD), rectified flow (Flux), DiT (Sora)</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=diffusion" class="tag" style="text-decoration: none;">How Diffusion Works</a>
+              <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">ComfyUI</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Multimodal Models
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Models that understand and generate across text, images, audio, video, and 3D.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Vision-Language:</strong> CLIP, SigLIP, BLIP, LLaVA, GPT-4V, Gemini, Qwen-VL</li>
+              <li><strong>Any-to-Any:</strong> ImageBind, CoDi, AnyMAL, Unified-IO</li>
+              <li><strong>Video:</strong> Sora, Runway Gen-3, Luma, Kling, Stable Video Diffusion</li>
+              <li><strong>Audio:</strong> Whisper, MusicGen, AudioLDM, Suno, ElevenLabs, SpeechT5</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=multimodal" class="tag" style="text-decoration: none;">Multimodal Guide</a>
+              <a href="https://huggingface.co/collections/google/siglip-652e8b3b8c4b2d1a2c3b4e5f" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Models</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Evaluation & Safety
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Measuring quality, detecting hallucinations, and ensuring responsible deployment.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Quality:</strong> LLM-as-judge, RAGAS, MT-Bench, AlpacaEval, human preference</li>
+              <li><strong>Safety:</strong> Llama Guard, ShieldGemma, constitutional AI, red-teaming</li>
+              <li><strong>Hallucination:</strong> SelfCheckGPT, Faithfulness metrics, citation verification</li>
+              <li><strong>Guardrails:</strong> Guardrails AI, NeMo Guardrails, structured output validation</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=evaluation" class="tag" style="text-decoration: none;">Evaluation Methods</a>
+              <a href="https://github.com/guardrails-ai/guardrails" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Guardrails</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Local LLMs & Deployment
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Running models privately on your hardware — privacy, cost control, offline access.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Tools:</strong> Ollama, LM Studio, llama.cpp, llamafile, vLLM, TGI, MLX</li>
+              <li><strong>Quantization:</strong> Q4_K_M (sweet spot), Q5_K_M, Q8_0, AWQ, GPTQ</li>
+              <li><strong>Hardware:</strong> Apple Silicon (unified memory), NVIDIA (CUDA), AMD (ROCm), CPU offload</li>
+              <li><strong>API-compatible:</strong> OpenAI-compatible endpoints for drop-in replacement</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=local-llm" class="tag" style="text-decoration: none;">Run LLMs Locally</a>
+              <a href="https://ollama.ai" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Ollama</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Generative AI Questions</h2>
+          <p class="lead">Browse the most frequently asked questions in this category.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=llm-work" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How do Large Language Models actually work?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">From tokenization to transformers to RLHF — the complete pipeline behind GPT, Claude, Llama.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Core Concept</span>
+            </div>
+          </a>
+          <a href="faq.html?q=rag" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What is RAG and how do I build it?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Retrieval-Augmented Generation architecture, chunking strategies, advanced patterns, and evaluation.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=prompt-engineering" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are the most effective prompt engineering techniques?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">CoT, few-shot, structured output, self-consistency, DSPy, and testing methodologies.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Practical</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Beginner</span>
+            </div>
+          </a>
+          <a href="faq.html?q=local-llm" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How can I run LLMs locally on my machine?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Ollama, llama.cpp, LM Studio, quantization guide, hardware requirements, and API compatibility.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Practical</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Beginner</span>
+            </div>
+          </a>
+          <a href="faq.html?q=agents" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are AI agents and how do they differ from chatbots?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Autonomous planning, tool use, memory, reflection, multi-agent frameworks (LangGraph, AutoGen).</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=fine-tuning-vs-rag" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">When should I use fine-tuning vs RAG vs prompt engineering?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Decision framework comparing cost, effort, and use cases for each technique at different stack levels.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=generative" class="btn btn-primary btn-lg">View All 30+ Generative AI Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Build Something</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Start Building with GenAI</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">From prototype to production — explore tools, patterns, and best practices.</p>
+            <a href="faq.html?category=generative" class="btn btn-primary btn-lg">Browse All GenAI Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

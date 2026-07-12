@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Applications - Healthcare, finance, creative, coding, science, robotics, education, cybersecurity, climate.">
+  <title>AI Applications — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">AI Applications</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Real-world impact across industries — healthcare, finance, creative, coding, science, robotics, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="sectors-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Industry Sectors</span>
+          <h2 id="sectors-title">AI by Application Domain</h2>
+          <p class="lead">How AI transforms each sector — use cases, key models, challenges, and opportunities.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Healthcare & Life Sciences
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Medical imaging, drug discovery, clinical decision support, genomics, digital pathology.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Imaging:</strong> Radiology (CXR, CT, MRI), dermatology, ophthalmology, pathology — FDA-cleared algorithms</li>
+              <li><strong>Drug Discovery:</strong> AlphaFold 3, molecular generation, target ID, clinical trial optimization</li>
+              <li><strong>Clinical AI:</strong> Sepsis prediction, ambient scribing (Nuance, Abridge), coding automation</li>
+              <li><strong>Key Models:</strong> Med-PaLM 2, GatorTron, BioGPT, ClinicalBERT, AlphaFold 3</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-healthcare" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://huggingface.co/collections/microsoft/biomednlp-652e8b3b8c4b2d1a2c3b4e5f" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Models</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Finance & FinTech
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Algorithmic trading, fraud detection, risk modeling, robo-advisors, compliance, insurance.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Trading:</strong> Alpha generation, execution optimization, market making, crypto/DeFi</li>
+              <li><strong>Risk & Compliance:</strong> Credit scoring, AML/KYC, regulatory reporting, stress testing</li>
+              <li><strong>Fraud:</strong> Real-time transaction monitoring, graph neural networks, behavioral biometrics</li>
+              <li><strong>Key Models:</strong> FinBERT, BloombergGPT, FinGPT, Tabular transformers (TabNet, FT-Transformer)</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-finance" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://huggingface.co/collections/finbert" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Models</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M18.37 5.39a20.08 20.08 0 0 0-5.64-1.55A19.94 19.94 0 0 0 12.01 5a19.89 19.89 0 0 0-1.74-.16 20.12 20.12 0 0 0-5.64 1.55 19.62 19.62 0 0 0-.5 5.52c0 5.25 3.87 9.67 9 11 5.13-1.33 9-5.75 9-11a19.62 19.62 0 0 0-.5-5.52z"/></svg>
+              Transportation & Logistics
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Autonomous vehicles, route optimization, fleet management, supply chain, last-mile delivery.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Autonomy:</strong> L2–L5 ADAS, perception (camera/LiDAR/radar fusion), planning, simulation</li>
+              <li><strong>Logistics:</strong> Route optimization (OR-Tools), demand forecasting, warehouse robots, drone delivery</li>
+              <li><strong>Fleet:</strong> Predictive maintenance, driver safety, fuel optimization, EV charging</li>
+              <li><strong>Key Players:</strong> Waymo, Tesla FSD, Mobileye, Aurora, Nuro, Amazon Robotics</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-transport" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/autonomousvision" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Research</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Creative Industries
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Generative art, video, music, design, writing, gaming, marketing content creation.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Images:</strong> Midjourney, DALL-E 3, Flux, Stable Diffusion, Ideogram, Adobe Firefly</li>
+              <li><strong>Video:</strong> Sora, Runway Gen-3, Luma, Kling, Pika, Stable Video Diffusion</li>
+              <li><strong>Audio:</strong> Suno, Udio, MusicGen, ElevenLabs, Whisper, AudioLDM</li>
+              <li><strong>Design:</strong> Figma AI, Canva Magic, Spline 3D, Adobe Express, Uizard</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-creative" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">ComfyUI</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Cybersecurity
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Threat detection, vulnerability management, SOC automation, adversarial robustness.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Detection:</strong> Anomaly detection (UEBA), malware classification, phishing detection, insider threat</li>
+              <li><strong>Offensive/Defensive:</strong> Automated pentesting, fuzzing, patch generation, deception tech</li>
+              <li><strong>LLM Security:</strong> Prompt injection, data exfiltration, jailbreak detection, guardrails</li>
+              <li><strong>Key Models:</strong> SecureBERT, CyberBERT, MalConv, Llama Guard, ShieldGemma</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-cybersecurity" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/guardrails-ai/guardrails" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Guardrails</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Education & Research
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Personalized learning, automated grading, intelligent tutoring, research acceleration.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Learning:</strong> Adaptive platforms (Khanmigo, Duolingo Max), AI tutors, content generation</li>
+              <li><strong>Assessment:</strong> Automated essay scoring, code evaluation, plagiarism detection</li>
+              <li><strong>Research:</strong> Literature review (Elicit, Semantic Scholar), hypothesis generation, lab automation</li>
+              <li><strong>Accessibility:</strong> Text-to-speech, translation, captioning, learning disability support</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-education" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Tools</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Software Development
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Code generation, refactoring, testing, documentation, architecture, DevOps automation.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Assistants:</strong> GitHub Copilot, Cursor, Windsurf, Cody, Continue, Codeium, Supermaven</li>
+              <li><strong>Agents:</strong> Devin, SWE-agent, OpenDevin, Aider, Cline, factory — end-to-end PRs</li>
+              <li><strong>Specialized:</strong> SQL generation, Terraform, GraphQL, regex, migration, legacy modernization</li>
+              <li><strong>Eval:</strong> SWE-bench, HumanEval, BigCodeBench, LiveCodeBench, CodeXGLUE</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-coding" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/princeton-nlp/SWE-bench" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">SWE-bench</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Scientific Discovery
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Materials science, climate modeling, particle physics, astronomy, mathematics, chemistry.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Materials:</strong> MatterGen, M3GNet, Crystal GNNs, inverse design for batteries/catalysts</li>
+              <li><strong>Climate:</strong> GraphCast, FourCastNet, Pangu-Weather, NowcastNet, Earth-2</li>
+              <li><strong>Physics/Math:</strong> Neural operators (DeepONet, FNO), AlphaGeometry, Lean proof assistant</li>
+              <li><strong>Biology:</strong> AlphaFold 3, ESM, ProteinMPNN, RFdiffusion, GeneFormer, scGPT</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-science" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/deepmind/alphafold" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">AlphaFold</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Robotics & Embodied AI
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Foundation models for robotics, sim-to-real, dexterous manipulation, humanoid robots.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Foundation Models:</strong> RT-1/RT-2, PaLM-E, Octo, OpenVLA, GR-1, π₀ (Physical Intelligence)</li>
+              <li><strong>Approaches:</strong> Imitation learning, RL, diffusion policies, VQ-VAE tokenization</li>
+              <li><strong>Hardware:</strong> ALOHA, Franka, Unitree, Figure, Tesla Optimus, 1X, Apptronik</li>
+              <li><strong>Simulators:</strong> Isaac Sim, MuJoCo, PyBullet, Genesis, ManiSkill, RoboCasa</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-robotics" class="tag" style="text-decoration: none;">Read Deep Dive</a>
+              <a href="https://github.com/physical-intelligence" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">π₀ Model</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Application Questions</h2>
+          <p class="lead">Browse the most frequently asked questions about AI in specific industries.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=ai-healthcare" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How is AI transforming healthcare and medicine?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Medical imaging, drug discovery, clinical decision support, digital pathology, ambient scribing.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Healthcare</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Intermediate</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-coding" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How is AI changing software development?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Copilot, Cursor, agents (Devin, SWE-agent), testing, refactoring, spec-driven development.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Coding</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-creative" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are the main AI tools for creative work?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Midjourney, DALL-E, Flux, Suno, Runway, Sora, ElevenLabs, ComfyUI, Figma AI.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Creative</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Tools</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-finance" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How is AI used in finance and fintech?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Algorithmic trading, fraud detection, risk modeling, robo-advisors, compliance automation.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Finance</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Intermediate</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-science" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How is AI accelerating scientific discovery?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">AlphaFold, materials design, climate modeling, neural operators, automated theorem proving.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-robotics" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What is embodied AI and the future of robotics?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Foundation models for robots, RT-2, π₀, sim-to-real, humanoids, dexterous manipulation.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Future</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=applications" class="btn btn-primary btn-lg">View All 20+ Application Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Explore by Sector</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">AI Transforming Every Industry</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">Deep dives into healthcare, finance, creative, science, robotics, and more.</p>
+            <a href="faq.html?category=applications" class="btn btn-primary btn-lg">Browse All Application Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

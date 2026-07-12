@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Ethics & Safety - Bias, fairness, transparency, privacy, alignment, governance, and responsible AI development.">
+  <title>AI Ethics & Safety — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">AI Ethics & Safety</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Building responsible AI — fairness, transparency, privacy, alignment, governance, and societal impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="path-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Learning Path</span>
+          <h2 id="path-title">Responsible AI Learning Path</h2>
+          <p class="lead">From core principles to advanced alignment research — understand the full spectrum of AI safety.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">1</div>
+            <h3>Core Principles</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Fairness, transparency, accountability, privacy, safety, human oversight.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=bias-fairness" style="color: var(--accent);">Bias & Fairness Metrics</a></li>
+              <li>• <a href="faq.html?q=privacy-ai" style="color: var(--accent);">Privacy in AI</a></li>
+              <li>• <a href="https://ai.google/responsibility/principles/" target="_blank" rel="noopener" style="color: var(--accent);">Google AI Principles</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">2</div>
+            <h3>Technical Safety</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Robustness, interpretability, guardrails, evaluation, red-teaming, monitoring.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="faq.html?q=alignment" style="color: var(--accent);">AI Alignment Overview</a></li>
+              <li>• <a href="https://github.com/guardrails-ai/guardrails" target="_blank" rel="noopener" style="color: var(--accent);">Guardrails AI</a></li>
+              <li>• <a href="https://github.com/NVIDIA/NeMo-Guardrails" target="_blank" rel="noopener" style="color: var(--accent);">NeMo Guardrails</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">3</div>
+            <h3>Alignment & Governance</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Scalable oversight, constitutional AI, weak-to-strong, policy, regulation, standards.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• <a href="https://www.anthropic.com/research/constitutional-ai" target="_blank" rel="noopener" style="color: var(--accent);">Constitutional AI</a></li>
+              <li>• <a href="https://arxiv.org/abs/2212.08073" target="_blank" rel="noopener" style="color: var(--accept);">Weak-to-Strong Generalization</a></li>
+              <li>• <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener" style="color: var(--accent);">EU AI Act</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="topics-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Core Pillars</span>
+          <h2 id="topics-title">Ethics & Safety Deep Dives</h2>
+          <p class="lead">Technical and governance frameworks for each pillar of responsible AI.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Fairness & Bias Mitigation
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Measuring and reducing systematic disparities across protected groups.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Metrics:</strong> Demographic parity, equalized odds, equal opportunity, calibration, individual fairness</li>
+              <li><strong>Mitigation:</strong> Pre-processing (reweighting), in-processing (adversarial debiasing), post-processing (threshold adjustment)</li>
+              <li><strong>Tools:</strong> AIF360, Fairlearn, Fairness Indicators, Themis-ML</li>
+              <li><strong>Impossibility:</strong> Cannot satisfy demographic parity + equalized odds + calibration simultaneously when base rates differ</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=bias-fairness" class="tag" style="text-decoration: none;">Technical Guide</a>
+              <a href="https://github.com/Trusted-AI/AIF360" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">AIF360</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Transparency & Explainability
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Making model decisions understandable to stakeholders — from developers to end users to regulators.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Post-hoc:</strong> SHAP, LIME, Integrated Gradients, Attention visualization, Counterfactuals</li>
+              <li><strong>Intrinsic:</strong> Decision trees, rule lists, generalized additive models (GAMs), prototype networks</li>
+              <li><strong>LLM-specific:</strong> Chain-of-thought faithfulness, attention probing, mechanistic interpretability (SAEs)</li>
+              <li><strong>Standards:</strong> Model Cards, Data Sheets, System Cards, EU AI Act transparency obligations</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=explainability" class="tag" style="text-decoration: none;">Technical Guide</a>
+              <a href="https://github.com/slundberg/shap" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">SHAP</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Privacy & Data Protection
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Protecting sensitive data throughout the ML lifecycle — training, inference, and deployment.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Threats:</strong> Membership inference, data extraction, attribute inference, model inversion, reconstruction</li>
+              <li><strong>Defenses:</strong> DP-SGD, federated learning, synthetic data, homomorphic encryption, TEEs, PII redaction</li>
+              <li><strong>Regulations:</strong> GDPR (Art. 22), EU AI Act, HIPAA, CCPA/CPRA, sector-specific (finance, healthcare)</li>
+              <li><strong>Practical:</strong> Zero-retention APIs, local inference, differential privacy budgets, data minimization</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=privacy-ai" class="tag" style="text-decoration: none;">Technical Guide</a>
+              <a href="https://github.com/microsoft/Presidio" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Presidio</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              AI Alignment & Safety
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Ensuring AI systems pursue intended goals reliably, even as capabilities scale beyond human supervision.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Outer alignment:</strong> Reward specification, RLHF/DPO/ORPO, Constitutional AI, RLAIF</li>
+              <li><strong>Inner alignment:</strong> Mesa-optimization, deceptive alignment, goal misgeneralization</li>
+              <li><strong>Scalable oversight:</strong> Debate, amplification, recursive reward modeling, weak-to-strong generalization</li>
+              <li><strong>Interpretability:</strong> SAEs, circuit analysis, automated interpretability, probing</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=alignment" class="tag" style="text-decoration: none;">Alignment Overview</a>
+              <a href="https://www.anthropic.com/research/interpretability" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Interpretability</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Robustness & Adversarial Safety
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Ensuring models behave correctly under distribution shift, adversarial attacks, and edge cases.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Adversarial:</strong> PGD, AutoAttack, jailbreaks, prompt injection, backdoors, trojan detection</li>
+              <li><strong>OOD detection:</strong> Mahalanobis, energy scores, likelihood ratios, conformal prediction</li>
+              <li><strong>Certified defenses:</strong> Randomized smoothing, interval bound propagation, Lipschitz constraints</li>
+              <li><strong>Evaluation:</strong> RobustBench, HEXA, AdvGLUE, Red-teaming frameworks (Garak, PromptInject)</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=robustness" class="tag" style="text-decoration: none;">Technical Guide</a>
+              <a href="https://github.com/robustbench/robustbench" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">RobustBench</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Governance, Regulation & Standards
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Policy frameworks, compliance, risk management, and organizational processes for responsible AI.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Regulations:</strong> EU AI Act (risk tiers), US Executive Order, NIST AI RMF, ISO 42001, sector rules</li>
+              <li><strong>Risk tiers:</strong> Unacceptable (banned), High-risk (conformity assessment), Limited, Minimal</li>
+              <li><strong>Processes:</strong> Model risk management, incident reporting, audit trails, human oversight</li>
+              <li><strong>Standards:</strong> IEEE 7000, ISO/IEC 23894, NIST AI RMF 1.0, OECD AI Principles</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=governance" class="tag" style="text-decoration: none;">Governance Guide</a>
+              <a href="https://airisk.nist.gov/AI-RMF-Knowledge-Base/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">NIST AI RMF</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Societal Impact & Ethics
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Broader consequences — labor displacement, inequality, environmental cost, misuse, dual-use.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Labor:</strong> Automation risk, augmentation vs replacement, reskilling, universal basic compute</li>
+              <li><strong>Environment:</strong> Training/inference carbon footprint, water usage, hardware supply chain</li>
+              <li><strong>Misuse:</strong> Deepfakes, disinformation, cyberattacks, surveillance, autonomous weapons</li>
+              <li><strong>Equity:</strong> Digital divide, Global South access, language bias, cultural representation</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=societal-impact" class="tag" style="text-decoration: none;">Impact Analysis</a>
+              <a href="https://climatechange.ai/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Climate Change AI</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Ethics & Safety Questions</h2>
+          <p class="lead">Browse the most frequently asked questions about responsible AI.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=bias-fairness" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How do I detect and mitigate bias in AI systems?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Fairness metrics (demographic parity, equalized odds), pre/in/post-processing mitigation, tools like AIF360 and Fairlearn.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Ethics</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Advanced</span>
+            </div>
+          </a>
+          <a href="faq.html?q=alignment" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What is AI alignment and why does it matter?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Outer/inner alignment, scalable oversight, constitutional AI, weak-to-strong generalization, interpretability.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+          <a href="faq.html?q=privacy-ai" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How do I protect privacy when using AI with sensitive data?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">DP-SGD, federated learning, synthetic data, local inference, zero-retention APIs, PII redaction, regulations.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Ethics</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=governance" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are the key AI regulations and compliance requirements?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">EU AI Act, NIST AI RMF, US Executive Order, ISO 42001, sector-specific rules, risk tiers.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Ethics</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Policy</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=ethics" class="btn btn-primary btn-lg">View All 15+ Ethics & Safety Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Build Responsibly</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">AI Safety Starts with Understanding</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">From fairness metrics to alignment research — explore the technical and governance toolkit.</p>
+            <a href="faq.html?category=ethics" class="btn btn-primary btn-lg">Browse All Ethics Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

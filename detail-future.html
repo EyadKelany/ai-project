@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Future of AI - AGI timelines, scaling laws, agents, embodied AI, scientific discovery, societal impact, and emerging research directions.">
+  <title>Future & Trends — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">Future & Trends</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">AGI timelines, scaling laws, autonomous agents, embodied AI, scientific discovery, and the road ahead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="timeline-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Timeline</span>
+          <h2 id="timeline-title">Predicted Milestones (2024–2035+)</h2>
+          <p class="lead">Expert forecasts and research milestones shaping the next decade of AI.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal" style="border-left: 3px solid var(--accent);">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem;">2024–2025</div>
+            <h3 style="margin-bottom: 1rem;">Reliable Agents & Multimodal</h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• Multi-step agents with tool use, memory, reflection</li>
+              <li>• Native multimodal models (text, image, audio, video)</li>
+              <li>• 1M+ token context windows, near-perfect retrieval</li>
+              <li>• Code agents passing SWE-bench >50%</li>
+            </ul>
+          </article>
+          <article class="card reveal" style="border-left: 3px solid var(--secondary);">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--secondary); margin-bottom: 1rem;">2026–2027</div>
+            <h3 style="margin-bottom: 1rem;">Automated AI Research</h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• AI systems improving AI systems (recursive improvement)</li>
+              <li>• Superhuman coding & ML engineering</li>
+              <li>• Automated hypothesis generation & experiment design</li>
+              <li>• "Drop-in remote worker" for knowledge tasks</li>
+            </ul>
+          </article>
+          <article class="card reveal" style="border-left: 3px solid #22d3ee;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: #22d3ee; margin-bottom: 1rem;">2028–2030</div>
+            <h3 style="margin-bottom: 1rem;">Scientific Discovery & Embodiment</h3>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• Nobel-level discoveries in materials, bio, physics</li>
+              <li>• General-purpose humanoid robots in factories/homes</li>
+              <li>• Personalized AI tutors for every student globally</li>
+              <li>• Brain-computer interfaces with AI decoding</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="topics-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Research Frontiers</span>
+          <h2 id="topics-title">Key Research Directions</h2>
+          <p class="lead">The technical areas that will define the next generation of AI capabilities.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Scaling Laws & New Paradigms
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Will Chinchilla scaling continue? Inference-time compute, MoE, data quality, synthetic data.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Inference-time scaling:</strong> o1, Q* — search, verification, CoT at test time (compute ∝ performance)</li>
+              <li><strong>Mixture of Experts:</strong> Sparse activation (1.6T params, 100B active) — better param/compute tradeoff</li>
+              <li><strong>Data quality > quantity:</strong> Phi-3 (textbook data) ≈ Llama-3 8B; curation beats raw scale</li>
+              <li><strong>Video/synthetic data:</strong> YouTube (1000T tokens), self-play, world models, simulators</li>
+              <li><strong>New objectives:</strong> Process supervision, RL on reasoning, planning, world models</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=scaling-laws" class="tag" style="text-decoration: none;">Scaling Laws Deep Dive</a>
+              <a href="faq.html?q=inference-scaling" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Inference Scaling</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              Agentic AI & Autonomous Systems
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">From chatbots to autonomous agents that plan, execute, and iterate over long horizons.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Planning:</strong> Tree-of-Thought, MCTS, LLM-based planners, neuro-symbolic</li>
+              <li><strong>Memory:</strong> Long-term (vector), episodic (past runs), working (context), semantic</li>
+              <li><strong>Tool ecosystems:</strong> Composio, Arcade, browser, code, APIs, OS control (OSWorld)</li>
+              <li><strong>Multi-agent:</strong> AutoGen, CrewAI, LangGraph, Swarm — specialization, debate, verification</li>
+              <li><strong>Benchmarks:</strong> SWE-bench, MLE-bench, WebShop, Mind2Web, GAIA, τ-bench</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=agents" class="tag" style="text-decoration: none;">Agents Guide</a>
+              <a href="https://github.com/princeton-nlp/SWE-bench" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">SWE-bench</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Embodied Intelligence & Robotics
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Foundation models for the physical world — sim-to-real, dexterous manipulation, humanoids.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Foundation models:</strong> RT-1/RT-2, PaLM-E, Octo, OpenVLA, GR-1, π₀ (Physical Intelligence)</li>
+              <li><strong>Approaches:</strong> Imitation learning, RL, diffusion policies, VQ-VAE tokenization, VQ-BeT</li>
+              <li><strong>Hardware:</strong> ALOHA, Franka, Unitree, Figure, Tesla Optimus, 1X, Apptronik, Agility</li>
+              <li><strong>Simulators:</strong> Isaac Sim, MuJoCo, PyBullet, Genesis, ManiSkill, RoboCasa, XLand</li>
+              <li><strong>Key challenge:</strong> Sim-to-real gap, data scarcity, safety, long-horizon credit assignment</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-robotics" class="tag" style="text-decoration: none;">Robotics Deep Dive</a>
+              <a href="https://github.com/physical-intelligence" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">π₀ Model</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              AI for Scientific Discovery
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Automating the scientific method — hypothesis, experiment, analysis, theory building.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Materials:</strong> MatterGen, M3GNet, Crystal GNNs, inverse design (batteries, catalysts, PV)</li>
+              <li><strong>Biology:</strong> AlphaFold 3, ESM-3, ProteinMPNN, RFdiffusion, GeneFormer, scGPT, virtual cells</li>
+              <li><strong>Climate:</strong> GraphCast, FourCastNet, Pangu-Weather, NowcastNet, NVIDIA Earth-2, digital twins</li>
+              <li><strong>Physics/Math:</strong> Neural operators (DeepONet, FNO), AlphaGeometry, Lean/Isabelle proof assistants</li>
+              <li><strong>Chemistry:</strong> RXN, ChemBERTa, MolCLR, retrosynthesis, reaction prediction</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=ai-science" class="tag" style="text-decoration: none;">Science Deep Dive</a>
+              <a href="https://github.com/deepmind/alphafold" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">AlphaFold</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Multimodal & World Models
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Models that understand and simulate the world across all modalities — the path to general intelligence.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Any-to-Any:</strong> ImageBind, CoDi, AnyMAL, Unified-IO, Transfusion (discrete + continuous)</li>
+              <li><strong>Video as world model:</strong> Sora, Gen-3, Luma, Kling, Stable Video Diffusion, V-JEPA</li>
+              <li><strong>3D/4D:</strong> Gaussian splatting, NeRF, 4D generation, spatial intelligence</li>
+              <li><strong>Audio unification:</strong> AudioPaLM, SpeechGPT, VALL-E, seamless streaming</li>
+              <li><strong>Goal:</strong> Unified representation space for perception, reasoning, action, generation</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=multimodal" class="tag" style="text-decoration: none;">Multimodal Guide</a>
+              <a href="https://arxiv.org/abs/2402.19498" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Sora Paper</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Alignment, Safety & Governance
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Ensuring increasingly capable systems remain beneficial and controllable.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Scalable oversight:</strong> Debate, amplification, recursive RM, weak-to-strong generalization</li>
+              <li><strong>Interpretability:</strong> SAEs (sparse autoencoders), circuit analysis, automated interpretability</li>
+              <li><strong>Control:</strong> Activation steering, representation engineering, circuit breakers</li>
+              <li><strong>Governance:</strong> EU AI Act, compute governance, model registration, incident reporting</li>
+              <li><strong>Evals:</strong> Dangerous capabilities (CBTR), alignment evals, red-teaming standards</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=alignment" class="tag" style="text-decoration: none;">Alignment Overview</a>
+              <a href="https://www.anthropic.com/research/interpretability" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Interpretability</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Societal & Economic Transformation
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Labor markets, inequality, education, geopolitics, environment, human-AI collaboration.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Labor:</strong> Augmentation vs automation, task-level exposure, reskilling, universal basic compute</li>
+              <li><strong>Economics:</strong> $15.7T GDP impact by 2030 (PwC), compute as new oil, winner-take-most dynamics</li>
+              <li><strong>Education:</strong> Personalized tutors, curriculum transformation, assessment redesign</li>
+              <li><strong>Geopolitics:</strong> Chip export controls, sovereign AI, talent migration, compute diplomacy</li>
+              <li><strong>Environment:</strong> Training carbon, inference at scale, water, hardware supply chain, green AI</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=societal-impact" class="tag" style="text-decoration: none;">Impact Analysis</a>
+              <a href="https://climatechange.ai/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Climate Change AI</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experts-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Expert Views</span>
+          <h2 id="experts-title">AGI Timeline Predictions</h2>
+          <p class="lead">What leading researchers and industry leaders predict for human-level AI.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #00b894); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">DA</div>
+              <div>
+                <div style="font-weight: 600;">Dario Amodei</div>
+                <div class="muted" style="font-size: 0.8rem;">CEO, Anthropic</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"Powerful AI by <strong>2026–2027</strong> — Nobel-level science, coding, reasoning. Scaling continues with algorithmic improvements."</p>
+          </article>
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--secondary), #818cf8); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">SA</div>
+              <div>
+                <div style="font-weight: 600;">Sam Altman</div>
+                <div class="muted" style="font-size: 0.8rem;">CEO, OpenAI</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"AGI within <strong>this decade</strong>. Systems that can do what humans can. Compute and algorithmic progress will drive it."</p>
+          </article>
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #22d3ee, #06b6d4); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">SL</div>
+              <div>
+                <div style="font-weight: 600;">Shane Legg</div>
+                <div class="muted" style="font-size: 0.8rem;">Co-founder, DeepMind</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"50% chance of AGI by <strong>2028</strong> (consistent since 2011). Scaling + algorithmic breakthroughs will get us there."</p>
+          </article>
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">GH</div>
+              <div>
+                <div style="font-weight: 600;">Geoffrey Hinton</div>
+                <div class="muted" style="font-size: 0.8rem;">Godfather of DL</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"<strong>5–20 years</strong> to superintelligence. Changed from 50+ years in 2023. Digital intelligence may surpass biological."</p>
+          </article>
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #a855f7, #d946ef); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">YL</div>
+              <div>
+                <div style="font-weight: 600;">Yann LeCun</div>
+                <div class="muted" style="font-size: 0.8rem;">Chief AI Scientist, Meta</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"<strong>Decades</strong> — current LLMs lack world models, planning, reasoning. Need objective-driven architectures (JEPA), not just scaling."</p>
+          </article>
+          <article class="card reveal">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: grid; place-items: center; color: var(--bg); font-weight: 700; font-size: 1.25rem;">GM</div>
+              <div>
+                <div style="font-weight: 600;">Gary Marcus</div>
+                <div class="muted" style="font-size: 0.8rem;">Cognitive Scientist</div>
+              </div>
+            </div>
+            <p style="color: var(--fg-muted);">"Not soon — <strong>hybrid neuro-symbolic</strong> needed. LLMs are autocomplete on steroids; brittle, unreliable, no genuine understanding."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Future Questions</h2>
+          <p class="lead">Browse the most frequently asked questions about where AI is heading.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=agi-timeline" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">When will we achieve AGI? What are the leading predictions?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Expert forecasts from Metaculus, AI Impacts, Altman, Amodei, Legg, Hinton, LeCun, Marcus — with definitions and reasoning.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+          <a href="faq.html?q=scaling-laws" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are scaling laws and will they continue to hold?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Chinchilla scaling, inference-time compute, MoE, data quality, video data, algorithmic efficiency — the debate on limits.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+          <a href="faq.html?q=agents" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are AI agents and how will they evolve?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">From ReAct to autonomous multi-agent systems — planning, memory, tools, benchmarks (SWE-bench, GAIA).</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Future</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-robotics" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What is embodied AI and the future of robotics?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Foundation models for robots, RT-2, π₀, sim-to-real, humanoids, dexterous manipulation, world models.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Future</span>
+            </div>
+          </a>
+          <a href="faq.html?q=ai-science" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How is AI accelerating scientific discovery?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">AlphaFold, materials design, climate modeling, neural operators, automated theorem proving, virtual cells.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+          <a href="faq.html?q=societal-impact" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What will be the societal impact of advanced AI?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Labor displacement, inequality, education transformation, geopolitics, environment, human-AI collaboration.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Ethics</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Future</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=future" class="btn btn-primary btn-lg">View All 15+ Future Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">The Future is Being Built Now</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Explore What's Coming</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">From AGI timelines to embodied intelligence — understand the forces shaping the next decade.</p>
+            <a href="faq.html?category=future" class="btn btn-primary btn-lg">Browse Future Q&As</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

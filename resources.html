@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Resources - Tools, platforms, courses, papers, and communities for learning and building with artificial intelligence.">
+  <title>Resources — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link active" aria-current="page">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="#contribute" class="btn btn-primary nav-cta">Contribute</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link active" aria-current="page">Resources</a>
+      </nav>
+      <a href="#contribute" class="btn btn-primary">Contribute</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Tools & Resources</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Resources Hub</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Curated tools, platforms, courses, papers, and communities to learn and build with AI</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="resources-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Explore by Category</span>
+          <h2 id="resources-title">Essential AI Resources</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Learning Resources -->
+          <article class="card fade-in reveal">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 12h5l3 9-6-4 6 4zM2 12h20"/></svg>
+            </div>
+            <h3>Learning & Courses</h3>
+            <p>Structured learning paths, tutorials, and educational content for all levels.</p>
+            <a href="resources-learning.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+
+          <!-- Tools & Platforms -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M3 12h18M3 16h18"/></svg>
+            </div>
+            <h3>Tools & Platforms</h3>
+            <p>Frameworks, APIs, cloud services, and development tools for AI/ML.</p>
+            <a href="resources-tools.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+
+          <!-- Models & Datasets -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>Models & Datasets</h3>
+            <p>Pre-trained models, model hubs, and datasets for training and fine-tuning.</p>
+            <a href="resources-models.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+
+          <!-- Research & Papers -->
+          <article class="card fade-in reveal" style="--i: 3;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.16l-3.58 3.59L12 20z"/></svg>
+            </div>
+            <h3>Research & Papers</h3>
+            <p>Latest papers, conferences, journals, and research communities.</p>
+            <a href="resources-research.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+
+          <!-- Communities -->
+          <article class="card fade-in reveal" style="--i: 4;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v4l4 2-4 2v4M6 2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/></svg>
+            </div>
+            <h3>Communities & Events</h3>
+            <p>Forums, Discord servers, meetups, conferences, and networking opportunities.</p>
+            <a href="resources-communities.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+
+          <!-- Career & Jobs -->
+          <article class="card fade-in reveal" style="--i: 5;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.41 2.11L18 12l-1.41 2.12L12 19l-4.41-6.57L6 12l1.41-2.11L12 3z"/></svg>
+            </div>
+            <h3>Career & Jobs</h3>
+            <p>Job boards, career guides, interview prep, and professional development.</p>
+            <a href="resources-career.html" class="btn btn-primary" style="margin-top: 1.25rem;">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section section--tight" style="background: var(--bg-elevated);" aria-labelledby="quick-links-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">
+          <span class="eyebrow">Quick Access</span>
+          <h2 id="quick-links-title">Popular Resources</h2>
+        </header>
+
+        <div class="grid grid-4">
+          <a href="resources-learning.html" class="card fade-in reveal" style="text-decoration: none; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3L2 12h5l3 9-6-4 6 4zM2 12h20"/></svg>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1rem;">Learning Paths</h4>
+                <p style="margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--fg-muted);">Structured courses</p>
+              </div>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);">Explore →</div>
+          </a>
+
+          <a href="resources-tools.html" class="card fade-in reveal" style="text-decoration: none; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M3 12h18M3 16h18"/></svg>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1rem;">Tools & SDKs</h4>
+                <p style="margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--fg-muted);">Frameworks & APIs</p>
+              </div>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);">Explore →</div>
+          </a>
+
+          <a href="resources-models.html" class="card fade-in reveal" style="text-decoration: none; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1rem;">Model Hubs</h4>
+                <p style="margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--fg-muted);">Hugging Face & more</p>
+              </div>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);">Explore →</div>
+          </a>
+
+          <a href="resources-research.html" class="card fade-in reveal" style="text-decoration: none; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <div style="width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.16l-3.58 3.59L12 20z"/></svg>
+              </div>
+              <div>
+                <h4 style="margin: 0; font-size: 1em;">Papers & Research</h4>
+                <p style="margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--fg-muted);">Latest findings</p>
+              </div>
+            </div>
+            <div style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);">Explore →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contribute Section -->
+    <section class="section section--tight" id="contribute" aria-labelledby="contribute-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Help Improve This Resource</span>
+            <h2 id="contribute-title" style="margin: 1rem 0;">Contribute to AI Explorer</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">Found a broken link? Have a great resource to add? Help us keep this directory up-to-date.</p>
+            <form style="display: flex; flex-direction: column; gap: 1rem; max-width: 480px; margin: 0 auto; text-align: left;" onsubmit="handleContribute(event)">
+              <div>
+                <label for="c-name" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg);">Your Name</label>
+                <input type="text" id="c-name" placeholder="Your name" style="width: 100%; padding: 0.875rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; outline: none; transition: border-color var(--transition-fast);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+              </div>
+              <div>
+                <label for="c-email" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg);">Email (optional)</label>
+                <input type="email" id="c-email" placeholder="you@example.com" style="width: 100%; padding: 0.875rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; outline: none; transition: border-color var(--transition-fast);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+              </div>
+              <div>
+                <label for="c-type" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg);">Contribution Type</label>
+                <select id="c-type" style="width: 100%; padding: 0.875rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; outline: none; transition: border-color var(--transition-fast);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+                  <option value="">Select type</option>
+                  <option value="link">Add/Update Link</option>
+                  <option value="correction">Fix Error</option>
+                  <option value="suggestion">New Category</option>
+                  <option value="feedback">General Feedback</option>
+                </select>
+              </div>
+              <div>
+                <label for="c-details" style="display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--fg);">Details</label>
+                <textarea id="c-details" placeholder="Please describe your contribution with as much detail as possible..." rows="4" style="width: 100%; padding: 0.875rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; font-family: inherit; outline: none; transition: border-color var(--transition-fast); resize: vertical;" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">Submit Contribution</button>
+            </form>
+            <p class="muted" style="margin-top: 1rem; font-size: 0.8rem;">We review all submissions and credit contributors when appropriate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Curated resources, tools, and learning paths for the AI community.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="resources-learning.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Learning & Courses</a></li>
+            <li><a href="resources-tools.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Tools & Platforms</a></li>
+            <li><a href="resources-models.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Models & Datasets</a></li>
+            <li><a href="resources-research.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Research & Papers</a></li>
+            <li><a href="resources-communities.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Communities</a></li>
+            <li><a href="resources-career.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Career & Jobs</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Explore</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="index.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Home</a></li>
+            <li><a href="faq.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Questions & Answers</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Discord Server</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">GitHub</a></li>
+            <li><a href="#contribute" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Contribute</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleContribute(e) {
+      e.preventDefault();
+      alert('Thank you for your contribution! We\\'ll review it and get back to you if we need more information. (Demo only)');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

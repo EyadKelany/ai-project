@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Explorer - Your comprehensive guide to artificial intelligence. Learn fundamentals, explore applications, understand ethics, and get answers to your AI questions.">
+  <title>AI Explorer — Your Guide to Artificial Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+
+      <div class="flex gap-sm" style="display: flex; align-items: center;">
+        <a href="faq.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 4rem); padding-bottom: 5rem;" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="flex-center" style="flex-direction: column; text-align: center; max-width: 800px; margin: 0 auto;">
+          <span class="eyebrow fade-in">Your AI Knowledge Companion</span>
+          <h1 id="hero-title" class="fade-in" style="margin-top: 1rem; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 60%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Understand AI.<br><span style="color: var(--accent); -webkit-text-fill-color: var(--accent);">Build with confidence.</span>
+          </h1>
+          <p class="lead fade-in" style="margin-bottom: 2.5rem; margin-left: auto; margin-right: auto;">
+            From fundamentals to frontiers — clear answers, practical guides, and curated resources for anyone exploring artificial intelligence.
+          </p>
+          <div class="flex gap-md fade-in" style="flex-wrap: wrap; justify-content: center; margin-bottom: 3.5rem;">
+            <a href="faq.html" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Browse Questions
+            </a>
+            <a href="resources.html" class="btn btn-secondary btn-lg">Explore Resources</a>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="flex gap-lg fade-in" style="flex-wrap: wrap; justify-content: center; opacity: 0.7;">
+            <div style="text-align: center; min-width: 120px;">
+              <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">200+</div>
+              <div class="muted" style="font-size: 0.85rem;">Questions Answered</div>
+            </div>
+            <div style="text-align: center; min-width: 120px;">
+              <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">12</div>
+              <div class="muted" style="font-size: 0.85rem;">Categories Covered</div>
+            </div>
+            <div style="text-align: center; min-width: 120px;">
+              <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1;">∞</div>
+              <div class="muted" style="font-size: 0.85rem;">Always Updated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Overview -->
+    <section class="section" aria-labelledby="categories-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
+          <span class="eyebrow">Explore by Topic</span>
+          <h2 id="categories-title" class="fade-in">AI Knowledge Categories</h2>
+          <p class="lead fade-in" style="margin-top: 1rem;">Dive deep into any area — each category contains curated Q&As, guides, and resources.</p>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Category Cards -->
+          <article class="card fade-in" style="--i: 0;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Fundamentals</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Core concepts: ML, DL, neural networks, supervised/unsupervised learning, transformers, embeddings.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="faq.html?category=fundamentals" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Questions</a>
+              <a href="detail-fundamentals.html" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Deep Dive</a>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 1;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            </div>
+            <h3>Generative AI</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">LLMs, diffusion models, prompt engineering, RAG, fine-tuning, agents, multimodal models.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="faq.html?category=generative" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Questions</a>
+              <a href="detail-generative.html" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Deep Dive</a>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 2;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Applications</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Healthcare, finance, creative, code, science, robotics, education, cybersecurity, climate.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="faq.html?category=applications" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Questions</a>
+              <a href="detail-applications.html" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Deep Dive</a>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 3;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Ethics & Safety</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Bias, fairness, transparency, privacy, alignment, governance, regulation, responsible AI.</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="faq.html?category=ethics" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Questions</a>
+              <a href="detail-ethics.html" class="btn btn-primary" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Deep Dive</a>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 4;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 23 16"/><path d="M1 14.5A8.38 8.38 0 0 1 4.59 3.16 8.38 8.38 0 0 1 17.41 21 8.38 8.38 0 0 1 1 14.5z"/></svg>
+            </div>
+            <h3>Tools & Platforms</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">APIs, frameworks, cloud services, local inference, vector DBs, orchestration, evaluation.</p>
+            <a href="resources.html" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Explore →</a>
+          </article>
+
+          <article class="card fade-in" style="--i: 5;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Career & Learning</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Roadmaps, certifications, portfolios, interviews, research, open source, community.</p>
+            <a href="faq.html?category=career" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Explore →</a>
+          </article>
+
+          <article class="card fade-in" style="--i: 6;">
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1.25rem; color: var(--accent);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>Future & Trends</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">AGI timelines, scaling laws, agents, embodied AI, scientific discovery, societal impact.</p>
+            <a href="faq.html?category=future" class="btn btn-ghost" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Questions Preview -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="featured-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Popular Questions</span>
+          <h2 id="featured-title">Trending This Week</h2>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3 style="margin-bottom: 0.75rem;">What's the difference between AI, ML, and Deep Learning?</h3>
+            <p style="margin-bottom: 1rem;">A clear breakdown of the hierarchy: AI ⊃ ML ⊃ Deep Learning, with practical examples of each.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span style="padding: 0.25rem 0.75rem; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--accent);">Fundamentals</span>
+              <span style="padding: 0.25rem 0.75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--fg-muted);">Beginner</span>
+            </div>
+            <a href="faq.html?q=ai-ml-dl" class="btn btn-primary" style="margin-top: 1.25rem; width: 100%;">Read Answer</a>
+          </article>
+
+          <article class="card">
+            <h3 style="margin-bottom: 0.75rem;">How do Large Language Models actually work?</h3>
+            <p style="margin-bottom: 1rem;">From tokenization to transformers — understand the architecture behind GPT, Claude, and Llama.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span style="padding: 0.25rem 0.75rem; background: var(--secondary-dim); border: 1px solid var(--secondary); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--secondary);">Generative AI</span>
+              <span style="padding: 0.25rem 0.75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--fg-muted);">Intermediate</span>
+            </div>
+            <a href="faq.html?q=llm-work" class="btn btn-primary" style="margin-top: 1.25rem; width: 100%;">Read Answer</a>
+          </article>
+
+          <article class="card">
+            <h3 style="margin-bottom: 0.75rem;">What is RAG and when should I use it?</h3>
+            <p style="margin-bottom: 1rem;">Retrieval-Augmented Generation explained: architecture, use cases, and implementation patterns.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span style="padding: 0.25rem 0.75rem; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--accent);">Generative AI</span>
+              <span style="padding: 0.25rem 0.75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--fg-muted);">Advanced</span>
+            </div>
+            <a href="faq.html?q=rag" class="btn btn-primary" style="margin-top: 1.25rem; width: 100%;">Read Answer</a>
+          </article>
+
+          <article class="card">
+            <h3 style="margin-bottom: 0.75rem;">How can I run LLMs locally on my machine?</h3>
+            <p style="margin-bottom: 1rem;">Ollama, llama.cpp, LM Studio, and hardware requirements for running models offline.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span style="padding: 0.25rem 0.75rem; background: var(--secondary-dim); border: 1px solid var(--secondary); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--secondary);">Tools</span>
+              <span style="padding: 0.25rem 0.75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--fg-muted);">Practical</span>
+            </div>
+            <a href="faq.html?q=local-llm" class="btn btn-primary" style="margin-top: 1.25rem; width: 100%;">Read Answer</a>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html" class="btn btn-secondary btn-lg">View All 200+ Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Stay Current</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Get Weekly AI Insights</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">Curated breakthroughs, practical tutorials, and answered questions — delivered to your inbox every Tuesday.</p>
+            <form class="flex gap-md" style="max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center;" onsubmit="handleSubscribe(event)">
+              <input type="email" placeholder="your@email.com" required aria-label="Email address" style="flex: 1; min-width: 240px; padding: 1rem 1.25rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; outline: none; transition: border-color var(--transition-fast);" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'">
+              <button type="submit" class="btn btn-primary btn-lg" style="white-space: nowrap;">Subscribe</button>
+            </form>
+            <p class="muted" style="margin-top: 1rem; font-size: 0.8rem;">No spam. Unsubscribe anytime. <a href="#" style="color: var(--accent);">Privacy Policy</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Tools & Platforms</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Model Hubs</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Research Papers</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Discord Server</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">GitHub Discussions</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Feedback</a></li>
+            <li><a href="faq.html#ask" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Submit a Question</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const email = input.value.trim();
+      if (email) {
+        alert(`Thanks for subscribing with ${email}! (Demo only)`);
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>

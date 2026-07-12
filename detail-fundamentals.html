@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Fundamentals - Deep dive into machine learning, deep learning, neural networks, transformers, and core AI concepts.">
+  <title>AI Fundamentals — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="faq.html#ask" class="btn btn-primary nav-cta">Submit Question</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="faq.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+      </nav>
+      <a href="faq.html#ask" class="btn btn-primary">Submit Question</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <a href="index.html" class="eyebrow fade-in" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent);">← Back to Home</a>
+          <h1 id="page-title" class="fade-in" style="margin: 1.5rem 0 1rem;">AI Fundamentals</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Master the building blocks of artificial intelligence — from classical ML to modern transformer architectures.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="section section--tight" aria-labelledby="path-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Structured Learning</span>
+          <h2 id="path-title">Recommended Learning Path</h2>
+          <p class="lead">Follow this progression to build solid foundations before advancing to specialized topics.</p>
+        </header>
+        <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">1</div>
+            <h3>ML Foundations</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Supervised vs unsupervised, bias-variance, cross-validation, feature engineering, evaluation metrics.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• Linear/logistic regression, trees, ensembles</li>
+              <li>• Overfitting, regularization, hyperparameter tuning</li>
+              <li>• <a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="noopener" style="color: var(--accent);">Andrew Ng ML Course</a> | <a href="https://hands-on-ml.com" target="_blank" rel="noopener" style="color: var(--accent);">Hands-On ML Book</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">2</div>
+            <h3>Deep Learning</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Neural networks, backprop, CNNs, RNNs, optimization, regularization, modern architectures.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• MLP, CNN, RNN/LSTM/GRU fundamentals</li>
+              <li>• Batch norm, dropout, residual connections</li>
+              <li>• <a href="https://fast.ai" target="_blank" rel="noopener" style="color: var(--accent);">fast.ai Practical DL</a> | <a href="https://d2l.ai" target="_blank" rel="noopener" style="color: var(--accent);">Dive into Deep Learning</a></li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; margin-bottom: 1.25rem; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--bg);">3</div>
+            <h3>Transformers & LLMs</h3>
+            <p style="margin: 0.75rem 0 1.25rem;">Attention mechanism, encoder/decoder, BERT, GPT, scaling laws, efficient attention.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.9rem; color: var(--fg-muted);">
+              <li>• Self-attention, multi-head, positional encoding</li>
+              <li>• Pre-training objectives: MLM, CLM, denoising</li>
+              <li>• <a href="https://nlp.seas.harvard.edu/annotated-transformer/" target="_blank" rel="noopener" style="color: var(--accent);">Annotated Transformer</a> | <a href="https://github.com/karpathy/nanoGPT" target="_blank" rel="noopener" style="color: var(--accent);">nanoGPT</a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Concepts Deep Dive -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="concepts-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3.5rem; text-align: center;">
+          <span class="eyebrow">Core Topics</span>
+          <h2 id="concepts-title">Fundamental Concepts</h2>
+          <p class="lead">Deep dive into each foundational area with practical resources.</p>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1100px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Supervised Learning
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Learning from labeled examples (X, y) to predict outputs for new inputs.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Classification:</strong> Logistic regression, SVM, Random Forest, XGBoost, Neural nets</li>
+              <li><strong>Regression:</strong> Linear, Ridge/Lasso, Gradient Boosting, Quantile regression</li>
+              <li><strong>Key metrics:</strong> Accuracy, F1, ROC-AUC, Precision/Recall, MSE, MAE, R²</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=supervised-learning" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://scikit-learn.org/stable/supervised_learning.html" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">sklearn Guide</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              Unsupervised Learning
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Discovering patterns in data without labels — clustering, dimensionality reduction, density estimation.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Clustering:</strong> K-Means, DBSCAN, HDBSCAN, Hierarchical, Gaussian Mixture</li>
+              <li><strong>Dimensionality Reduction:</strong> PCA, t-SNE, UMAP, Autoencoders</li>
+              <li><strong>Anomaly Detection:</strong> Isolation Forest, One-Class SVM, Elliptic Envelope</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=unsupervised-learning" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://scikit-learn.org/stable/unsupervised_learning.html" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">sklearn Guide</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              Neural Networks & Backprop
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Universal function approximators trained via gradient descent and the chain rule.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Architecture:</strong> Layers, neurons, weights, biases, activations (ReLU, GELU, Swish)</li>
+              <li><strong>Training:</strong> Forward pass → Loss → Backward pass (autograd) → Optimizer step (Adam, AdamW)</li>
+              <li><strong>Regularization:</strong> Dropout, weight decay, batch/layer norm, data augmentation, early stopping</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=neural-networks" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">PyTorch Tutorial</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Convolutional Neural Networks
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Translation-equivariant architectures for grid-like data (images, audio spectrograms, time series).</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Building blocks:</strong> Conv2D, pooling, stride, dilation, depthwise separable, groups</li>
+              <li><strong>Modern architectures:</strong> ResNet, EfficientNet, ConvNeXt, NFNet, ViT hybrids</li>
+              <li><strong>Applications:</strong> Classification, detection (YOLO, Faster R-CNN), segmentation (U-Net, DeepLab)</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=cnn" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://github.com/labmlai/annotated_deep_learning_paper_implementations" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Annotated Implementations</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Sequence Models (RNN/LSTM/GRU)
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Processing sequential data with recurrent connections and gating mechanisms.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Vanilla RNN:</strong> Simple recurrence, vanishing gradient problem</li>
+              <li><strong>LSTM:</strong> Input/forget/output gates, cell state, constant error carousel</li>
+              <li><strong>GRU:</strong> Simplified gating (reset/update), fewer params, similar performance</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=rnn" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Understanding LSTMs</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              Attention & Transformers
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">The architecture that enabled modern LLMs — parallelizable, global context, compositional.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Self-Attention:</strong> Q·Kᵀ/√d scaling, softmax, weighted value aggregation</li>
+              <li><strong>Multi-Head:</strong> Parallel attention heads → concat → project</li>
+              <li><strong>Architecture:</strong> Pre-LN, residual, FFN (SwiGLU/GeLU), RoPE/ALiBi positions</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=transformers" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://nlp.seas.harvard.edu/annotated-transformer/" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Annotated Transformer</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              Embeddings & Representations
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Dense vectors where semantic similarity = geometric proximity. The universal language of modern AI.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Static:</strong> Word2Vec, GloVe, FastText — context-independent</li>
+              <li><strong>Contextual:</strong> BERT, GPT, E5, BGE — token meaning depends on context</li>
+              <li><strong>Sentence/Multimodal:</strong> SBERT, CLIP, ImageBind — cross-modal alignment</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=embeddings" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">MTEB Leaderboard</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              Optimization & Training Tricks
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Making deep learning actually converge — the engineering behind the science.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Optimizers:</strong> AdamW, Lion, Sophia, Muon — adaptive learning rates, weight decay decoupling</li>
+              <li><strong>Schedules:</strong> Cosine decay, warmup, linear decay, constant + cooldown</li>
+              <li><strong>Mixed Precision:</strong> FP16/BF16, gradient scaling, FSDP/ZeRO for distributed training</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=optimization" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://github.com/lucidrains/lion-pytorch" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Lion Optimizer</a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Evaluation & Model Selection
+            </h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Rigorous assessment prevents overfitting to benchmarks and ensures real-world performance.</p>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem; color: var(--fg-muted); margin-bottom: 1.25rem;">
+              <li><strong>Validation:</strong> Train/val/test splits, k-fold CV, stratified, group-aware, time-series splits</li>
+              <li><strong>Metrics per task:</strong> Classification (F1, AUC, calibration), Regression (MAE, RMSE, quantile), Ranking (NDCG, MRR)</li>
+              <li><strong>Statistical significance:</strong> Bootstrap CI, paired t-test, McNemar, permutation tests</li>
+            </ul>
+            <div class="tags">
+              <a href="faq.html?q=evaluation" class="tag" style="text-decoration: none;">View Q&As</a>
+              <a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard" target="_blank" rel="noopener" class="tag" style="text-decoration: none; background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Chatbot Arena</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Questions Preview -->
+    <section class="section" aria-labelledby="questions-title">
+      <div class="container">
+        <header style="max-width: 800px; margin: 0 auto 3rem; text-align: center;">
+          <span class="eyebrow">Explore</span>
+          <h2 id="questions-title">Popular Questions in This Category</h2>
+          <p class="lead">Browse the most frequently asked fundamental questions.</p>
+        </header>
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <a href="faq.html?q=ai-ml-dl" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What's the difference between AI, ML, and Deep Learning?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">A clear breakdown of the hierarchy: AI ⊃ ML ⊃ Deep Learning, with practical examples of each.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Beginner</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Core Concept</span>
+            </div>
+          </a>
+          <a href="faq.html?q=supervised-unsupervised" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">Supervised vs Unsupervised vs Reinforcement Learning</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">The three main learning paradigms explained with concrete examples and when to use each.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Beginner</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Core Concept</span>
+            </div>
+          </a>
+          <a href="faq.html?q=transformers-explained" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How do Transformers actually work?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Self-attention, multi-head attention, positional encodings, and the transformer block architecture.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Architecture</span>
+            </div>
+          </a>
+          <a href="faq.html?q=embeddings-explained" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are embeddings and how do they work?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">From Word2Vec to modern contextual embeddings — dense vectors where meaning = geometry.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Core Concept</span>
+            </div>
+          </a>
+          <a href="faq.html?q=fine-tuning-vs-rag" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">Fine-tuning vs RAG vs Prompt Engineering</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Decision framework for choosing the right technique at each level of the stack.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Intermediate</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Practical</span>
+            </div>
+          </a>
+          <a href="faq.html?q=neural-network-basics" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">How does a neural network actually work?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">Neurons, weights, biases, activations, forward/backward pass, and gradient descent explained.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag">Beginner</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Core Concept</span>
+            </div>
+          </a>
+          <a href="faq.html?q=scaling-laws" class="card reveal" style="text-decoration: none;">
+            <h3 style="margin-bottom: 0.75rem;">What are scaling laws (Chinchilla) and do they still hold?</h3>
+            <p style="margin-bottom: 1rem; color: var(--fg-muted);">The predictable relationship between model size, data, compute — and where the limits might be.</p>
+            <div class="flex gap-sm" style="flex-wrap: wrap;">
+              <span class="tag" style="background: var(--secondary-dim); border-color: var(--secondary); color: var(--secondary);">Advanced</span>
+              <span class="tag" style="background: var(--bg); border-color: var(--border); color: var(--fg-muted);">Research</span>
+            </div>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="faq.html?category=fundamentals" class="btn btn-primary btn-lg">View All 25+ Fundamental Questions →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight" aria-labelledby="cta-title">
+      <div class="container">
+        <div style="max-width: 700px; margin: 0 auto; text-align: center; background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: clamp(2.5rem, 5vw, 4rem); position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, var(--accent-dim) 0%, transparent 60%); pointer-events: none;"></div>
+          <div style="position: relative;">
+            <span class="eyebrow" style="color: var(--accent);">Ready to Go Deeper?</span>
+            <h2 id="cta-title" style="margin: 1rem 0;">Explore the Full Q&A Database</h2>
+            <p class="lead" style="margin: 1rem auto 2rem;">200+ questions across 8 categories — searchable, filterable, and continuously updated.</p>
+            <a href="faq.html?category=fundamentals" class="btn btn-primary btn-lg">Browse All Fundamental Questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence. Clear answers, practical guides, curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html?category=fundamentals" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="faq.html?category=generative" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="faq.html?category=applications" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="faq.html?category=ethics" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+            <li><a href="faq.html?category=future" style="color: var(--fg-muted);">Future Trends</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Resources</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="resources.html" style="color: var(--fg-muted);">Tools & Platforms</a></li>
+            <li><a href="resources.html#learning" style="color: var(--fg-muted);">Learning Paths</a></li>
+            <li><a href="resources.html#papers" style="color: var(--fg-muted);">Research Papers</a></li>
+            <li><a href="resources.html#models" style="color: var(--fg-muted);">Model Hubs</a></li>
+            <li><a href="resources.html#communities" style="color: var(--fg-muted);">Communities</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="faq.html#ask" style="color: var(--fg-muted);">Submit Question</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Contribute</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <p class="muted" style="font-size: 0.8rem; color: var(--fg-subtle);">Made by <strong style="color: var(--fg);">Eyad Kelany</strong></p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          <a href="#" aria-label="LinkedIn" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
