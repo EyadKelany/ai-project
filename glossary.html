@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Glossary - Comprehensive A-Z terminology for artificial intelligence, machine learning, deep learning, and generative AI concepts.">
+  <title>AI Glossary — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .glossary-search { position: relative; max-width: 600px; margin: 0 auto 2rem; }
+    .glossary-search-icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--fg-subtle); }
+    .glossary-search-input { width: 100%; padding: 1rem 1rem 1rem 3.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--fg); font-size: 1rem; outline: none; transition: border-color var(--transition-fast); }
+    .glossary-search-input:focus { border-color: var(--accent); }
+    .glossary-letter-nav { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: center; margin-bottom: 2.5rem; }
+    .glossary-letter { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; font-weight: 600; font-size: 0.875rem; color: var(--fg-muted); cursor: pointer; transition: all var(--transition-fast); text-decoration: none; }
+    .glossary-letter:hover, .glossary-letter.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+    .glossary-letter.disabled { opacity: 0.3; pointer-events: none; }
+    .glossary-section { margin-bottom: 3rem; }
+    .glossary-section-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .glossary-term { padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 0.75rem; transition: border-color var(--transition-fast); }
+    .glossary-term:hover { border-color: var(--border-hover); }
+    .glossary-term h4 { margin-bottom: 0.5rem; color: var(--fg); }
+    .glossary-term p { font-size: 0.925rem; line-height: 1.65; }
+    .glossary-term .tags { margin-top: 0.75rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .glossary-empty { text-align: center; padding: 3rem 1rem; color: var(--fg-muted); display: none; }
+    .glossary-empty.visible { display: block; }
+    .faq-list .glossary-term { cursor: pointer; }
+    .faq-list .glossary-term:hover { background: var(--card-hover); }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link active" aria-current="page">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="ask.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link active" aria-current="page">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="ask.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Reference</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Glossary</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Quick, clear definitions for 100+ AI, ML, and deep learning terms. Search or browse alphabetically.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="glossary-title">
+      <div class="container" style="max-width: 900px;">
+        <div class="glossary-search fade-in">
+          <svg class="glossary-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="search" class="glossary-search-input" id="glossary-search" placeholder="Search terms... (try 'transformer', 'embeddings', 'RLHF')" aria-label="Search glossary terms" autocomplete="off">
+        </div>
+
+        <div class="glossary-letter-nav" id="letter-nav" role="navigation" aria-label="Browse by letter"></div>
+
+        <div id="glossary-content"></div>
+
+        <div class="glossary-empty" id="glossary-empty">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 1rem; opacity: 0.4;">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <h3>No terms match your search</h3>
+          <p>Try different keywords or clear your search.</p>
+          <button class="btn btn-secondary" onclick="document.getElementById('glossary-search').value=''; filterGlossary();" style="margin-top: 1rem;">Clear Search</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="detail-fundamentals.html" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="detail-generative.html" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="detail-applications.html" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="detail-ethics.html" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Tools</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="glossary.html" style="color: var(--fg-muted);">AI Glossary</a></li>
+            <li><a href="timeline.html" style="color: var(--fg-muted);">AI Timeline</a></li>
+            <li><a href="compare.html" style="color: var(--fg-muted);">Model Comparison</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Q&A Database</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="about.html" style="color: var(--fg-muted);">About Us</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Submit Question</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+  <script>
+    const glossaryTerms = [
+      { term: "Activation Function", def: "A mathematical function applied to a neuron's output that introduces non-linearity, enabling neural networks to learn complex patterns. Common examples include ReLU, sigmoid, tanh, GELU, and Swish.", category: "fundamentals" },
+      { term: "Adam Optimizer", def: "An adaptive learning rate optimization algorithm that combines the benefits of AdaGrad and RMSProp. Uses momentum and adaptive per-parameter learning rates. AdamW decouples weight decay from the gradient update.", category: "fundamentals" },
+      { term: "AGI (Artificial General Intelligence)", def: "Hypothetical AI system with human-level cognitive abilities across all domains — reasoning, learning, creativity, social intelligence. Distinct from narrow AI which excels at specific tasks.", category: "future" },
+      { term: "Alignment", def: "The challenge of ensuring AI systems behave in accordance with human values, intentions, and preferences. Includes technical alignment (RLHF, constitutional AI) and governance alignment (regulations, standards).", category: "ethics" },
+      { term: "Attention Mechanism", def: "A mechanism that allows models to dynamically focus on relevant parts of the input when producing each element of the output. Self-attention computes relationships between all positions in a sequence.", category: "fundamentals" },
+      { term: "Autoencoder", def: "A neural network trained to reconstruct its input through a compressed bottleneck representation (encoding). Used for dimensionality reduction, denoising, and learning latent representations.", category: "fundamentals" },
+      { term: "Backpropagation", def: "The algorithm for training neural networks by computing gradients of the loss with respect to each weight via the chain rule, then updating weights to minimize the loss.", category: "fundamentals" },
+      { term: "Batch Normalization", def: "A technique that normalizes layer inputs during training to stabilize and accelerate learning. Reduces internal covariate shift and allows higher learning rates.", category: "fundamentals" },
+      { term: "Bias (Model)", def: "The tendency of a model to consistently learn the wrong pattern — underfitting. High bias means the model is too simple to capture the underlying data structure.", category: "fundamentals" },
+      { term: "Bias (Social/Algorithmic)", def: "Systematic unfairness in AI outputs that disadvantages certain groups, often reflecting biases in training data or algorithmic design.", category: "ethics" },
+      { term: "BERT", def: "Bidirectional Encoder Representations from Transformers — a pre-trained language model that reads text in both directions simultaneously. Excellent for classification, NER, and question answering.", category: "fundamentals" },
+      { term: "Chain-of-Thought (CoT)", def: "A prompting technique that encourages LLMs to show their reasoning step-by-step before giving a final answer, improving performance on complex reasoning tasks.", category: "generative" },
+      { term: "Chatbot Arena", def: "A crowdsourced platform by LLM researchers where blind comparisons of model outputs help create Elo-based rankings of LLM performance.", category: "tools" },
+      { term: "CNN (Convolutional Neural Network)", def: "A neural network architecture using convolutional layers that apply learnable filters to capture spatial patterns. Widely used for image, video, and audio processing.", category: "fundamentals" },
+      { term: "Constitutional AI", def: "An alignment technique (proposed by Anthropic) where AI critiques and revises its own responses based on a set of principles, reducing the need for human feedback.", category: "ethics" },
+      { term: "Context Window", def: "The maximum number of tokens a language model can process in a single forward pass. Larger windows allow processing more text but increase compute costs quadratically (or linearly with efficient attention).", category: "generative" },
+      { term: "Cross-Validation", def: "A model evaluation technique where the dataset is split into k folds; the model is trained on k-1 folds and evaluated on the remaining fold, repeating k times for robust performance estimates.", category: "fundamentals" },
+      { term: "DBSCAN", def: "Density-Based Spatial Clustering of Applications with Noise — a clustering algorithm that groups together points in high-density regions and marks outliers in low-density regions.", category: "fundamentals" },
+      { term: "Deep Learning", def: "A subset of machine learning using neural networks with multiple layers (deep architectures) to learn hierarchical representations from data.", category: "fundamentals" },
+      { term: "Diffusion Model", def: "A generative model that learns to create data by reversing a gradual noising process. State-of-the-art for image generation (Stable Diffusion, DALL-E, Midjourney).", category: "generative" },
+      { term: "Dropout", def: "A regularization technique that randomly sets a fraction of neuron activations to zero during training, preventing co-adaptation and reducing overfitting.", category: "fundamentals" },
+      { term: "Embedding", def: "A dense, low-dimensional vector representation of discrete data (words, sentences, images) where semantic similarity corresponds to geometric proximity in the vector space.", category: "fundamentals" },
+      { term: "Epoch", def: "One complete pass through the entire training dataset during model training.", category: "fundamentals" },
+      { term: "F1 Score", def: "The harmonic mean of precision and recall. Ranges from 0 to 1, providing a single metric that balances both false positives and false negatives.", category: "fundamentals" },
+      { term: "Few-Shot Learning", def: "A model's ability to perform a task given only a small number of examples in the prompt, without weight updates. A key capability of modern LLMs.", category: "generative" },
+      { term: "Fine-Tuning", def: "The process of further training a pre-trained model on a specific dataset or task to adapt its capabilities. Includes full fine-tuning, LoRA, QLoRA, and adapter methods.", category: "generative" },
+      { term: "GAN (Generative Adversarial Network)", def: "A framework where two neural networks — a generator and discriminator — compete in a minimax game. The generator creates synthetic data while the discriminator tries to distinguish real from fake.", category: "generative" },
+      { term: "Gradient Descent", def: "An optimization algorithm that iteratively adjusts model parameters in the direction of steepest decrease of the loss function. Variants include SGD, mini-batch, and adaptive methods.", category: "fundamentals" },
+      { term: "Hallucination", def: "When an AI model generates confident but factually incorrect or fabricated information. A major challenge in deploying LLMs for reliable applications.", category: "generative" },
+      { term: "Hugging Face", def: "The largest open-source AI model hub and community platform. Hosts thousands of pre-trained models, datasets, and demo spaces for NLP, vision, audio, and multimodal AI.", category: "tools" },
+      { term: "Inference", def: "The process of using a trained model to make predictions on new data. In LLMs, inference involves autoregressive token generation with sampling strategies.", category: "fundamentals" },
+      { term: "JSON Mode", def: "A feature in LLM APIs that constrains output to valid JSON format, useful for structured data extraction and API integrations.", category: "generative" },
+      { term: "K-Means", def: "A clustering algorithm that partitions data into k clusters by iteratively assigning points to the nearest centroid and updating centroids. Simple, scalable, but assumes spherical clusters.", category: "fundamentals" },
+      { term: "LangChain", def: "A popular open-source framework for building LLM-powered applications. Provides abstractions for chains, agents, retrieval, memory, and tool use.", category: "tools" },
+      { term: "LLM (Large Language Model)", def: "A neural network with billions of parameters trained on vast text corpora to understand and generate human language. Examples include GPT-4, Claude, Llama, and Gemini.", category: "generative" },
+      { term: "LoRA (Low-Rank Adaptation)", def: "A parameter-efficient fine-tuning technique that freezes pre-trained weights and injects trainable low-rank decomposition matrices into transformer layers.", category: "generative" },
+      { term: "Loss Function", def: "A mathematical function that measures how far a model's predictions are from the true values. Training minimizes this function via gradient-based optimization.", category: "fundamentals" },
+      { term: "Machine Learning", def: "A subset of AI where systems learn patterns from data to make predictions or decisions without being explicitly programmed for each scenario.", category: "fundamentals" },
+      { term: "MLOps", def: "Practices combining machine learning, DevOps, and data engineering for reliable deployment, monitoring, and management of ML models in production.", category: "tools" },
+      { term: "Multimodal AI", def: "AI systems that can process and generate multiple types of data — text, images, audio, video — often within a single model (e.g., GPT-4V, Gemini).", category: "generative" },
+      { term: "Neural Network", def: "A computing system inspired by biological neurons, consisting of layers of interconnected nodes (neurons) that process information through weighted connections and non-linear activations.", category: "fundamentals" },
+      { term: "NLP (Natural Language Processing)", def: "A field of AI focused on enabling computers to understand, interpret, and generate human language. Modern NLP is dominated by transformer-based models.", category: "fundamentals" },
+      { term: "Overfitting", def: "When a model learns noise or spurious patterns in training data rather than generalizable patterns, resulting in high training performance but poor test performance.", category: "fundamentals" },
+      { term: "PCA (Principal Component Analysis)", def: "A dimensionality reduction technique that projects data onto orthogonal axes of maximum variance, useful for visualization and preprocessing.", category: "fundamentals" },
+      { term: "Perplexity", def: "A measurement of how well a probability model predicts a sample. In language models, lower perplexity indicates better prediction of the next token.", category: "generative" },
+      { term: "Prompt Engineering", def: "The practice of designing and optimizing input prompts to elicit desired outputs from language models. Includes techniques like few-shot, chain-of-thought, and system prompts.", category: "generative" },
+      { term: "PyTorch", def: "An open-source deep learning framework by Meta, known for its dynamic computation graph and Pythonic interface. The most popular framework for AI research.", category: "tools" },
+      { term: "RAG (Retrieval-Augmented Generation)", def: "An architecture that combines information retrieval with text generation. The model retrieves relevant documents from a knowledge base before generating a response, reducing hallucinations.", category: "generative" },
+      { term: "Random Forest", def: "An ensemble learning method that builds multiple decision trees and aggregates their predictions (classification by majority vote, regression by averaging). Robust and interpretable.", category: "fundamentals" },
+      { term: "ReLU", def: "Rectified Linear Unit — an activation function f(x) = max(0, x). The most widely used activation in modern neural networks due to computational efficiency and reduced vanishing gradients.", category: "fundamentals" },
+      { term: "Residual Connection", def: "A skip connection that adds a layer's input directly to its output, enabling training of very deep networks by mitigating the vanishing gradient problem.", category: "fundamentals" },
+      { term: "RLHF", def: "Reinforcement Learning from Human Feedback — a training technique where human preferences are used to train a reward model, which then guides the language model's behavior via PPO optimization.", category: "generative" },
+      { term: "ROC-AUC", def: "Area Under the Receiver Operating Characteristic Curve. Measures a classifier's ability to distinguish between classes across all threshold settings. 1.0 = perfect, 0.5 = random.", category: "fundamentals" },
+      { term: "Scikit-learn", def: "The most popular Python library for traditional machine learning. Provides consistent APIs for classification, regression, clustering, and preprocessing.", category: "tools" },
+      { term: "Self-Supervised Learning", def: "A training paradigm where the model learns from unlabeled data by creating supervisory signals from the data itself (e.g., predicting masked tokens, next token prediction).", category: "fundamentals" },
+      { term: "Semantic Search", def: "Search based on meaning rather than keywords. Uses embeddings to find documents that are semantically similar to a query, even if they don't share exact words.", category: "generative" },
+      { term: "SFT (Supervised Fine-Tuning)", def: "The process of fine-tuning a pre-trained LLM on a curated dataset of (input, desired output) pairs to teach it to follow instructions or perform specific tasks.", category: "generative" },
+      { term: "Temperature", def: "A parameter in LLM sampling that controls randomness. Lower values (e.g., 0.2) make output more deterministic; higher values (e.g., 1.5) increase diversity and creativity.", category: "generative" },
+      { term: "TensorFlow", def: "An open-source deep learning framework by Google. Supports production deployment, distributed training, and edge inference. Used widely in industry.", category: "tools" },
+      { term: "Tokenization", def: "The process of converting text into tokens (subwords, words, or characters) that a language model can process. BPE, WordPiece, and SentencePiece are common algorithms.", category: "generative" },
+      { term: "Transformer", def: "The neural network architecture introduced in 'Attention Is All You Need' (2017). Uses self-attention for parallel sequence processing. The foundation of all modern LLMs.", category: "fundamentals" },
+      { term: "Underfitting", def: "When a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets.", category: "fundamentals" },
+      { term: "U-MAP", def: "Uniform Manifold Approximation and Projection — a dimensionality reduction technique for visualization that better preserves global structure than t-SNE.", category: "fundamentals" },
+      { term: "Variance (Model)", def: "The tendency of a model to learn different patterns when trained on different subsets of data. High variance indicates overfitting to training data.", category: "fundamentals" },
+      { term: "Vector Database", def: "A specialized database optimized for storing, indexing, and querying high-dimensional vectors (embeddings). Essential for semantic search and RAG systems.", category: "tools" },
+      { term: "ViT (Vision Transformer)", def: "A transformer architecture adapted for image processing by splitting images into patches and treating them as a sequence of tokens.", category: "fundamentals" },
+      { term: "XGBoost", def: "An optimized gradient boosting library known for speed and performance. Dominant in tabular data competitions and widely used in industry for structured data tasks.", category: "tools" },
+    ];
+
+    const letterNav = document.getElementById('letter-nav');
+    const glossaryContent = document.getElementById('glossary-content');
+    const glossaryEmpty = document.getElementById('glossary-empty');
+    const searchInput = document.getElementById('glossary-search');
+
+    function initGlossary() {
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      letterNav.innerHTML = letters.map(l => `<a href="#letter-${l}" class="glossary-letter" data-letter="${l}">${l}</a>`).join('');
+      renderGlossary(glossaryTerms);
+      searchInput.addEventListener('input', filterGlossary);
+    }
+
+    function renderGlossary(terms) {
+      const grouped = {};
+      terms.forEach(t => {
+        const letter = t.term[0].toUpperCase();
+        if (!grouped[letter]) grouped[letter] = [];
+        grouped[letter].push(t);
+      });
+
+      const usedLetters = new Set(terms.map(t => t.term[0].toUpperCase()));
+      document.querySelectorAll('.glossary-letter').forEach(el => {
+        el.classList.toggle('disabled', !usedLetters.has(el.dataset.letter));
+      });
+
+      const categoryColors = {
+        fundamentals: 'var(--accent)',
+        generative: 'var(--secondary)',
+        tools: '#22d3ee',
+        ethics: '#f59e0b',
+        future: '#10b981'
+      };
+
+      const categoryLabels = {
+        fundamentals: 'Fundamentals',
+        generative: 'Generative AI',
+        tools: 'Tools',
+        ethics: 'Ethics',
+        future: 'Future'
+      };
+
+      let html = '';
+      Object.keys(grouped).sort().forEach(letter => {
+        grouped[letter].sort((a, b) => a.term.localeCompare(b.term));
+        html += `<div class="glossary-section" id="letter-${letter}">`;
+        html += `<div class="glossary-section-title">${letter}</div>`;
+        grouped[letter].forEach(t => {
+          const color = categoryColors[t.category] || 'var(--accent)';
+          html += `<div class="glossary-term"><h4>${t.term}</h4><p>${t.def}</p>`;
+          html += `<div class="tags"><span class="tag" style="background: ${color}15; border-color: ${color}; color: ${color};">${categoryLabels[t.category] || t.category}</span></div></div>`;
+        });
+        html += '</div>';
+      });
+
+      glossaryContent.innerHTML = html;
+      glossaryEmpty.classList.toggle('visible', terms.length === 0);
+    }
+
+    function filterGlossary() {
+      const q = searchInput.value.toLowerCase().trim();
+      if (!q) {
+        renderGlossary(glossaryTerms);
+        return;
+      }
+      const filtered = glossaryTerms.filter(t =>
+        t.term.toLowerCase().includes(q) || t.def.toLowerCase().includes(q)
+      );
+      renderGlossary(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', initGlossary);
+  </script>
+</body>
+</html>

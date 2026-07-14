@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Timeline - The complete history of artificial intelligence from the 1950s to 2026, covering key breakthroughs, milestones, and research directions.">
+  <title>AI Timeline — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .timeline { position: relative; max-width: 900px; margin: 0 auto; padding-left: 3rem; }
+    .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent), var(--secondary), #22d3ee); border-radius: 2px; }
+    .timeline-era { margin-bottom: 4rem; position: relative; }
+    .timeline-era-dot { position: absolute; left: -2.55rem; top: 0.5rem; width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--accent); background: var(--bg); z-index: 2; }
+    .timeline-era:nth-child(2) .timeline-era-dot { border-color: var(--secondary); }
+    .timeline-era:nth-child(3) .timeline-era-dot { border-color: #22d3ee; }
+    .timeline-era:nth-child(4) .timeline-era-dot { border-color: #10b981; }
+    .timeline-era:nth-child(5) .timeline-era-dot { border-color: #f59e0b; }
+    .timeline-era:nth-child(6) .timeline-era-dot { border-color: #ef4444; }
+    .timeline-year { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .timeline-era:nth-child(1) .timeline-year { color: var(--accent); }
+    .timeline-era:nth-child(2) .timeline-year { color: var(--secondary); }
+    .timeline-era:nth-child(3) .timeline-year { color: #22d3ee; }
+    .timeline-era:nth-child(4) .timeline-year { color: #10b981; }
+    .timeline-era:nth-child(5) .timeline-year { color: #f59e0b; }
+    .timeline-era:nth-child(6) .timeline-year { color: #ef4444; }
+    .timeline-era-title { font-size: 1.35rem; margin-bottom: 1.25rem; color: var(--fg); }
+    .timeline-item { padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 0.75rem; transition: border-color var(--transition-fast); }
+    .timeline-item:hover { border-color: var(--border-hover); }
+    .timeline-item-date { font-weight: 600; font-size: 0.85rem; color: var(--accent); margin-bottom: 0.25rem; }
+    .timeline-item h4 { font-size: 1rem; margin-bottom: 0.35rem; }
+    .timeline-item p { font-size: 0.9rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link active" aria-current="page">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="ask.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link active" aria-current="page">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="ask.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">History</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">The History of AI</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">From Turing's dream to GPT-7 — seven decades of breakthroughs, winters, and revolutions that shaped artificial intelligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="timeline-title">
+      <div class="container">
+        <div class="timeline">
+
+          <!-- Era 1: Origins -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">1950–1970</div>
+            <h3 class="timeline-era-title">The Origins & First Hopes</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1950</div>
+              <h4>Turing Test Proposed</h4>
+              <p>Alan Turing publishes "Computing Machinery and Intelligence," proposing the Imitation Game as a measure of machine intelligence.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1956</div>
+              <h4>Dartmouth Conference</h4>
+              <p>The term "Artificial Intelligence" is coined at a summer workshop at Dartmouth College. Attendees include John McCarthy, Marvin Minsky, and Claude Shannon.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1957</div>
+              <h4>Perceptron Invented</h4>
+              <p>Frank Rosenblatt creates the Perceptron — the first neural network capable of learning from data. Demonstrated at Cornell.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1966</div>
+              <h4>ELIZA Chatbot</h4>
+              <p>Joseph Weizenbaum builds ELIZA at MIT — the first natural language processing program, simulating a Rogerian psychotherapist.</p>
+            </div>
+          </div>
+
+          <!-- Era 2: Expert Systems & First Winter -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">1970–1990</div>
+            <h3 class="timeline-era-title">Expert Systems & AI Winters</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1972</div>
+              <h4>MYCIN Expert System</h4>
+              <p>Stanford develops MYCIN for diagnosing bacterial infections — one of the first successful expert systems, outperforming some doctors.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1974–1980</div>
+              <h4>First AI Winter</h4>
+              <p>Funding cuts after overpromising. Minsky and Papert's "Perceptrons" highlights neural network limitations, shifting focus to symbolic AI.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1986</div>
+              <h4>Backpropagation Popularized</h4>
+              <p>Rumelhart, Hinton, and Williams publish on backpropagation, revitalizing neural network research and enabling deep learning.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1988</div>
+              <h4>Reinforcement Learning Revival</h4>
+              <p>Watkins publishes Q-learning. TD-Gammon (1992) shows RL can master backgammon at near-human level.</p>
+            </div>
+          </div>
+
+          <!-- Era 3: Machine Learning & Deep Learning Rise -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">1990–2012</div>
+            <h3 class="timeline-era-title">Statistical Learning & the Deep Learning Revolution</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1997</div>
+              <h4>Deep Blue Defeats Kasparov</h4>
+              <p>IBM's Deep Blue becomes the first computer to beat a reigning world chess champion, demonstrating brute-force search + evaluation.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">1998</div>
+              <h4>MNIST & LeNet</h4>
+              <p>LeCun releases the MNIST dataset and LeNet — convolutional neural networks achieve practical handwritten digit recognition.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2006</div>
+              <h4>Deep Belief Networks</h4>
+              <p>Hinton shows deep networks can be pre-trained layer-by-layer, sparking the modern deep learning renaissance.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2009–2012</div>
+              <h4>ImageNet & AlexNet</h4>
+              <p>ImageNet Large Scale Visual Recognition Challenge (ILSVRC) launches in 2009. AlexNet wins in 2012, cutting error rates by 10% — the moment deep learning goes mainstream.</p>
+            </div>
+          </div>
+
+          <!-- Era 4: Transformers & LLMs -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">2013–2022</div>
+            <h3 class="timeline-era-title">Transformers, LLMs & Generative AI</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2014</div>
+              <h4>GANs & Attention Mechanism</h4>
+              <p>Goodfellow introduces GANs. Bahdanau proposes attention for machine translation — laying the groundwork for transformers.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2017</div>
+              <h4>"Attention Is All You Need"</h4>
+              <p>Vaswani et al. at Google introduce the Transformer architecture — the most consequential ML paper of the decade. Self-attention replaces recurrence.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2018–2020</div>
+              <h4>GPT & BERT Era</h4>
+              <p>GPT-1 (2018), BERT (2018), GPT-2 (2019), GPT-3 (2020). Pre-training + fine-tuning paradigm dominates NLP. Few-shot learning emerges.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2021–2022</div>
+              <h4>DALL-E, ChatGPT & Diffusion</h4>
+              <p>OpenAI's DALL-E (2021), Stable Diffusion (2022), and ChatGPT (Nov 2022) bring generative AI to the mainstream. AI goes viral.</p>
+            </div>
+          </div>
+
+          <!-- Era 5: Modern Era -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">2023–2025</div>
+            <h3 class="timeline-era-title">The Agent Era & Multimodal Models</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2023</div>
+              <h4>GPT-4, Claude, Gemini & Open Source</h4>
+              <p>GPT-4 (Mar 2023), Claude 2, Gemini (Dec 2023), Llama 2 open-source. Context windows grow to 100K+ tokens. Multimodal capabilities expand rapidly.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2024</div>
+              <h4>Agents, Reasoning & Efficiency</h4>
+              <p>Claude 3.5 Sonnet, GPT-4o, Llama 3, Gemini 1.5 (1M context). AI agents gain traction. Reasoning models (o1, DeepSeek-R1). Efficient inference via quantization, speculation.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-item-date">2025</div>
+              <h4>Multimodal Agents & Research Automation</h4>
+              <p>Claude 4, GPT-4.5, Gemini 2.0. Native multimodal models. Code agents solve real engineering tasks. AI-for-science breakthroughs accelerate. Global AI regulation frameworks emerge.</p>
+            </div>
+          </div>
+
+          <!-- Era 6: The Future -->
+          <div class="timeline-era fade-in">
+            <div class="timeline-era-dot"></div>
+            <div class="timeline-year">2026+</div>
+            <h3 class="timeline-era-title">The Road Ahead</h3>
+            <div class="timeline-item">
+              <div class="timeline-item-date">Near Future</div>
+              <h4>What's Coming Next</h4>
+              <p>Superhuman coding, automated AI research, reliable multi-step agents, personalized education at scale, and the ongoing pursuit of artificial general intelligence. Read more on our <a href="detail-future.html" style="color: var(--accent);">Future & Trends</a> page.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Pages -->
+    <section class="section section--tight" aria-labelledby="related-title">
+      <div class="container" style="max-width: 900px;">
+        <header style="text-align: center; margin-bottom: 2rem;">
+          <h2 id="related-title">Explore Further</h2>
+        </header>
+        <div class="grid grid-3">
+          <a href="glossary.html" class="card fade-in" style="text-decoration: none; text-align: center;">
+            <h4>AI Glossary</h4>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Look up any AI term</p>
+          </a>
+          <a href="compare.html" class="card fade-in" style="text-decoration: none; text-align: center; --i: 1;">
+            <h4>Model Comparison</h4>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Compare LLMs side by side</p>
+          </a>
+          <a href="detail-future.html" class="card fade-in" style="text-decoration: none; text-align: center; --i: 2;">
+            <h4>Future & Trends</h4>
+            <p style="font-size: 0.875rem; margin-top: 0.5rem;">What's coming next</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="detail-fundamentals.html" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="detail-generative.html" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="detail-applications.html" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="detail-ethics.html" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Tools</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="glossary.html" style="color: var(--fg-muted);">AI Glossary</a></li>
+            <li><a href="timeline.html" style="color: var(--fg-muted);">AI Timeline</a></li>
+            <li><a href="compare.html" style="color: var(--fg-muted);">Model Comparison</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Q&A Database</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="about.html" style="color: var(--fg-muted);">About Us</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Submit Question</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Communities & Events - Forums, Discord servers, meetups, conferences, and networking opportunities for AI professionals and enthusiasts.">
+  <title>Communities & Events — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Connect & Collaborate</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Communities & Events</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Forums, Discord servers, meetups, conferences, and networking opportunities for AI professionals and enthusiasts</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Communities -->
+    <section class="section" aria-labelledby="communities-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Online Communities</span>
+          <h2 id="communities-title">Where AI Practitioners Connect</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Discord Communities -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Discord Communities</h3>
+            <p>Real-time chat communities for AI/ML practitioners, researchers, and enthusiasts.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Latent Space</h4>
+                <p>The AI Engineer Discord - ML engineering, LLMs, MLOps</p>
+                <a href="https://discord.gg/latentspace" target="_blank" class="resource-link">Join →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Hugging Face</h4>
+                <p>Official HF community for transformers, datasets, and Spaces</p>
+                <a href="https://huggingface.co/discord" target="_blank" class="resource-link">Join →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MLOps.community</h4>
+                <p>Discuss MLOps, model deployment, and production ML systems</p>
+                <a href="https://discord.gg/mlops" target="_blank" class="resource-link">Join →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Fast.ai</h4>
+                <p>Discussions around practical deep learning and fast.ai courses</p>
+                <a href="https://forums.fast.ai/" target="_blank" class="resource-link">Visit Forum →</a>
+              </div>
+              <div class="resource-item">
+                <h4>r/MachineLearning (Reddit)</h4>
+                <p>While not Discord, the ML subreddit has active discussion</p>
+                <a href="https://www.reddit.com/r/MachineLearning/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Forums -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Forums & Discussion Boards</h3>
+            <p>Asynchronous discussion platforms for in-depth technical conversations.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Stack Overflow</h4>
+                <p>Ask and answer technical questions about AI/ML programming</p>
+                <a href="https://stackoverflow.com/questions/tagged/machine-learning" target="_blank" class="resource-link">Browse ML →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Cross Validated</h4>
+                <p>Statistics, machine learning, and data analysis Q&A</p>
+                <a href="https://stats.stackexchange.com/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Reddit ML Communities</h4>
+                <p>r/MachineLearning, r/learnmachinelearning, r/artificial</p>
+                <a href="https://www.reddit.com/r/MachineLearning/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Keras Community Forum</h4>
+                <p>Official forum for Keras and TensorFlow discussions</p>
+                <a href="https://forum.keras.io/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Newsletters -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Newsletters & News Sources</h3>
+            <p>Stay updated with the latest AI research, releases, and industry news.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Import AI</h4>
+                <p>Jack Clark's weekly AI newsletter covering research, policy, and industry</p>
+                <a href="https://jack-clark.net/" target="_blank" class="resource-link">Subscribe →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Last Week in AI</h4>
+                <p>Weekly summary of what's happening in AI/ML research and industry</p>
+                <a href="https://lastweekin.ai/" target="_blank" class="resource-link">Subscribe →</a>
+              </div>
+              <div class="resource-item">
+                <h4>AlphaSignal</h4>
+                <p>Technical deep-dives on the latest ML papers and techniques</p>
+                <a href="https://www.alphasignal.ai/" target="_blank" class="resource-link">Subscribe →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Paper Summary</h4>
+                <p>Daily ML paper summaries with code links</p>
+                <a href="https://papersummary.substack.com/" target="_blank" class="resource-link">Subscribe →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events & Conferences -->
+    <section class="section" aria-labelledby="events-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Conferences & Events</span>
+          <h2 id="events-title">Major AI Conferences & Meetups</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Major Conferences -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Top Tier Conferences</h3>
+            <p>The most prestigious academic conferences in AI and machine learning.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>NeurIPS</h4>
+                <p>Conference on Neural Information Processing Systems</p>
+                <a href="https://neurips.cc/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ICML</h4>
+                <p>International Conference on Machine Learning</p>
+                <a href="https://icml.cc/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ICLR</h4>
+                <p>International Conference on Learning Representations</p>
+                <a href="https://iclr.cc/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>CVPR</h4>
+                <p>Conference on Computer Vision and Pattern Recognition</p>
+                <a href="https://cvpr2024.thecvf.com/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ACL</h4>
+                <p>Annual Meeting of the Association for Computational Linguistics</p>
+                <a href="https://aclanthology.org/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Industry Events -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Industry & Applied Events</h3>
+            <p>Conferences focused on practical AI applications and industry adoption.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>AI Summit Series</h4>
+                <p>Global series focusing on enterprise AI adoption</p>
+                <a href="https://aiconsultant.com/ai-summit/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MLconf</h4>
+                <p>Machine Learning conference for practitioners</p>
+                <a href="https://www.mlconf.com/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ODSC (Open Data Science Conference)</h4>
+                <p>Conference and training for data science and AI</p>
+                <a href="https://opendatasci.com/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Spark + AI Summit</h4>
+                <p>Data and AI conference by Databricks</p>
+                <a href="https://databricks.com/summit/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Local Meetups -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid;)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Local Meetups & Groups</h3>
+            <p>Find or start local AI/ML meetups in your area.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Meetup.com</h4>
+                <p>Search for AI, machine learning, and data science groups</p>
+                <a href="https://www.meetup.com/topics/ai/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>AI Saturdays</h4>
+                <p>Community-driven, free AI education program in many cities</p>
+                <a href="https://www.ai6.org/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Women in Machine Learning (WiML)</h4>
+                <p>Workshops and networking events for women in ML</p>
+                <a href="https://wimlworkshop.org/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Black in AI</h4>
+                <p>Workshops, mentoring, and community building for Black researchers</p>
+                <a href="https://blackinai.github.io/" target="_blank" class="resource-link">Learn →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Connect with AI practitioners worldwide through communities, events, and discussion platforms.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Explore</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="index.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Home</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Questions</a></li>
+            <li><a href="resources.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Resources</a></li>
+            <li><a href="glossary.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Glossary</a></li>
+            <li><a href="timeline.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Timeline</a></li>
+            <li><a href="compare.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Compare</a></li>
+            <li><a href="about.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">About</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community Types</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#discord" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Discord Communities</a></li>
+            <li><a href="#forums" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Forums</a></li>
+            <li><a href="#newsletters" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Newsletters</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Stay Updated</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#newsletters" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Newsletters</a></li>
+            <li><a href="#events" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Events</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--fg-muted);">Made by Eyad Kelany</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+</body>
+</html>

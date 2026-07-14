@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Models & Datasets - Pre-trained models, model hubs, and datasets for training, fine-tuning, and evaluating artificial intelligence systems.">
+  <title>Models & Datasets — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Models & Data</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Models & Datasets</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Pre-trained models, model hubs, and datasets for training, fine-tuning, and evaluating AI systems</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Hubs -->
+    <section class="section" aria-labelledby="model-hubs-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Model Hubs & Repositories</span>
+          <h2 id="model-hubs-title">Discover & Share Pre-trained Models</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Hugging Face -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.71 11.29a1 1 0 0 0-1.42 0l-2.34 2.34a1 1 0 0 1-1.42 0l-.76-.76a4.96 4.96 0 0 0-6.93 0l-.76.76a1 1 0 0 1-1.42 0l-2.34 2.34a1 1 0 0 0 0 1.42l2.34 2.34a1 1 0 0 1 1.42 0l.76.76a4.96 4.96 0 0 0 6.93 0l.76-.76a1 1 0 0 1 1.42 0l2.34-2.34a1 1 0 0 0 0-1.42zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+            </div>
+            <h3>Hugging Face Hub</h3>
+            <p>The largest collection of pre-trained models for NLP, computer vision, audio, and multimodal tasks.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Model Types</h4>
+                <p>Transformers, Diffusers, Sentence Transformers, TTS, Vision, RL, Tableau, and more</p>
+              </div>
+              <div class="resource-item">
+                <h4>Popular Models</h4>
+                <p>Llama, Mistral, Phi, Gemma, Stable Diffusion, Whisper, CLIP, BERT, GPT-2, T5</p>
+              </div>
+              <div class="resource-item">
+                <h4>Spaces</h4>
+                <p>Host and share ML demos and apps (Gradio, Streamlit)</p>
+                <a href="https://huggingface.co/spaces" target="_blank" class="resource-link">Explore Spaces →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Datasets</h4>
+                <p>Massive collection of datasets for training and evaluation</p>
+                <a href="https://huggingface.co/datasets" target="_blank" class="resource-link">Explore Datasets →</a>
+              </div>
+            </div>
+            <a href="https://huggingface.co/models" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore Models →</a>
+          </article>
+
+          <!-- TensorFlow Hub -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-9 3h2V6h-2v3zm-4 0h2V6H7v3zm9 8H9v-2h10v2zm-4 0H7v-2h10v2z"/></svg>
+            </div>
+            <h3>TensorFlow Hub</h3>
+            <p>Library for reusable machine learning modules including text embeddings, image feature vectors, and more.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Module Types</h4>
+                <p>Text embeddings, image feature vectors, audio/text classifiers, and more</p>
+              </div>
+              <div class="resource-item">
+                <h4>Popular Modules</h4>
+                <p>BERT, ELMo, Universal Sentence Encoder, Inception, MobileNet, etc.</p>
+              </div>
+            </div>
+            <a href="https://tfhub.dev/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore TF Hub →</a>
+          </article>
+
+          <!-- PyTorch Hub -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>PyTorch Hub</h3>
+            <p>Pre-trained models for computer vision, NLP, and more, ready for fine-tuning and inference.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Model Zoo</h4>
+                <p>Classification, detection, segmentation, pose estimation models</p>
+              </div>
+              <div class="resource-item">
+                <h4>Popular Models</h4>
+                <p>ResNet, EfficientNet, YOLO, Faster R-CNN, Mask R-CNN, DeepLab, etc.</p>
+              </div>
+            </div>
+            <a href="https://pytorch.org/hub/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore PyTorch Hub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Model Families -->
+    <section class="section" aria-labelledby="model-families-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Popular Model Families</span>
+          <h2 id="model-families-title">State-of-the-Art Model Families</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- LLMs -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Large Language Models (LLMs)</h3>
+            <p>Foundation models for text generation, understanding, and reasoning.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Open Models</h4>
+                <p>Llama 2/3 (Meta), Mistral (Mistral AI), Phi (Microsoft), Gemma (Google), Qwen (Alibaba)</p>
+              </div>
+              <div class="resource-item">
+                <h4>Access Points</h4>
+                <p>Hugging Face, Ollama, Replicate, Together AI, Fireworks AI</p>
+              </div>
+              <div class="resource-item">
+                <h4>Sizes</h4>
+                <p>From 1B to 70B+ parameters, quantized versions available</p>
+              </div>
+            </div>
+            <a href="https://huggingface.co/models?library=transformers&sort=downloads" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore LLMs →</a>
+          </article>
+
+          <!-- Diffusion Models -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4l1.41 1.41L16.17 11H4v2h12.16l-3.58 3.59L12 20z"/></svg>
+            </div>
+            <h3>Diffusion Models</h3>
+            <p>State-of-the-art models for image, video, and audio generation.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Image Generation</h4>
+                <p>Stable Diffusion, DALL-E, Midjourney (via API), Kandinsky, DeepFloyd IF</p>
+              </div>
+              <div class="resource-item">
+                <h4>Video Generation</h4>
+                <p>Stable Video Diffusion, ModelScopeT2V, Pika, Runway Gen-2</p>
+              </div>
+              <div class="resource-item">
+                <h4>Audio Generation</h4>
+                <p>AudioLDM, Riffusion, MusicGen, Stable Audio, Suno/Udio</p>
+              </div>
+            </div>
+            <a href="https://huggingface.co/models?library=diffusers" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Explore Diffusion →</a>
+          </article>
+
+          <!-- Vision Models -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Vision Models</h3>
+            <p>Models for image classification, object detection, segmentation, and understanding.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Classification</h4>
+                <p>ResNet, EfficientNet, ViT (Vision Transformer), Swin Transformer, ConvNeXt</p>
+              </div>
+              <div class="resource-item">
+                <h4>Object Detection</h4>
+                <p>YOLO v5/v8, Faster R-CNN, DETR, EfficientDet, SSD, RetinaNet</p>
+              </div>
+              <div class="resource-item">
+                <h4>Segmentation</h4>
+                <p>DeepLab, U-Net, Mask R-CNN, SegFormer, SAM (Segment Anything Model)</p>
+              </div>
+              <div class="resource-item">
+                <h4>Multimodal Vision</h4>
+                <p>CLIP, BLIP, Flamingo, FILIP, ALIGN, ViLT</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+</body>
+</html>

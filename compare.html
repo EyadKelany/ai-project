@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare AI Models - Side-by-side comparison of popular LLMs including GPT-4, Claude, Gemini, Llama, and more.">
+  <title>Model Comparison — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .compare-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 3rem; }
+    .compare-table { width: 100%; border-collapse: collapse; min-width: 800px; }
+    .compare-table th { padding: 1rem 1.25rem; text-align: left; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); background: var(--bg-elevated); border-bottom: 1px solid var(--border); position: sticky; top: 0; }
+    .compare-table td { padding: 0.875rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--fg-muted); vertical-align: top; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: var(--bg-card); }
+    .compare-table .model-name { font-weight: 600; color: var(--fg); white-space: nowrap; }
+    .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 100px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .badge-green { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-blue { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+    .badge-cyan { background: rgba(34, 211, 238, 0.15); color: #22d3ee; border: 1px solid rgba(34, 211, 238, 0.3); }
+    .badge-orange { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-red { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(0, 229, 179, 0.3); }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+    .filter-tab { padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; background: var(--bg-card); border: 1px solid var(--border); color: var(--fg-muted); cursor: pointer; transition: all var(--transition-fast); }
+    .filter-tab:hover, .filter-tab.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link active" aria-current="page">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="ask.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link active" aria-current="page">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="ask.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Reference</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">Model Comparison</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Side-by-side comparison of the most popular AI models. Compare capabilities, pricing, context windows, and more.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="filter-tabs" id="filter-tabs" role="tablist" aria-label="Filter by provider">
+          <button class="filter-tab active" role="tab" data-filter="all">All Models</button>
+          <button class="filter-tab" role="tab" data-filter="openai">OpenAI</button>
+          <button class="filter-tab" role="tab" data-filter="anthropic">Anthropic</button>
+          <button class="filter-tab" role="tab" data-filter="google">Google</button>
+          <button class="filter-tab" role="tab" data-filter="meta">Meta</button>
+          <button class="filter-tab" role="tab" data-filter="mistral">Mistral</button>
+          <button class="filter-tab" role="tab" data-filter="deepseek">DeepSeek</button>
+          <button class="filter-tab" role="tab" data-filter="open">Open Source</button>
+        </div>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table" id="compare-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Provider</th>
+                <th>Context</th>
+                <th>Modalities</th>
+                <th>Open Source</th>
+                <th>Strengths</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody id="compare-body"></tbody>
+          </table>
+        </div>
+
+        <!-- Model Cards -->
+        <header style="text-align: center; max-width: 700px; margin: 3rem auto 2rem;">
+          <span class="eyebrow">Quick Picks</span>
+          <h2>Which Model Should You Use?</h2>
+        </header>
+
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+          <article class="card fade-in">
+            <h3 style="margin-bottom: 0.75rem;">Best for Coding</h3>
+            <p style="margin-bottom: 0.75rem; color: var(--fg-muted);">Claude 4 Opus and GPT-4o lead in code generation, debugging, and software engineering tasks. DeepSeek-Coder-V2 offers a strong open-source alternative.</p>
+            <div class="tags">
+              <span class="tag badge badge-accent">Claude 4</span>
+              <span class="tag badge badge-blue">GPT-4o</span>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 1;">
+            <h3 style="margin-bottom: 0.75rem;">Best for Analysis</h3>
+            <p style="margin-bottom: 0.75rem; color: var(--fg-muted);">Gemini 2.0 leads in processing massive documents thanks to its 2M token context. GPT-4o and Claude 4 excel at nuanced multi-step reasoning.</p>
+            <div class="tags">
+              <span class="tag badge badge-cyan">Gemini 2.0</span>
+              <span class="tag badge badge-accent">Claude 4</span>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 2;">
+            <h3 style="margin-bottom: 0.75rem;">Best Open Source</h3>
+            <p style="margin-bottom: 0.75rem; color: var(--fg-muted);">Llama 3 (405B) and Qwen 2.5 are the most capable open-weight models. DeepSeek-V3 offers exceptional quality at low cost.</p>
+            <div class="tags">
+              <span class="tag badge badge-orange">Llama 3</span>
+              <span class="tag badge badge-orange">Qwen 2.5</span>
+            </div>
+          </article>
+
+          <article class="card fade-in" style="--i: 3;">
+            <h3 style="margin-bottom: 0.75rem;">Best on a Budget</h3>
+            <p style="margin-bottom: 0.75rem; color: var(--fg-muted);">DeepSeek-V3 and Llama 3.1 (8B) offer the best quality-per-dollar. GPT-4o-mini and Claude 3.5 Haiku are excellent affordable API options.</p>
+            <div class="tags">
+              <span class="tag badge badge-red">DeepSeek-V3</span>
+              <span class="tag badge badge-blue">GPT-4o-mini</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Related -->
+        <div style="text-align: center; margin-top: 3rem;">
+          <p class="muted" style="margin-bottom: 1rem;">Data as of early 2026. Prices and capabilities change frequently.</p>
+          <div class="flex gap-md" style="justify-content: center; flex-wrap: wrap;">
+            <a href="glossary.html" class="btn btn-ghost">AI Glossary</a>
+            <a href="detail-generative.html" class="btn btn-ghost">Generative AI Deep Dive</a>
+            <a href="resources-models.html" class="btn btn-primary">Model Hubs & Resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Your comprehensive guide to understanding artificial intelligence.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Learn</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="detail-fundamentals.html" style="color: var(--fg-muted);">Fundamentals</a></li>
+            <li><a href="detail-generative.html" style="color: var(--fg-muted);">Generative AI</a></li>
+            <li><a href="detail-applications.html" style="color: var(--fg-muted);">Applications</a></li>
+            <li><a href="detail-ethics.html" style="color: var(--fg-muted);">Ethics & Safety</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Tools</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="glossary.html" style="color: var(--fg-muted);">AI Glossary</a></li>
+            <li><a href="timeline.html" style="color: var(--fg-muted);">AI Timeline</a></li>
+            <li><a href="compare.html" style="color: var(--fg-muted);">Model Comparison</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Q&A Database</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Community</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="#" style="color: var(--fg-muted);">Discord</a></li>
+            <li><a href="#" style="color: var(--fg-muted);">GitHub</a></li>
+            <li><a href="about.html" style="color: var(--fg-muted);">About Us</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted);">Submit Question</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+  <script>
+    const models = [
+      { name: "GPT-4o", provider: "openai", context: "128K", modalities: "Text, Image, Audio, Video", open: false, strengths: "Best all-around, multimodal, fast", best: "General use, multimodal tasks", badge: "badge-blue" },
+      { name: "GPT-4o mini", provider: "openai", context: "128K", modalities: "Text, Image", open: false, strengths: "Fast, cheap, surprisingly capable", best: "High-volume tasks, chatbots", badge: "badge-blue" },
+      { name: "o3", provider: "openai", context: "200K", modalities: "Text, Image", open: false, strengths: "Deep reasoning, math, code", best: "Complex reasoning, research", badge: "badge-blue" },
+      { name: "Claude 4 Opus", provider: "anthropic", context: "200K", modalities: "Text, Image, PDF", open: false, strengths: "Coding, analysis, long context", best: "Software engineering, analysis", badge: "badge-accent" },
+      { name: "Claude 4 Sonnet", provider: "anthropic", context: "200K", modalities: "Text, Image, PDF", open: false, strengths: "Balanced performance/speed", best: "General use, coding", badge: "badge-accent" },
+      { name: "Claude 3.5 Haiku", provider: "anthropic", context: "200K", modalities: "Text, Image", open: false, strengths: "Ultra-fast, very affordable", best: "Real-time apps, extraction", badge: "badge-accent" },
+      { name: "Gemini 2.0 Flash", provider: "google", context: "2M", modalities: "Text, Image, Audio, Video", open: false, strengths: "Massive context, multimodal", best: "Long documents, video analysis", badge: "badge-cyan" },
+      { name: "Gemini 2.0 Pro", provider: "google", context: "2M", modalities: "Text, Image, Audio, Video", open: false, strengths: "Top-tier reasoning, 2M context", best: "Research, massive doc analysis", badge: "badge-cyan" },
+      { name: "Llama 3.1 405B", provider: "meta", context: "128K", modalities: "Text, Image", open: true, strengths: "Most capable open model", best: "Self-hosted, fine-tuning", badge: "badge-orange" },
+      { name: "Llama 3.1 8B", provider: "meta", context: "128K", modalities: "Text, Image", open: true, strengths: "Fast, runs locally", best: "Edge deployment, experimentation", badge: "badge-orange" },
+      { name: "Qwen 2.5 72B", provider: "open", context: "128K", modalities: "Text, Image, Code", open: true, strengths: "Multilingual, strong coding", best: "Code generation, multilingual", badge: "badge-orange" },
+      { name: "DeepSeek-V3", provider: "deepseek", context: "128K", modalities: "Text, Code", open: true, strengths: "Top quality, very low cost", best: "Cost-sensitive production", badge: "badge-red" },
+      { name: "DeepSeek-R1", provider: "deepseek", context: "128K", modalities: "Text, Code", open: true, strengths: "Chain-of-thought reasoning", best: "Math, logic, reasoning tasks", badge: "badge-red" },
+      { name: "Mistral Large 2", provider: "mistral", context: "128K", modalities: "Text, Image", open: false, strengths: "EU-based, multilingual", best: "EU compliance, multilingual", badge: "badge-green" },
+      { name: "Mixtral 8x22B", provider: "mistral", context: "65K", modalities: "Text, Code", open: true, strengths: "Efficient MoE architecture", best: "Efficient self-hosting", badge: "badge-green" },
+    ];
+
+    const badgeLabels = { openai: "OpenAI", anthropic: "Anthropic", google: "Google", meta: "Meta", mistral: "Mistral", deepseek: "DeepSeek", open: "Open" };
+
+    function renderModels(filter) {
+      const filtered = filter === "all" ? models :
+        filter === "open" ? models.filter(m => m.open) :
+        models.filter(m => m.provider === filter);
+
+      document.getElementById("compare-body").innerHTML = filtered.map(m => `
+        <tr>
+          <td class="model-name">${m.name}</td>
+          <td><span class="badge ${m.badge}">${badgeLabels[m.provider] || m.provider}</span></td>
+          <td>${m.context}</td>
+          <td style="font-size: 0.8rem;">${m.modalities}</td>
+          <td>${m.open ? '<span style="color: #10b981;">Yes</span>' : '<span style="color: var(--fg-subtle);">No</span>'}</td>
+          <td>${m.strengths}</td>
+          <td style="font-size: 0.8rem;">${m.best}</td>
+        </tr>
+      `).join("");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderModels("all");
+      document.querySelectorAll(".filter-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll(".filter-tab").forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          renderModels(tab.dataset.filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

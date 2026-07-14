@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ask AI Explorer - Get instant answers to your artificial intelligence questions. Powered by curated AI knowledge.">
+  <title>Ask AI — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    main { flex: 1; display: flex; flex-direction: column; }
+    .chat-container { flex: 1; display: flex; flex-direction: column; max-width: 860px; margin: 0 auto; width: 100%; padding: 0 1.5rem; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 1.5rem 0; display: flex; flex-direction: column; gap: 1.25rem; }
+    .chat-welcome { text-align: center; padding: 3rem 1rem; max-width: 600px; margin: auto; }
+    .chat-welcome h2 { margin-bottom: 0.75rem; }
+    .chat-welcome p { color: var(--fg-muted); margin-bottom: 2rem; }
+    .suggestion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+    .suggestion-btn { padding: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); text-align: left; cursor: pointer; transition: all var(--transition-fast); color: var(--fg); font-size: 0.9rem; line-height: 1.5; }
+    .suggestion-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+    .suggestion-btn .s-icon { color: var(--accent); margin-bottom: 0.5rem; }
+    .msg { display: flex; gap: 0.75rem; max-width: 85%; animation: fadeIn 0.3s ease; }
+    .msg-user { align-self: flex-end; flex-direction: row-reverse; }
+    .msg-ai { align-self: flex-start; }
+    .msg-avatar { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; font-size: 0.8rem; font-weight: 700; }
+    .msg-user .msg-avatar { background: var(--secondary-dim); color: var(--secondary); border: 1px solid var(--secondary); }
+    .msg-ai .msg-avatar { background: linear-gradient(135deg, var(--accent), var(--secondary)); color: var(--bg); }
+    .msg-bubble { padding: 1rem 1.25rem; border-radius: var(--radius-md); line-height: 1.7; font-size: 0.95rem; }
+    .msg-user .msg-bubble { background: var(--secondary-dim); border: 1px solid rgba(99,102,241,0.25); color: var(--fg); border-top-right-radius: 4px; }
+    .msg-ai .msg-bubble { background: var(--bg-card); border: 1px solid var(--border); color: var(--fg-muted); border-top-left-radius: 4px; }
+    .msg-bubble h4 { color: var(--fg); margin: 1rem 0 0.5rem; font-size: 1rem; }
+    .msg-bubble h4:first-child { margin-top: 0; }
+    .msg-bubble ul, .msg-bubble ol { padding-left: 1.25rem; margin: 0.5rem 0; }
+    .msg-bubble li { margin-bottom: 0.35rem; }
+    .msg-bubble code { background: var(--bg); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85rem; color: var(--accent); }
+    .msg-bubble pre { background: var(--bg); padding: 1rem; border-radius: var(--radius-sm); overflow-x: auto; margin: 0.75rem 0; border: 1px solid var(--border); }
+    .msg-bubble pre code { background: none; padding: 0; }
+    .msg-bubble table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.85rem; }
+    .msg-bubble th { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--border); color: var(--fg); font-weight: 600; }
+    .msg-bubble td { padding: 0.5rem; border-bottom: 1px solid var(--border); }
+    .msg-bubble a { color: var(--accent); text-decoration: underline; text-decoration-color: rgba(0,229,179,0.3); }
+    .msg-bubble a:hover { text-decoration-color: var(--accent); }
+    .msg-links { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .msg-links a { padding: 0.3rem 0.7rem; background: var(--accent-dim); border: 1px solid rgba(0,229,179,0.2); border-radius: 100px; font-size: 0.75rem; font-weight: 500; color: var(--accent); text-decoration: none; transition: all var(--transition-fast); }
+    .msg-links a:hover { background: var(--accent); color: var(--bg); }
+    .typing-indicator { display: flex; gap: 0.3rem; padding: 0.75rem 1rem; }
+    .typing-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fg-subtle); animation: typingBounce 1.4s infinite ease-in-out; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce { 0%, 80%, 100% { transform: translateY(0); opacity: 0.4; } 40% { transform: translateY(-6px); opacity: 1; } }
+    .chat-input-area { padding: 1rem 0 1.5rem; border-top: 1px solid var(--border); }
+    .chat-input-wrap { display: flex; gap: 0.75rem; align-items: flex-end; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.5rem 0.5rem 0.5rem 1rem; transition: border-color var(--transition-fast); }
+    .chat-input-wrap:focus-within { border-color: var(--accent); }
+    .chat-input { flex: 1; background: none; border: none; color: var(--fg); font-size: 1rem; font-family: var(--font-sans); resize: none; outline: none; min-height: 24px; max-height: 120px; line-height: 1.5; padding: 0.35rem 0; }
+    .chat-input::placeholder { color: var(--fg-subtle); }
+    .chat-send { width: 42px; height: 42px; border-radius: 10px; background: var(--accent); color: var(--bg); border: none; cursor: pointer; display: grid; place-items: center; transition: opacity var(--transition-fast); flex-shrink: 0; }
+    .chat-send:hover { opacity: 0.85; }
+    .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+    .chat-hint { text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--fg-subtle); }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link active" aria-current="page">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="ask.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link active" aria-current="page">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="ask.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="chat-container">
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-welcome" id="chat-welcome">
+          <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, var(--accent), var(--secondary)); display: grid; place-items: center; margin: 0 auto 1.25rem; color: var(--bg);">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h2>Ask AI Explorer</h2>
+          <p>Your AI knowledge assistant. Ask anything about machine learning, deep learning, LLMs, ethics, tools, or careers in AI.</p>
+          <div class="suggestion-grid">
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">🧠</div>
+              What's the difference between AI, ML, and Deep Learning?
+            </button>
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">⚡</div>
+              How do Large Language Models work?
+            </button>
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">🔍</div>
+              What is RAG and when should I use it?
+            </button>
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">🛠️</div>
+              How can I run LLMs locally?
+            </button>
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">⚖️</div>
+              What is AI alignment?
+            </button>
+            <button class="suggestion-btn" onclick="askQuestion(this.textContent.trim())">
+              <div class="s-icon">🚀</div>
+              What's the best AI career path?
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-area">
+        <div class="chat-input-wrap">
+          <textarea class="chat-input" id="chat-input" placeholder="Ask a question about AI..." rows="1" aria-label="Ask a question"></textarea>
+          <button class="chat-send" id="chat-send" aria-label="Send message" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <div class="chat-hint">Press Enter to send · Shift+Enter for new line</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+  <script>
+    const knowledgeBase = [
+      {
+        q: ["ai", "ml", "deep learning", "difference", "machine learning", "what is ai", "what is machine learning"],
+        title: "AI vs Machine Learning vs Deep Learning",
+        answer: `<p>Think of them as nested concepts — like Russian dolls:</p>
+<ul>
+  <li><strong>Artificial Intelligence (AI)</strong> — The broadest umbrella: any technique that enables computers to mimic human intelligence.</li>
+  <li><strong>Machine Learning (ML)</strong> — A subset of AI where systems learn patterns from data without being explicitly programmed.</li>
+  <li><strong>Deep Learning (DL)</strong> — A subset of ML using neural networks with many layers to learn hierarchical representations.</li>
+</ul>
+<p><strong>Analogy:</strong> AI is "vehicles." ML is "motor vehicles." DL is "electric vehicles."</p>`,
+        links: [{ text: "Full Q&A", url: "faq.html?q=ai-ml-dl" }, { text: "Deep Dive", url: "detail-fundamentals.html" }]
+      },
+      {
+        q: ["llm", "large language model", "how do", "work", "gpt", "claude", "how does an llm work", "how do large language models"],
+        title: "How Large Language Models Work",
+        answer: `<p>LLMs are <strong>probabilistic next-token predictors</strong> trained on massive text corpora:</p>
+<ol>
+  <li><strong>Tokenization</strong> — Text → subword tokens (BPE, ~0.75 words/token)</li>
+  <li><strong>Embedding</strong> — Tokens → dense vectors with positional encoding</li>
+  <li><strong>Transformer layers</strong> — Self-attention + feed-forward networks process all tokens in parallel</li>
+  <li><strong>Output</strong> — Probability distribution over next token vocabulary</li>
+  <li><strong>Sampling</strong> — Temperature, top-k, top-p control creativity vs coherence</li>
+</ol>
+<h4>Training Pipeline</h4>
+<ol>
+  <li><strong>Pre-training</strong> — Next-token prediction on trillion-token corpus (learns knowledge)</li>
+  <li><strong>SFT</strong> — Supervised fine-tuning on instruction/response pairs</li>
+  <li><strong>RLHF/DPO</strong> — Preference optimization to align with human values</li>
+</ol>`,
+        links: [{ text: "Full Explanation", url: "faq.html?q=llm-work" }, { text: "Generative AI", url: "detail-generative.html" }]
+      },
+      {
+        q: ["rag", "retrieval", "augmented", "generation", "what is rag", "when should i use rag", "rag when"],
+        title: "RAG (Retrieval-Augmented Generation)",
+        answer: `<p><strong>RAG</strong> grounds LLM generation in retrieved documents, reducing hallucinations.</p>
+<h4>How It Works</h4>
+<ol>
+  <li><strong>Chunk</strong> — Split documents into passages</li>
+  <li><strong>Embed</strong> — Convert chunks to vectors</li>
+  <li><strong>Index</strong> — Store in vector database</li>
+  <li><strong>Retrieve</strong> — Find relevant chunks for query</li>
+  <li><strong>Re-rank</strong> — Score and filter results</li>
+  <li><strong>Generate</strong> — LLM answers using retrieved context</li>
+</ol>
+<h4>When to Use RAG</h4>
+<ul>
+  <li>Needs factual, up-to-date information</li>
+  <li>Must cite sources</li>
+  <li>Data changes frequently</li>
+  <li>Base model hallucinates on your domain</li>
+</ul>`,
+        links: [{ text: "RAG Deep Dive", url: "faq.html?q=rag" }, { text: "Tools Guide", url: "detail-tools.html" }]
+      },
+      {
+        q: ["local", "llm", "run", "machine", "computer", "offline", "local llm", "run locally", "how can i run"],
+        title: "Running LLMs Locally",
+        answer: `<p>You can run LLMs on your own hardware for privacy, cost control, and offline access:</p>
+<h4>Easy Start</h4>
+<ul>
+  <li><strong>Ollama</strong> — <code>ollama run llama3</code> — One command, automatic quantization</li>
+  <li><strong>LM Studio</strong> — GUI app, browse & download models, built-in chat</li>
+  <li><strong>GPT4All</strong> — Desktop app with local model library</li>
+</ul>
+<h4>Hardware Requirements</h4>
+<ul>
+  <li><strong>8B models</strong> — 8GB RAM minimum (4-bit quantized)</li>
+  <li><strong>13B models</strong> — 16GB RAM</li>
+  <li><strong>70B models</strong> — 64GB+ RAM or 2× 24GB GPU</li>
+  <li><strong>Apple Silicon</strong> — Excellent unified memory advantage</li>
+</ul>`,
+        links: [{ text: "Full Guide", url: "faq.html?q=local-llm" }, { text: "Tools & Platforms", url: "detail-tools.html" }]
+      },
+      {
+        q: ["alignment", "safe", "safety", "ai alignment", "what is alignment", "aligned", "values"],
+        title: "AI Alignment & Safety",
+        answer: `<p><strong>AI Alignment</strong> ensures AI systems behave in accordance with human values and intentions.</p>
+<h4>Key Approaches</h4>
+<ul>
+  <li><strong>RLHF</strong> — Train reward model from human preferences, optimize policy</li>
+  <li><strong>Constitutional AI</strong> — AI critiques itself against principles (Anthropic)</li>
+  <li><strong>Red-teaming</strong> — Adversarial testing to find failure modes</li>
+  <li><strong>Guardrails</strong> — Input/output filtering and validation</li>
+</ul>
+<h4>Open Problems</h4>
+<ul>
+  <li>Scalable oversight — supervising superhuman systems</li>
+  <li>Misalignment detection — knowing when AI is deceptive</li>
+  <li>Value specification — encoding complex human values</li>
+  <li>Corrigibility — keeping AI controllable</li>
+</ul>`,
+        links: [{ text: "Ethics Deep Dive", url: "detail-ethics.html" }, { text: "More Questions", url: "faq.html?category=ethics" }]
+      },
+      {
+        q: ["career", "job", "path", "become", "work", "salary", "career path", "ai career", "get into ai"],
+        title: "AI Career Paths",
+        answer: `<p>There are several paths into AI depending on your background:</p>
+<h4>Technical Roles</h4>
+<ul>
+  <li><strong>ML Engineer</strong> — Build and deploy models. Skills: Python, PyTorch, Docker, MLOps</li>
+  <li><strong>Research Scientist</strong> — Push boundaries. Skills: Math, papers, experimentation</li>
+  <li><strong>AI Engineer</strong> — Build LLM apps. Skills: APIs, RAG, agents, prompt engineering</li>
+  <li><strong>Data Scientist</strong> — Analytics + modeling. Skills: SQL, stats, visualization</li>
+</ul>
+<h4>Non-Technical Roles</h4>
+<ul>
+  <li><strong>AI Product Manager</strong> — Define AI products and strategy</li>
+  <li><strong>AI Ethics Researcher</strong> — Safety, policy, fairness</li>
+  <li><strong>AI Writer/Educator</strong> — Content, tutorials, documentation</li>
+</ul>
+<h4>Getting Started</h4>
+<ol>
+  <li>Learn Python + ML basics (Andrew Ng's course)</li>
+  <li>Pick a specialization and go deep</li>
+  <li>Build 3-5 portfolio projects</li>
+  <li>Contribute to open source</li>
+  <li>Network at meetups and online communities</li>
+</ol>`,
+        links: [{ text: "Career Guide", url: "detail-career.html" }, { text: "Learning Paths", url: "resources-learning.html" }]
+      },
+      {
+        q: ["transformer", "attention", "architecture", "self-attention", "what is a transformer", "how do transformers work"],
+        title: "Transformers & Self-Attention",
+        answer: `<p>The <strong>Transformer</strong> (2017) is the architecture behind all modern LLMs. Its core innovation is <strong>self-attention</strong>.</p>
+<h4>Self-Attention</h4>
+<p>Every token attends to every other token simultaneously:</p>
+<pre><code>Attention(Q, K, V) = softmax(QKᵀ/√dₖ)V</code></pre>
+<ul>
+  <li><strong>Q (Query)</strong> — What I'm looking for</li>
+  <li><strong>K (Key)</strong> — What I contain</li>
+  <li><strong>V (Value)</strong> — What I'll pass on if selected</li>
+</ul>
+<h4>Why Transformers Won</h4>
+<ol>
+  <li><strong>Parallelizable</strong> — No sequential dependency like RNNs</li>
+  <li><strong>Global context</strong> — Every token sees every other</li>
+  <li><strong>Scalable</strong> — Scales to billions of parameters</li>
+  <li><strong>Transfer learning</strong> — Pre-train once, fine-tune everywhere</li>
+</ol>`,
+        links: [{ text: "Full Explanation", url: "faq.html?q=transformers-explained" }, { text: "Fundamentals", url: "detail-fundamentals.html" }]
+      },
+      {
+        q: ["fine-tuning", "finetuning", "fine tune", "peft", "lora", "when to fine-tune", "fine-tuning vs"],
+        title: "Fine-Tuning & When to Use It",
+        answer: `<p>Fine-tuning updates a pre-trained model's weights on your specific data.</p>
+<h4>Decision Framework</h4>
+<ol>
+  <li><strong>Start with prompting</strong> — Can the base model do it with good instructions?</li>
+  <li><strong>Add RAG</strong> — If you need external knowledge or citations</li>
+  <li><strong>Fine-tune</strong> — If you need consistent style, specialized domain, or smaller/faster models</li>
+</ol>
+<h4>Parameter-Efficient Methods</h4>
+<ul>
+  <li><strong>LoRA</strong> — Low-rank adapters, trains <1% of parameters</li>
+  <li><strong>QLoRA</strong> — LoRA + 4-bit quantization, runs on consumer GPUs</li>
+  <li><strong>Tools</strong> — Unsloth (2-5x faster), Axolotl, LLaMA-Factory, PEFT</li>
+</ul>
+<h4>Best Practice</h4>
+<p><strong>Fine-tuned model + RAG + good prompts</strong> — they stack! Fine-tune for behavior, RAG for knowledge, prompts for instructions.</p>`,
+        links: [{ text: "Decision Guide", url: "faq.html?q=fine-tuning-vs-rag" }, { text: "Generative AI", url: "detail-generative.html" }]
+      },
+      {
+        q: ["prompt engineering", "prompting", "prompts", "chain of thought", "how to prompt", "better prompts"],
+        title: "Prompt Engineering",
+        answer: `<p>Prompt engineering is designing inputs that elicit desired outputs from LLMs.</p>
+<h4>Core Techniques</h4>
+<ul>
+  <li><strong>Zero-shot</strong> — Give task instructions without examples</li>
+  <li><strong>Few-shot</strong> — Include 2-5 input/output examples</li>
+  <li><strong>Chain-of-Thought</strong> — "Let's think step by step" — shows reasoning</li>
+  <li><strong>Self-consistency</strong> — Generate multiple answers, take majority vote</li>
+  <li><strong>System prompt</strong> — Set role, tone, format, constraints</li>
+</ul>
+<h4>Tips</h4>
+<ol>
+  <li>Be specific about output format (JSON, markdown, etc.)</li>
+  <li>Break complex tasks into steps</li>
+  <li>Include constraints: "Answer in 3 bullet points"</li>
+  <li>Use delimiters for clarity: triple backticks, XML tags</li>
+</ol>`,
+        links: [{ text: "Full Guide", url: "faq.html?q=prompt-engineering" }, { text: "Generative AI", url: "detail-generative.html" }]
+      },
+      {
+        q: ["agent", "agents", "ai agent", "autonomous", "tool use", "agentic"],
+        title: "AI Agents",
+        answer: `<p>AI Agents are autonomous systems that <strong>plan, act, observe, and iterate</strong> to achieve goals.</p>
+<h4>How They Work</h4>
+<ol>
+  <li><strong>Plan</strong> — Break goal into steps (CoT, Tree-of-Thought)</li>
+  <li><strong>Act</strong> — Execute actions via tools (code, APIs, search, browser)</li>
+  <li><strong>Observe</strong> — Process results and update state</li>
+  <li><strong>Reflect</strong> — Evaluate progress, adjust plan</li>
+</ol>
+<h4>Frameworks</h4>
+<ul>
+  <li><strong>LangGraph</strong> — State machine graphs, complex workflows</li>
+  <li><strong>CrewAI</strong> — Role-based multi-agent teams</li>
+  <li><strong>AutoGen</strong> — Microsoft's multi-agent conversation framework</li>
+</ul>
+<h4>Benchmarks</h4>
+<p>SWE-bench (coding), MLE-bench (ML engineering), WebShop (web), GAIA (general)</p>`,
+        links: [{ text: "Agents Guide", url: "faq.html?q=agents" }, { text: "Tools Deep Dive", url: "detail-tools.html" }]
+      },
+      {
+        q: ["ethics", "bias", "fairness", "responsible", "ai ethics", "biased"],
+        title: "AI Ethics & Bias",
+        answer: `<p>AI ethics addresses fairness, transparency, privacy, and societal impact of AI systems.</p>
+<h4>Key Issues</h4>
+<ul>
+  <li><strong>Bias</strong> — Models reflect training data biases (racial, gender, cultural)</li>
+  <li><strong>Transparency</strong> — Black-box models lack explainability</li>
+  <li><strong>Privacy</strong> — Training on personal data, model memorization</li>
+  <li><strong>Misinformation</strong> — Deepfakes, hallucinations, manipulation</li>
+</ul>
+<h4>Mitigation Approaches</h4>
+<ul>
+  <li>Diverse training data and evaluation benchmarks</li>
+  <li>Bias detection and fairness metrics</li>
+  <li>Interpretability tools (SHAP, attention visualization)</li>
+  <li>Constitutional AI, RLHF alignment</li>
+  <li>Regulation: EU AI Act, NIST AI RMF</li>
+</ul>`,
+        links: [{ text: "Ethics Deep Dive", url: "detail-ethics.html" }, { text: "Safety Questions", url: "faq.html?category=ethics" }]
+      },
+      {
+        q: ["diffusion", "image generation", "stable diffusion", "midjourney", "dall-e", "image gen", "how does diffusion work"],
+        title: "Diffusion Models & Image Generation",
+        answer: `<p>Diffusion models generate images by learning to <strong>reverse a gradual noising process</strong>.</p>
+<h4>How It Works</h4>
+<ol>
+  <li><strong>Forward process</strong> — Gradually add Gaussian noise to images until pure noise</li>
+  <li><strong>Training</strong> — Neural net learns to predict the noise at each step</li>
+  <li><strong>Generation</strong> — Start from random noise, iteratively denoise to create an image</li>
+</ol>
+<h4>Key Tools</h4>
+<ul>
+  <li><strong>Stable Diffusion</strong> — Open source, runs locally, massive community</li>
+  <li><strong>ComfyUI</strong> — Node-based UI for complex workflows</li>
+  <li><strong>ControlNet</strong> — Precise control with pose, depth, edge maps</li>
+  <li><strong>Flux</strong> — Latest generation, rectified flow, superior quality</li>
+</ul>`,
+        links: [{ text: "How Diffusion Works", url: "faq.html?q=diffusion" }, { text: "Generative AI", url: "detail-generative.html" }]
+      },
+      {
+        q: ["vector database", "vectordb", "chroma", "pinecone", "weaviate", "qdrant", "vector db"],
+        title: "Vector Databases",
+        answer: `<p>Vector databases store and search high-dimensional embeddings for semantic search and RAG.</p>
+<h4>Popular Options</h4>
+<table>
+  <tr><th>Database</th><th>Best For</th></tr>
+  <tr><td><strong>Chroma</strong></td><td>Prototyping, simple, Python-first</td></tr>
+  <tr><td><strong>Pinecone</strong></td><td>Managed cloud, production-ready</td></tr>
+  <tr><td><strong>Weaviate</strong></td><td>Hybrid search, GraphQL API</td></tr>
+  <tr><td><strong>Qdrant</strong></td><td>Self-hosted, high performance</td></tr>
+  <tr><td><strong>Milvus</strong></td><td>Enterprise scale, GPU-accelerated</td></tr>
+  <tr><td><strong>pgvector</strong></td><td>PostgreSQL extension, simple setup</td></tr>
+</table>
+<h4>Choosing</h4>
+<ul>
+  <li><strong>Prototype</strong> → Chroma (embedded mode)</li>
+  <li><strong>Small production</strong> → Qdrant or Pinecone</li>
+  <li><strong>Enterprise</strong> → Milvus or Weaviate</li>
+  <li><strong>Already on Postgres</strong> → pgvector</li>
+</ul>`,
+        links: [{ text: "Vector DB Comparison", url: "faq.html?q=vector-db" }, { text: "Tools & Platforms", url: "detail-tools.html" }]
+      },
+      {
+        q: ["embeddings", "embedding", "vector", "representation", "word2vec", "what are embeddings"],
+        title: "Embeddings Explained",
+        answer: `<p><strong>Embeddings</strong> are dense vector representations where semantic similarity = geometric proximity.</p>
+<h4>Key Property</h4>
+<p><code>cosine_sim("king" - "man" + "woman", "queen") ≈ 1</code></p>
+<h4>Types</h4>
+<ul>
+  <li><strong>Word</strong> — Word2Vec, GloVe (static, context-independent)</li>
+  <li><strong>Contextual</strong> — BERT, GPT (meaning depends on context)</li>
+  <li><strong>Sentence</strong> — SBERT, E5, BGE (full text → single vector)</li>
+  <li><strong>Multimodal</strong> — CLIP, ImageBind (text ↔ image alignment)</li>
+</ul>
+<h4>Use Cases</h4>
+<p>Semantic search, clustering, recommendation, anomaly detection, RAG retrieval.</p>`,
+        links: [{ text: "Embeddings Deep Dive", url: "faq.html?q=embeddings-explained" }, { text: "Glossary", url: "glossary.html" }]
+      },
+      {
+        q: ["scaling", "scaling laws", "chinchilla", "model size", "bigger models", "are bigger models better"],
+        title: "Scaling Laws",
+        answer: `<p><strong>Scaling laws</strong> describe the predictable relationship between model performance and three factors:</p>
+<ul>
+  <li><strong>Model size</strong> (parameters)</li>
+  <li><strong>Dataset size</strong> (tokens)</li>
+  <li><strong>Compute</strong> (FLOPs)</li>
+</ul>
+<h4>Key Findings</h4>
+<ul>
+  <li>Performance improves as power laws with each factor</li>
+  <li><strong>Chinchilla</strong> (2022) — Optimal: 20 tokens per parameter</li>
+  <li>GPT-4 was undertrained on data relative to Chinchilla optimal</li>
+  <li><strong>Inference-time scaling</strong> (o1, R1) — Adding compute at test time improves reasoning</li>
+</ul>
+<h4>Current Trends</h4>
+<p>Models are being trained with far more tokens than Chinchilla suggested, prioritizing inference efficiency over training optimality.</p>`,
+        links: [{ text: "Scaling Laws Q&A", url: "faq.html?q=scaling-laws" }, { text: "Future & Trends", url: "detail-future.html" }]
+      },
+      {
+        q: ["future", "agi", "artificial general intelligence", "what is agi", "when will agi", "future of ai"],
+        title: "The Future of AI & AGI",
+        answer: `<p>AI is advancing rapidly across multiple fronts:</p>
+<h4>Near-Term (2025-2027)</h4>
+<ul>
+  <li>Reliable multi-step coding agents</li>
+  <li>Native multimodal models (text+image+audio+video)</li>
+  <li>1M+ token context windows</li>
+  <li>AI systems improving AI systems (recursive improvement)</li>
+</ul>
+<h4>Medium-Term (2028-2030)</h4>
+<ul>
+  <li>Automated scientific discovery</li>
+  <li>General-purpose robotics</li>
+  <li>Personalized AI education at scale</li>
+</ul>
+<h4>AGI Timelines</h4>
+<p>Expert forecasts vary widely — from 2029 (optimists) to 2045+ (skeptics). Key question: does scaling + new paradigms reach human-level reasoning, or is something fundamentally missing?</p>`,
+        links: [{ text: "Future Timeline", url: "timeline.html" }, { text: "Future Deep Dive", url: "detail-future.html" }]
+      }
+    ];
+
+    const defaultAnswer = {
+      title: "I don't have a specific answer for that",
+      answer: `<p>I don't have a specific answer for that question in my knowledge base yet. Here are some things you can try:</p>
+<ul>
+  <li><strong>Browse the FAQ</strong> — We have 200+ answered questions across 7 categories</li>
+  <li><strong>Check the Glossary</strong> — Quick definitions for 50+ AI terms</li>
+  <li><strong>Explore Deep Dives</strong> — Comprehensive guides for each topic</li>
+</ul>
+<p>Try rephrasing your question or asking about a specific AI topic like:</p>
+<ul>
+  <li>How do transformers/LLMs/RAG work?</li>
+  <li>What is fine-tuning/LoRA/prompt engineering?</li>
+  <li>How do I get started in AI?</li>
+  <li>What tools should I use for [task]?</li>
+</ul>`,
+      links: [{ text: "Browse All Questions", url: "faq.html" }, { text: "AI Glossary", url: "glossary.html" }]
+    };
+
+    const chatMessages = document.getElementById('chat-messages');
+    const chatWelcome = document.getElementById('chat-welcome');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+
+    chatInput.addEventListener('input', () => {
+      chatInput.style.height = 'auto';
+      chatInput.style.height = Math.min(chatInput.scrollHeight, 120) + 'px';
+      chatSend.disabled = !chatInput.value.trim();
+    });
+
+    chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        if (chatInput.value.trim()) sendMessage();
+      }
+    });
+
+    chatSend.addEventListener('click', sendMessage);
+
+    function askQuestion(text) {
+      chatInput.value = text;
+      chatInput.dispatchEvent(new Event('input'));
+      sendMessage();
+    }
+
+    function sendMessage() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      chatInput.value = '';
+      chatInput.style.height = 'auto';
+      chatSend.disabled = true;
+
+      if (chatWelcome) chatWelcome.remove();
+
+      appendMessage(text, 'user');
+
+      showTyping();
+
+      setTimeout(() => {
+        removeTyping();
+        const response = findAnswer(text);
+        appendAIMessage(response);
+      }, 800 + Math.random() * 700);
+    }
+
+    function appendMessage(text, type) {
+      const div = document.createElement('div');
+      div.className = `msg msg-${type}`;
+      const avatar = type === 'user' ? 'You' : 'AI';
+      div.innerHTML = `<div class="msg-avatar">${avatar}</div><div class="msg-bubble">${escapeHtml(text)}</div>`;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function appendAIMessage(response) {
+      const div = document.createElement('div');
+      div.className = 'msg msg-ai';
+      let linksHtml = '';
+      if (response.links && response.links.length) {
+        linksHtml = '<div class="msg-links">' + response.links.map(l =>
+          `<a href="${l.url}">${l.text} →</a>`
+        ).join('') + '</div>';
+      }
+      div.innerHTML = `<div class="msg-avatar">AI</div><div class="msg-bubble"><h4>${response.title}</h4>${response.answer}${linksHtml}</div>`;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'msg msg-ai';
+      div.id = 'typing';
+      div.innerHTML = `<div class="msg-avatar">AI</div><div class="msg-bubble"><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function removeTyping() {
+      const el = document.getElementById('typing');
+      if (el) el.remove();
+    }
+
+    function findAnswer(query) {
+      const q = query.toLowerCase().replace(/[^\w\s]/g, '');
+      const words = q.split(/\s+/).filter(w => w.length > 2);
+
+      let bestMatch = null;
+      let bestScore = 0;
+
+      for (const entry of knowledgeBase) {
+        let score = 0;
+        for (const keyword of entry.q) {
+          for (const word of words) {
+            if (keyword.includes(word) || word.includes(keyword)) {
+              score += word.length;
+            }
+          }
+        }
+        if (q.includes('how can i run') && keywordMatch(entry.q, ['local', 'run'])) score += 20;
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = entry;
+        }
+      }
+
+      if (bestScore >= 3 && bestMatch) {
+        return bestMatch;
+      }
+
+      for (const entry of knowledgeBase) {
+        for (const keyword of entry.q) {
+          if (q.includes(keyword)) {
+            return entry;
+          }
+        }
+      }
+
+      return defaultAnswer;
+    }
+
+    function keywordMatch(keywords, targets) {
+      return keywords.some(k => targets.some(t => k.includes(t)));
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

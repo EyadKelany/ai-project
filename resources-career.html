@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Career & Jobs - Job boards, career guides, interview prep, and professional development resources for artificial intelligence professionals.">
+  <title>Career & Jobs — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Professional Development</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Career & Jobs</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Job boards, career guides, interview preparation, and professional development resources for AI professionals</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Boards -->
+    <section class="section" aria-labelledby="jobs-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Job Boards & Platforms</span>
+          <h2 id="jobs-title">Find AI & ML Positions</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- General Tech Job Boards -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10 12l10 5 10-5" stroke-line="round"dL22"></svg>
+            10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>General Tech Job Boards</h3>
+            <p>Popular platforms with strong AI/ML job listings.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>LinkedIn Jobs</h4>
+                <p>Professional network with AI-specific job postings</p>
+                <a href="https://www.linkedin.com/jobs/" target="_blank" class="resource-link">Browse Jobs →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Indeed</h4>
+                <p>Large aggregator with AI/ML filters</p>
+                <a href="https://www.indeed.com/" target="_blank" class="resource-link">Search Jobs →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Glassdoor</h4>
+                <p>Job listings with company reviews and salary info</p>
+                <a href="https://www.glassdoor.com/Job/index.htm" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- AI-Specific Job Boards -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>AI-Specific Job Boards</h3>
+            <p>Platforms focused exclusively on artificial intelligence roles.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>AI-Jobs.net</h4>
+                <p>Global AI job board with remote and on-site positions</p>
+                <a href="https://ai-jobs.net/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>RemoteAI Jobs</h4>
+                <p>Remote-first AI/ML positions worldwide</p>
+                <a href="https://remoteaijobs.com/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>MLJobs.co</h4>
+                <p>Machine learning focused job board</p>
+                <a href="https://mljobs.co/" target="_blank" class="resource-link">Browse →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Company Career Pages -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Top AI Company Career Pages</h3>
+            <p>Direct links to careers pages of leading AI companies.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Google AI</h4>
+                <p>Research and engineering roles at Google AI</p>
+                <a href="https://careers.google.com/teams/ai/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Meta AI</h4>
+                <p>AI Research (FAIR) and Applied AI positions</p>
+                <a href="https://www.metacareers.com/teams/ai-research/" target="_blank" class="resource-link">View Roles →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Microsoft AI</h4>
+                <p>AI and research positions across Microsoft</p>
+                <a href="https://careers.microsoft.com/us/en/search-results?keywords=artificial%20intelligence" target="_blank" class="resource-link">Search →</a>
+              </div>
+              <div class="resource-item">
+                <h4>OpenAI Careers</h4>
+                <p>Research, engineering, and operations roles</p>
+                <a href="https://openai.com/careers/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Guides -->
+    <section class="section" aria-labelledby="guides-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Career Development</span>
+          <h2 id="guides-title">Guides & Resources for AI Professionals</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Resume & Interview -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Resume, Interview & Preparation</h3>
+            <p>Resources to help you land your dream AI role.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>AI Interview Handbook</h4>
+                <p>Comprehensive guide to technical and behavioral interviews</p>
+                <a href="https://github.com/ashishpatel26/AI-Interview-Questions" target="_blank" class="resource-link">View Guide →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Resume Worded</h4>
+                <p>AI-powered resume optimization for tech roles</p>
+                <a href="https://www.resumeworded.com/" target="_blank" class="resource-link">Try Now →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Exponent</h4>
+                <p>Technical interview preparation for FAANG and tech companies</p>
+                <a href="https://www.joinexponent.com/" target="_blank" class="resource-link">Learn More →</a>
+              </div>
+              <div class="resource-item">
+                <h4>LeetCode Discuss</h4>
+                <p>Discuss coding interview problems and solutions</p>
+                <a href="https://leetcode.com/discuss/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Skill Development -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Skill Development & Learning</h3>
+            <p>Resources to continuously improve your AI expertise.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Awesome Machine Learning</h4>
+                <p>Curated list of ML frameworks, libraries, and resources</p>
+                <a href="https://github.com/josephmisiti/awesome-machine-learning" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ML Ops Community</h4>
+                <p>Templates, guides, and best practices for production ML</p>
+                <a href="https://mlops.community/" target="_blank" class="resource-link">Visit →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Towards Data Science</h4>
+                <p>Articles, tutorials, and insights from practitioners</p>
+                <a href="https://towardsdatascience.com/" target="_blank" class="resource-link">Read →</a>
+              </div>
+              <div class="resource-item">
+                <h4>ArXiv Sanity Preserver</h4>
+                <p>Search, filter, and browse arXiv for latest research</p>
+                <a href="http://www.arxiv-sanity.com/" target="_blank" class="resource-link">Try →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Networking & Community -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Networking & Professional Growth</h3>
+            <p>Build your professional network and advance your career.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>LinkedIn Learning</h4>
+                <p>Courses on AI, ML, data science, and soft skills</p>
+                <a href="https://www.linkedin.com/learning/" target="_blank" class="resource-link">Explore →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Meetup AI Groups</h4>
+                <p>Find local AI/ML meetups and events</p>
+                <a href="https://www.meetup.com/topics/ai/" target="_blank" class="resource-link">Search →</a>
+              </div>
+              <div class="resource-item">
+                <h4>Kaggle</h4>
+                <p>Compete, learn, and collaborate with data scientists</p>
+                <a href="https://www.kaggle.com/" target="_blank" class="resource-link">Join →</a>
+              </div>
+              <div class="resource-item">
+                <h4>GitHub Student Developer Pack</h4>
+                <p>Free tools for students (GitHub Pro, CI/CD, cloud credits)</p>
+                <a href="https://education.github.com/pack" target="_blank" class="resource-link">Get Pack →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Salary & Trends -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, var(--bg-elevated), transparent);" aria-labelledby="salary-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Market Insights</span>
+          <h2 id="salary-title">AI Salary Trends & Career Outlook</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- Salary Data -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Salary Benchmarks (US, 2024)</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Entry-Level (0-2 years)</h4>
+                <p>Machine Learning Engineer: $90K - $130K</p>
+                <p>Data Scientist: $85K - $120K</p>
+                <p>AI Research Intern: $60K - $90K</p>
+              </div>
+              <div class="resource-item">
+                <h4>Mid-Level (3-5 years)</h4>
+                <p>ML Engineer: $130K - $180K</p>
+                <p>Data Scientist: $120K - $160K</p>
+                <p>AI Specialist: $140K - $200K</p>
+              </div>
+              <div class="resource-item">
+                <h4>Senior/Lead (5+ years)</h4>
+                <p>Principal ML Engineer: $180K - $250K+</p>
+                <p>Head of AI/ML: $200K - $300K+</p>
+                <p>AI Director: $220K - $350K+</p>
+              </div>
+            </div>
+            <a href="https://www.levels.fyi/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">View Detailed Data →</a>
+          </article>
+
+          <!-- Growth Trends -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Industry Trends & Outlook</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Fastest Growing Roles</h4>
+                <p>AI Ethics Specialist, MLOps Engineer, Prompt Engineer, AI Product Manager</p>
+              </div>
+              <div class="resource-item">
+                <h4>Emerging Specializations</h4>
+                <p>Multimodal AI, AI Agents, Edge AI, AI for Scientific Discovery</p>
+              </div>
+              <div class="resource-item">
+                <h4>In-Demand Skills</h4>
+                <p>LLM Fine-tuning, RAG, Vector Databases, MLflow, Kubernetes, GPU Optimization</p>
+              </div>
+            </div>
+            <a href="https://www.worldeconomicforum.org/reports/the-future-of-jobs-report-2023" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Read Future of Jobs Report →</a>
+          </article>
+
+          <!-- Remote Work -->
+          <article class="card fade-in reveal" style="--i: 2;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--accent-dim), var(--secondary-dim)); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3>Remote & Hybrid Opportunities</h3>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Remote-First AI Companies</h4>
+                <p>Autonomous, Zapier, GitLab, Doist, Toptal (many AI roles)</p>
+              </div>
+              <var class="resource-item">
+                <h4>Hybrid-Friendly Tech Hubs</h4>
+                <p>San Francisco, New York, Seattle, Boston, Austin, Toronto, London, Berlin</p>
+              </div>
+              <div class="resource-item">
+                <h4>Remote Job Boards</h4>
+                <p>We Work Remotely, RemoteOK, AngelList (filter for AI/ML)</p>
+                <a href="https://weworkremotely.com/" target="_blank" class="resource-link">Find Remote →</a>
+              </div>
+            </div>
+            <a href="https://www.remote.co/remote-jobs/developer/" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Browse Remote Tech Jobs →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background: var(--bg-elevated); border-top: 1px solid var(--border); padding: 4rem 0 2rem;" role="contentinfo">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+        <div>
+          <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </span>
+            <span>AI Explorer</span>
+          </a>
+          <p style="color: var(--fg-muted); max-width: 300px; line-height: 1.7;">Find your next AI role, develop your skills, and navigate your career in artificial intelligence with our curated resources.</p>
+        </div>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Explore</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="index.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Home</a></li>
+            <li><a href="ask.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Questions & Answers</a></li>
+            <li><a href="resources.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Resources Hub</a></li>
+            <li><a href="resources-learning.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Learning Resources</a></li>
+            <li><a href="glossary.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Glossary</a></li>
+            <li><a href="timeline.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Timeline</a></li>
+            <li><a href="compare.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Compare</a></li>
+            <li><a href="about.html" style="color: var(--fg-muted); transition: color var(--transition-fast);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">About</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Job Search</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="https://www.linkedin.com/jobs/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">LinkedIn Jobs</a></li>
+            <li><a href="https://www.indeed.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Indeed</a></li>
+            <li><a href="https://ai-jobs.net/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">AI-Jobs.net</a></li>
+            <li><a href="https://remoteaijobs.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">RemoteAI Jobs</a></li>
+            <li><a href="https://mljobs.co/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">MLJobs.co</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h4 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-subtle); margin-bottom: 1.25rem;">Career Growth</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><a href="https://github.com/ashishpatel26/AI-Interview-Questions" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Interview Prep</a></li>
+            <li><a href="https://mlops.community/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">MLOps Resources</a></li>
+            <li><a href="https://towardsdatascience.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Industry Insights</a></li>
+            <li><a href="https://www.kaggle.com/" target="_blank" style="color: var(--fg-muted);" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--fg-muted)'">Practice & Compete</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+        <p class="muted" style="font-size: 0.85rem;">© 2024 AI Explorer. Built with curiosity for the AI community.</p>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="#" aria-label="Twitter" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" aria-label="GitHub" style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--bg-card); border: 1px solid var(--border); display: grid; place-items: center; color: var(--fg-muted); transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'; this.style.background='var(--accent-dim)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--fg-muted)'; this.style.background='var(--bg-card)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.93 3.51c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--fg-muted);">Made by Eyad Kelany</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+</body>
+</html>

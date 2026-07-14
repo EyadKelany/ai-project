@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Research & Papers - Latest research papers, conferences, journals, and academic resources for artificial intelligence and machine learning.">
+  <title>Research & Papers — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="resources.html" class="btn btn-outline nav-cta">← Back to Resources</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="resources.html" class="btn btn-outline">← Back to Resources</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: calc(var(--header-h) + 3rem); padding-bottom: 2rem;" aria-labelledby="page-title">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow fade-in">Academic Resources</span>
+          <h1 id="page-title" class="fade-in" style="margin: 1rem 0 1.5rem;">AI Research & Papers</h1>
+          <p class="lead fade-in" style="margin: 0 auto;">Latest research papers, conferences, journals, and academic resources for AI/ML</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paper Repositories -->
+    <section class="section" aria-labelledby="paper-repos-title">
+      <div class="container">
+        <header style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <span class="eyebrow">Paper Repositories</span>
+          <h2 id="paper-repos-title">Find & Access Research Papers</h2>
+        </header>
+
+        <div class="grid grid-3">
+          <!-- arXiv -->
+          <article class="card fade-in reveal">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--accent-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--accent);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg>
+            </div>
+            <h3>arXiv.org</h3>
+            <p>Open-access archive for e-prints in physics, mathematics, computer science, and more.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Categories</h4>
+                <p>cs.LG (Machine Learning), cs.CV (Computer Vision), cs.CL (Computation and Language), cs.AI (Artificial Intelligence), stat.ML (Machine Learning)</p>
+              </div>
+              <div class="resource-item">
+                <h4>Search Tips</h4>
+                <p>Use "cat:cs.LG" for Machine Learning papers, sort by date or relevance</p>
+              </div>
+            </div>
+            <a href="https://arxiv.org/list/cs.LG/recent" target="_blank" class="btn btn-outline" style="margin-top: 1.5rem;">Browse ML Papers →</a>
+          </article>
+
+          <!-- Papers With Code -->
+          <article class="card fade-in reveal" style="--i: 1;">
+            <div style="width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--secondary-dim); display: grid; place-items: center; margin-bottom: 1rem; color: var(--secondary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.71 11.29a1 1 0 0 0-1.42 0l-2.34 2.34a1 1 0 0 1-1.42 0l-.76-.76a4.96 4.96 0 0 0-6.93 0l-.76.76a1 1 0 0 1-1.42 0l-2.34 2.34a1 1 0 0 0 0 1.42l2.34 2.34a1 1 0 0 1 1.42 0l.76.76a4.96 4.96 0 0 0 6.93 0l.76-.76a1 1 0 0 1 1.42 0l2.34-2.34a1 1 0 0 0 0-1.42zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+            </div>
+            <h3>Papers With Code</h3>
+            <p>Machine learning papers with code implementations and evaluation tables.</p>
+            <div class="resource-list">
+              <div class="resource-item">
+                <h4>Features</h4>
+                <p>State-of-the-art leaderboards, code implementations, trends, and datasets</p>
+              </div>
+              <div class="resource-item">
+                <h4>Popular Sections</h4>
+                <p>Image Classification, Object Detection, Language Modeling, Neural Machine Translation</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+</body>
+</html>

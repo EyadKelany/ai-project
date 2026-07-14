@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Explorer for Kids - Fun games and activities to learn about Artificial Intelligence!">
+  <title>AI Games for Kids — AI Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    :root {
+      --kid-pink: #ff6b9d;
+      --kid-purple: #c44dff;
+      --kid-blue: #4d9fff;
+      --kid-green: #4dff88;
+      --kid-yellow: #ffd94d;
+      --kid-orange: #ff8c4d;
+    }
+
+    .kids-hero {
+      background: linear-gradient(135deg, rgba(255,107,157,0.1) 0%, rgba(196,77,255,0.1) 50%, rgba(77,159,255,0.1) 100%);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      border: 2px solid rgba(255,107,157,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .kids-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,107,157,0.05) 0%, transparent 50%);
+      animation: kidsFloat 10s ease-in-out infinite;
+    }
+    @keyframes kidsFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(20px, -20px) rotate(5deg); }
+    }
+    .kids-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      background: linear-gradient(135deg, var(--kid-pink), var(--kid-purple), var(--kid-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .kids-hero .emoji-big {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .game-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .game-tab {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .game-tab:hover, .game-tab.active {
+      background: linear-gradient(135deg, var(--kid-pink), var(--kid-purple));
+      border-color: transparent;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .game-container {
+      display: none;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      min-height: 500px;
+    }
+    .game-container.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    .game-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .game-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .game-header p {
+      color: var(--fg-muted);
+    }
+
+    .score-board {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .score-item {
+      background: var(--bg);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      border: 2px solid var(--border);
+      min-width: 120px;
+    }
+    .score-item .label {
+      font-size: 0.8rem;
+      color: var(--fg-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .score-item .value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--kid-pink);
+    }
+
+    /* Sorting Game */
+    .sort-game {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .sort-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 1.5rem;
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      min-height: 100px;
+    }
+    .sort-item {
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, var(--kid-blue), var(--kid-purple));
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: grab;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .sort-item:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 8px 20px rgba(77,159,255,0.3);
+    }
+    .sort-item:active {
+      cursor: grabbing;
+    }
+    .sort-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .sort-category {
+      background: var(--bg);
+      border: 3px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      min-height: 150px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .sort-category.dragover {
+      border-color: var(--kid-green);
+      background: rgba(77,255,136,0.1);
+      transform: scale(1.02);
+    }
+    .sort-category h4 {
+      margin-bottom: 0.5rem;
+      color: var(--fg);
+    }
+    .sort-category .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .sort-category .items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .sort-category .items .sort-item {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Pattern Game */
+    .pattern-game {
+      text-align: center;
+    }
+    .pattern-sequence {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .pattern-item {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--kid-purple), var(--kid-pink));
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 2.5rem;
+      animation: fadeIn 0.5s ease;
+    }
+    .pattern-item.question {
+      background: var(--bg);
+      border: 3px dashed var(--kid-yellow);
+      font-size: 2rem;
+      color: var(--kid-yellow);
+    }
+    .pattern-options {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pattern-option {
+      width: 80px;
+      height: 80px;
+      background: var(--bg);
+      border: 3px solid var(--border);
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .pattern-option:hover {
+      border-color: var(--kid-yellow);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255,217,77,0.3);
+    }
+    .pattern-option.correct {
+      border-color: var(--kid-green);
+      background: rgba(77,255,136,0.2);
+      animation: correctPulse 0.5s ease;
+    }
+    .pattern-option.wrong {
+      border-color: var(--kid-pink);
+      background: rgba(255,107,157,0.2);
+      animation: shake 0.5s ease;
+    }
+    @keyframes correctPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+
+    /* Robot Game */
+    .robot-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .robot-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      grid-template-rows: repeat(5, 60px);
+      gap: 4px;
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--border);
+    }
+    .robot-cell {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      transition: all 0.2s ease;
+    }
+    .robot-cell.robot {
+      background: linear-gradient(135deg, var(--kid-blue), var(--kid-purple));
+      border-color: transparent;
+      animation: robotPulse 1s ease-in-out infinite;
+    }
+    @keyframes robotPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(77,159,255,0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(77,159,255,0); }
+    }
+    .robot-cell.goal {
+      background: rgba(77,255,136,0.2);
+      border-color: var(--kid-green);
+    }
+    .robot-cell.wall {
+      background: rgba(255,107,157,0.3);
+      border-color: var(--kid-pink);
+    }
+    .robot-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .robot-btn {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      color: var(--fg);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .robot-btn:hover {
+      border-color: var(--kid-blue);
+      transform: translateY(-2px);
+    }
+    .robot-btn.run {
+      background: linear-gradient(135deg, var(--kid-green), #00cc6a);
+      border-color: transparent;
+      color: #003311;
+    }
+    .robot-btn.run:hover {
+      transform: translateY(-2px) scale(1.05);
+    }
+    .robot-btn.clear {
+      background: linear-gradient(135deg, var(--kid-pink), #cc3366);
+      border-color: transparent;
+      color: white;
+    }
+    .robot-code {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      min-height: 60px;
+      border: 2px dashed var(--border);
+    }
+    .robot-code:empty::before {
+      content: 'Click buttons to add instructions!';
+      color: var(--fg-subtle);
+    }
+    .code-step {
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, var(--kid-blue), var(--kid-purple));
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Quiz Game */
+    .quiz-game {
+      text-align: center;
+    }
+    .quiz-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 2px solid var(--border);
+    }
+    .quiz-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--fg);
+    }
+    .quiz-content {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .quiz-option {
+      padding: 1rem 1.5rem;
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--fg);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .quiz-option:hover {
+      border-color: var(--kid-purple);
+      transform: translateY(-3px);
+    }
+    .quiz-option.correct {
+      border-color: var(--kid-green);
+      background: rgba(77,255,136,0.2);
+    }
+    .quiz-option.wrong {
+      border-color: var(--kid-pink);
+      background: rgba(255,107,157,0.2);
+    }
+
+    /* Neural Network Game */
+    .nn-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nn-canvas {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 2px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .nn-layer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0 3rem;
+    }
+    .nn-node {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 3px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+    .nn-node:hover {
+      transform: scale(1.1);
+      border-color: var(--kid-purple);
+    }
+    .nn-node.active {
+      background: linear-gradient(135deg, var(--kid-purple), var(--kid-pink));
+      border-color: transparent;
+      animation: nodeGlow 1s ease-in-out infinite;
+    }
+    @keyframes nodeGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196,77,255,0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(196,77,255,0); }
+    }
+    .nn-label {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--fg-subtle);
+      margin-top: 0.5rem;
+    }
+
+    /* Result Modal */
+    .result-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(6,10,18,0.9);
+      z-index: 1000;
+      place-items: center;
+      animation: fadeIn 0.3s ease;
+    }
+    .result-modal.show {
+      display: grid;
+    }
+    .result-content {
+      background: var(--bg-card);
+      border: 2px solid var(--kid-green);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      text-align: center;
+      max-width: 400px;
+      animation: bounceIn 0.5s ease;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .result-content .emoji {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+    .result-content h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--kid-green);
+    }
+
+    /* Fun Facts */
+    .fun-fact {
+      background: linear-gradient(135deg, rgba(255,217,77,0.1), rgba(255,140,77,0.1));
+      border: 2px solid rgba(255,217,77,0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .fun-fact .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .fun-fact p {
+      color: var(--fg-muted);
+      font-size: 0.95rem;
+    }
+    .fun-fact strong {
+      color: var(--kid-yellow);
+    }
+
+    @media (max-width: 600px) {
+      .robot-grid {
+        grid-template-columns: repeat(5, 45px);
+        grid-template-rows: repeat(5, 45px);
+      }
+      .pattern-item, .pattern-option {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+    }
+
+    /* Memory Match Game */
+    .memory-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .memory-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      max-width: 450px;
+      width: 100%;
+    }
+    .memory-card {
+      aspect-ratio: 1;
+      perspective: 600px;
+      cursor: pointer;
+    }
+    .memory-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: var(--radius-md);
+    }
+    .memory-card.flipped .memory-card-inner {
+      transform: rotateY(180deg);
+    }
+    .memory-card.matched .memory-card-inner {
+      transform: rotateY(180deg);
+    }
+    .memory-card-front, .memory-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius-md);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+    }
+    .memory-card-front {
+      background: linear-gradient(135deg, var(--kid-purple), var(--kid-pink));
+      border: 2px solid rgba(196, 77, 255, 0.3);
+    }
+    .memory-card-front::after {
+      content: '?';
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.6);
+    }
+    .memory-card-back {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      transform: rotateY(180deg);
+    }
+    .memory-card.matched .memory-card-back {
+      border-color: var(--kid-green);
+      background: rgba(77, 255, 136, 0.1);
+      animation: matchPop 0.4s ease;
+    }
+    .memory-card:hover:not(.flipped):not(.matched) .memory-card-inner {
+      transform: rotateY(8deg);
+    }
+    @keyframes matchPop {
+      0%, 100% { transform: rotateY(180deg) scale(1); }
+      50% { transform: rotateY(180deg) scale(1.1); }
+    }
+
+    /* Reaction Game */
+    .reaction-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .reaction-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .reaction-area {
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-card) 100%);
+      border: 3px solid var(--border);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .reaction-area:hover {
+      border-color: var(--kid-blue);
+    }
+    .reaction-area.waiting {
+      background: linear-gradient(135deg, #cc3333, #ff4444);
+      border-color: #ff6666;
+      animation: reactionPulse 1s ease-in-out infinite;
+    }
+    .reaction-area.ready {
+      background: linear-gradient(135deg, #22aa44, #44dd66);
+      border-color: #66ff88;
+      cursor: pointer;
+    }
+    .reaction-area.result {
+      border-color: var(--kid-yellow);
+    }
+    @keyframes reactionPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    .reaction-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--fg);
+      text-align: center;
+      padding: 1rem;
+    }
+    .reaction-area.waiting .reaction-text {
+      color: white;
+      font-size: 1.8rem;
+    }
+    .reaction-area.ready .reaction-text {
+      color: white;
+      font-size: 2rem;
+    }
+
+    /* Floating decorations */
+    .kids-deco {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      font-size: 2rem;
+      opacity: 0.15;
+      animation: floatDeco 20s ease-in-out infinite;
+    }
+    .kids-deco:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+    .kids-deco:nth-child(2) { top: 30%; right: 8%; animation-delay: -5s; font-size: 1.5rem; }
+    .kids-deco:nth-child(3) { bottom: 20%; left: 10%; animation-delay: -10s; }
+    .kids-deco:nth-child(4) { bottom: 40%; right: 5%; animation-delay: -15s; font-size: 2.5rem; }
+    .kids-deco:nth-child(5) { top: 60%; left: 3%; animation-delay: -7s; font-size: 1.8rem; }
+    @keyframes floatDeco {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(15px, -20px) rotate(10deg); }
+      50% { transform: translate(-10px, 15px) rotate(-5deg); }
+      75% { transform: translate(20px, 10px) rotate(8deg); }
+    }
+
+    /* Enhanced game tabs */
+    .game-tab {
+      position: relative;
+      overflow: hidden;
+    }
+    .game-tab::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .game-tab:hover::before {
+      left: 100%;
+    }
+
+    /* Game container entrance animation */
+    .game-container {
+      display: none;
+    }
+    .game-container.active {
+      display: block;
+      animation: gameSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes gameSlideIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Score items glow effect */
+    .score-item {
+      transition: all 0.3s ease;
+    }
+    .score-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    .score-item .value {
+      text-shadow: 0 0 20px currentColor;
+    }
+
+    /* Fun fact enhanced */
+    .fun-fact {
+      animation: fadeIn 0.5s ease;
+      transition: all 0.3s ease;
+    }
+    .fun-fact:hover {
+      transform: translateX(5px);
+      border-color: var(--kid-yellow);
+    }
+
+    /* Modal confetti effect */
+    .result-content {
+      position: relative;
+      overflow: hidden;
+    }
+    .result-content::before {
+      content: '🎉 🌟 ⭐ 🎊 🏆';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      letter-spacing: 0.5rem;
+      animation: confettiFall 2s ease-in-out infinite;
+      opacity: 0.3;
+    }
+    @keyframes confettiFall {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+/* Tic-Tac-Toe */
+.xo-game { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.xo-difficulty { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+.xo-diff-btn { padding: 0.6rem 1.25rem; background: var(--bg); border: 2px solid var(--border); border-radius: 100px; font-weight: 600; font-size: 0.9rem; color: var(--fg-muted); cursor: pointer; transition: all 0.3s ease; }
+.xo-diff-btn:hover { border-color: var(--kid-purple); color: var(--fg); }
+.xo-diff-btn.active { background: linear-gradient(135deg, var(--kid-purple), var(--kid-pink)); border-color: transparent; color: white; }
+.xo-status { font-size: 1.3rem; font-weight: 700; color: var(--fg); padding: 0.75rem 1.5rem; background: var(--bg); border-radius: var(--radius-md); border: 2px solid var(--border); }
+.xo-wins { font-size: 0.9rem; color: var(--fg-subtle); }
+.xo-wins span { color: var(--kid-green); font-weight: 700; }
+.xo-board { display: grid; grid-template-columns: repeat(3, 100px); gap: 8px; }
+.xo-cell { width: 100px; height: 100px; background: var(--bg); border: 2px solid var(--border); border-radius: var(--radius-md); display: grid; place-items: center; font-size: 2.5rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; }
+.xo-cell:hover { border-color: var(--kid-purple); transform: scale(1.05); }
+.xo-cell.x { color: var(--kid-pink); text-shadow: 0 0 15px rgba(255,107,157,0.5); }
+.xo-cell.o { color: var(--kid-blue); text-shadow: 0 0 15px rgba(77,159,255,0.5); }
+.xo-cell.win { background: rgba(77,255,136,0.2); border-color: var(--kid-green); animation: winPulse 0.5s ease; }
+    @keyframes winPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    /* Simon Says */
+    .simon-game { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .simon-status { font-size: 1.2rem; font-weight: 600; color: var(--fg); padding: 0.75rem 1.5rem; background: var(--bg); border-radius: var(--radius-md); border: 2px solid var(--border); }
+    .simon-score { font-size: 1.3rem; font-weight: 700; color: var(--kid-yellow); }
+    .simon-pad { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 300px; width: 100%; }
+    .simon-btn { aspect-ratio: 1; border-radius: var(--radius-lg); border: 3px solid transparent; cursor: pointer; transition: all 0.15s ease; opacity: 0.6; }
+    .simon-btn:hover { transform: scale(1.03); }
+    .simon-btn.active, .simon-btn.lit { opacity: 1; transform: scale(1.08); filter: brightness(1.4); box-shadow: 0 0 30px currentColor; }
+    .simon-green { background: #22c55e; color: #22c55e; }
+    .simon-red { background: #ef4444; color: #ef4444; }
+    .simon-yellow { background: #eab308; color: #eab308; }
+    .simon-blue { background: #3b82f6; color: #3b82f6; }
+
+    /* Subway Runner */
+    .subway-game { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .subway-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    #subway-canvas { background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border: 2px solid var(--border); border-radius: var(--radius-lg); max-width: 100%; }
+    .subway-controls { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+
+    /* Whack-a-Mole */
+    .mole-game { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .mole-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .mole-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 360px; width: 100%; }
+    .mole-hole { aspect-ratio: 1; background: linear-gradient(135deg, #5d4037, #3e2723); border-radius: 50%; display: grid; place-items: center; cursor: pointer; transition: all 0.2s ease; border: 3px solid #795548; position: relative; overflow: hidden; }
+    .mole-hole:hover { transform: scale(1.05); }
+    .mole-hole .mole { font-size: 2.5rem; transition: transform 0.2s ease; transform: translateY(70%); }
+    .mole-hole.active .mole { transform: translateY(0); animation: molePop 0.3s ease; }
+    .mole-hole.whacked .mole { transform: scale(0.5) rotate(20deg); }
+    @keyframes molePop { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+    /* Snake */
+    .snake-game { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .snake-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    #snake-canvas { background: #111; border: 2px solid var(--border); border-radius: var(--radius-lg); }
+    .snake-controls { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .snake-controls > div { display: flex; gap: 0.5rem; }
+
+    /* Flappy Bird */
+    .flappy-game { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .flappy-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    #flappy-canvas { background: linear-gradient(180deg, #87CEEB 0%, #E0F6FF 100%); border: 2px solid var(--border); border-radius: var(--radius-lg); max-width: 100%; }
+
+    /* Mobile responsive for new games */
+    @media (max-width: 480px) {
+      .xo-cell { width: 80px; height: 80px; font-size: 2rem; }
+      .xo-board { grid-template-columns: repeat(3, 80px); }
+      .simon-pad { max-width: 250px; }
+      #subway-canvas, #flappy-canvas { width: 100%; height: auto; }
+      #snake-canvas { width: 260px; height: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+  
+  <!-- Floating decorations for kids page -->
+  <div class="kids-deco" aria-hidden="true">🤖</div>
+  <div class="kids-deco" aria-hidden="true">🧠</div>
+  <div class="kids-deco" aria-hidden="true">⚡</div>
+  <div class="kids-deco" aria-hidden="true">🎮</div>
+  <div class="kids-deco" aria-hidden="true">🌟</div>
+
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="AI Explorer Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </span>
+        <span>AI Explorer</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link active" aria-current="page">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="ask.html" class="btn btn-primary nav-cta">Ask AI</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-drawer"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu">
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="ask.html" class="nav-link">Questions</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="kids.html" class="nav-link active" aria-current="page">Kids</a>
+        <a href="glossary.html" class="nav-link">Glossary</a>
+        <a href="timeline.html" class="nav-link">Timeline</a>
+        <a href="compare.html" class="nav-link">Compare</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <a href="ask.html" class="btn btn-primary">Ask AI</a>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top: calc(var(--header-h) + 2rem);">
+    <div class="container">
+
+      <!-- Kids Hero -->
+      <div class="kids-hero">
+        <span class="emoji-big">🤖</span>
+        <h1>AI Games for Kids!</h1>
+        <p class="lead" style="margin: 0 auto 1.5rem; max-width: 500px;">
+          Learn how Artificial Intelligence works by playing fun games!
+        </p>
+      </div>
+
+      <!-- Score Board -->
+      <div class="score-board">
+        <div class="score-item">
+          <div class="label">Stars Earned</div>
+          <div class="value" id="total-stars">0</div>
+        </div>
+        <div class="score-item">
+          <div class="label">Games Played</div>
+          <div class="value" id="games-played">0</div>
+        </div>
+      </div>
+
+      <!-- Game Categories -->
+      <div class="game-category">
+        <h2 class="category-title"><span class="cat-icon">🧠</span> Learn AI Concepts</h2>
+        <p class="category-desc">These games teach you how AI works!</p>
+        <div class="game-grid">
+          <div class="game-card" onclick="openGame('sorting')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #ff6b9d, #c44dff);">🎮</div>
+            <h3>Sort It!</h3>
+            <p>Drag items to correct categories — like how AI classifies data!</p>
+            <span class="game-card-tag">Classification</span>
+          </div>
+          <div class="game-card" onclick="openGame('pattern')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #4d9fff, #22d3ee);">🔍</div>
+            <h3>Pattern Detective</h3>
+            <p>Find the pattern and pick the missing piece!</p>
+            <span class="game-card-tag">Pattern Recognition</span>
+          </div>
+          <div class="game-card" onclick="openGame('network')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #c44dff, #6366f1);">🧬</div>
+            <h3>Build a Network</h3>
+            <p>Connect nodes to see how neural networks work!</p>
+            <span class="game-card-tag">Neural Networks</span>
+          </div>
+          <div class="game-card" onclick="openGame('robot')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #22c55e, #06b6d4);">🤖</div>
+            <h3>Code the Robot</h3>
+            <p>Give instructions to guide a robot to the goal!</p>
+            <span class="game-card-tag">Programming</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-category">
+        <h2 class="category-title"><span class="cat-icon">🎯</span> Challenge Games</h2>
+        <p class="category-desc">Test your skills against AI!</p>
+        <div class="game-grid">
+          <div class="game-card" onclick="openGame('xo')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #f472b6, #ec4899);">❌</div>
+            <h3>Tic-Tac-Toe</h3>
+            <p>Play against AI with Easy, Medium, or Hard difficulty!</p>
+            <span class="game-card-tag">Strategy</span>
+          </div>
+          <div class="game-card" onclick="openGame('simon')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🎵</div>
+            <h3>Simon Says</h3>
+            <p>Watch the pattern and repeat it! How far can you go?</p>
+            <span class="game-card-tag">Memory</span>
+          </div>
+          <div class="game-card" onclick="openGame('memory')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #a78bfa, #8b5cf6);">🃏</div>
+            <h3>Memory Match</h3>
+            <p>Find all matching pairs! Test your memory power!</p>
+            <span class="game-card-tag">Memory</span>
+          </div>
+          <div class="game-card" onclick="openGame('quiz')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #34d399, #10b981);">🧠</div>
+            <h3>AI or Human?</h3>
+            <p>Can you guess if it was made by AI or a human?</p>
+            <span class="game-card-tag">Critical Thinking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-category">
+        <h2 class="category-title"><span class="cat-icon">⚡</span> Arcade Games</h2>
+        <p class="category-desc">Fast-paced fun games!</p>
+        <div class="game-grid">
+          <div class="game-card" onclick="openGame('reaction')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #ef4444, #f97316);">⚡</div>
+            <h3>Reaction Time</h3>
+            <p>How fast can you click when the screen changes?</p>
+            <span class="game-card-tag">Speed</span>
+          </div>
+          <div class="game-card" onclick="openGame('subway')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">🏃</div>
+            <h3>Subway Runner</h3>
+            <p>Dodge obstacles! Use arrow keys to jump and move!</p>
+            <span class="game-card-tag">Reflexes</span>
+          </div>
+          <div class="game-card" onclick="openGame('flappy')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #fbbf24, #22d3ee);">🐦</div>
+            <h3>Flappy Bird</h3>
+            <p>Click to fly! How far can you go without crashing?</p>
+            <span class="game-card-tag">Timing</span>
+          </div>
+          <div class="game-card" onclick="openGame('snake')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">🐍</div>
+            <h3>Snake</h3>
+            <p>Grow the snake by eating food! Don't hit walls!</p>
+            <span class="game-card-tag">Strategy</span>
+          </div>
+          <div class="game-card" onclick="openGame('mole')">
+            <div class="game-card-icon" style="background: linear-gradient(135deg, #a16207, #ca8a04);">🔨</div>
+            <h3>Whack-a-Mole</h3>
+            <p>Click the moles before they hide! 30 seconds!</p>
+            <span class="game-card-tag">Speed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Play Area (shown when a game is selected) -->
+      <div class="game-play-area" id="game-play-area" style="display: none;">
+        <button class="back-to-games" onclick="closeGame()">← Back to Games</button>
+
+      <!-- Game 1: Sorting Game -->
+      <div class="game-container" id="game-sorting">
+        <div class="game-header">
+          <h2>🎮 Sort It Like AI!</h2>
+          <p>Drag items to the correct category — just like how AI learns to classify things!</p>
+        </div>
+        <div class="sort-game">
+          <div class="sort-items" id="sort-items"></div>
+          <div class="sort-categories" id="sort-categories"></div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" onclick="resetSortingGame()">🔄 New Round</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI learns to sort things by looking at thousands of examples. Like showing an AI many pictures of cats and dogs until it can tell them apart!</p>
+        </div>
+      </div>
+
+      <!-- Game 2: Pattern Detective -->
+      <div class="game-container" id="game-pattern">
+        <div class="game-header">
+          <h2>🔍 Pattern Detective</h2>
+          <p>Find the pattern and pick the missing piece — this is how AI learns!</p>
+        </div>
+        <div class="pattern-game">
+          <div class="pattern-sequence" id="pattern-sequence"></div>
+          <p style="margin-bottom: 1rem; color: var(--fg-muted);">What comes next? Click the answer!</p>
+          <div class="pattern-options" id="pattern-options"></div>
+          <div id="pattern-feedback" style="margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600;"></div>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button class="robot-btn run" onclick="newPatternRound()">🔄 New Pattern</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI is really good at finding patterns in data. It looks at millions of examples to find similarities, just like you're doing now!</p>
+        </div>
+      </div>
+
+      <!-- Game 3: Code the Robot -->
+      <div class="game-container" id="game-robot">
+        <div class="game-header">
+          <h2>🤖 Code the Robot</h2>
+          <p>Tell the robot how to reach the star! Add instructions and press Run.</p>
+        </div>
+        <div class="robot-game">
+          <div class="robot-grid" id="robot-grid"></div>
+          <div>
+            <p style="margin-bottom: 0.5rem; color: var(--fg-muted); font-weight: 600;">Your Instructions:</p>
+            <div class="robot-code" id="robot-code"></div>
+          </div>
+          <div class="robot-controls">
+            <button class="robot-btn" onclick="addRobotStep('up')">⬆️ Up</button>
+            <button class="robot-btn" onclick="addRobotStep('down')">⬇️ Down</button>
+            <button class="robot-btn" onclick="addRobotStep('left')">⬅️ Left</button>
+            <button class="robot-btn" onclick="addRobotStep('right')">➡️ Right</button>
+            <button class="robot-btn run" onclick="runRobot()">▶️ Run</button>
+            <button class="robot-btn clear" onclick="clearRobot()">🗑️ Clear</button>
+          </div>
+          <div id="robot-feedback" style="font-size: 1.1rem; font-weight: 600;"></div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> When we program AI, we give it instructions and goals. AI then figures out the best way to reach the goal!</p>
+        </div>
+      </div>
+
+      <!-- Game 4: AI or Human Quiz -->
+      <div class="game-container" id="game-quiz">
+        <div class="game-header">
+          <h2>🧠 AI or Human?</h2>
+          <p>Can you guess if this was made by AI or a human?</p>
+        </div>
+        <div class="quiz-game">
+          <div class="quiz-card" id="quiz-card"></div>
+          <div id="quiz-feedback" style="font-size: 1.1rem; font-weight: 600; margin-top: 1rem;"></div>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button class="robot-btn run" onclick="newQuizQuestion()">🔄 Next Question</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI can now write stories, draw pictures, and even make music! But it learned from looking at millions of things humans made!</p>
+        </div>
+      </div>
+
+      <!-- Game 5: Neural Network Builder -->
+      <div class="game-container" id="game-network">
+        <div class="game-header">
+          <h2>🧬 Build a Neural Network</h2>
+          <p>Connect the layers to help the AI learn! Click nodes to activate them.</p>
+        </div>
+        <div class="nn-game">
+          <p style="color: var(--fg-muted); margin-bottom: 1rem;">Click the input nodes (left), then watch signals travel to the output!</p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <div>
+              <div class="nn-layer" id="nn-input"></div>
+              <div class="nn-label">Input Layer<br>(What AI sees)</div>
+            </div>
+            <div style="font-size: 2rem; color: var(--fg-subtle);">→</div>
+            <div>
+              <div class="nn-layer" id="nn-hidden"></div>
+              <div class="nn-label">Hidden Layer<br>(AI thinks here)</div>
+            </div>
+            <div style="font-size: 2rem; color: var(--fg-subtle);">→</div>
+            <div>
+              <div class="nn-layer" id="nn-output"></div>
+              <div class="nn-label">Output Layer<br>(AI's answer)</div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 2rem;">
+            <button class="robot-btn run" onclick="activateNetwork()">⚡ Send Signal!</button>
+            <button class="robot-btn clear" onclick="resetNetwork()">🔄 Reset</button>
+          </div>
+          <div id="nn-feedback" style="margin-top: 1rem; font-size: 1.1rem; font-weight: 600;"></div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> Neural networks are inspired by your brain! They have layers of "neurons" that pass signals to each other!</p>
+        </div>
+      </div>
+
+      <!-- Game 6: Memory Match -->
+      <div class="game-container" id="game-memory">
+        <div class="game-header">
+          <h2>🃏 Memory Match</h2>
+          <p>Find all the matching pairs! AI uses memory like this to recognize patterns.</p>
+        </div>
+        <div class="memory-game">
+          <div class="memory-stats">
+            <div class="score-item"><div class="label">Moves</div><div class="value" id="memory-moves">0</div></div>
+            <div class="score-item"><div class="label">Pairs Found</div><div class="value" id="memory-pairs">0/8</div></div>
+            <div class="score-item"><div class="label">Time</div><div class="value" id="memory-time">0s</div></div>
+          </div>
+          <div class="memory-grid" id="memory-grid"></div>
+          <div id="memory-feedback" style="text-align: center; margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;"></div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" onclick="initMemoryGame()">🔄 New Game</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI uses "memory" to store and recall patterns. Transformers have "attention" that helps them remember important information!</p>
+        </div>
+      </div>
+
+      <!-- Game 7: Reaction Time -->
+      <div class="game-container" id="game-reaction">
+        <div class="game-header">
+          <h2>⚡ Lightning Reaction</h2>
+          <p>How fast can you react? Click as soon as the screen changes color!</p>
+        </div>
+        <div class="reaction-game">
+          <div class="reaction-stats">
+            <div class="score-item"><div class="label">Best Time</div><div class="value" id="reaction-best">---</div></div>
+            <div class="score-item"><div class="label">Average</div><div class="value" id="reaction-avg">---</div></div>
+            <div class="score-item"><div class="label">Attempts</div><div class="value" id="reaction-count">0</div></div>
+          </div>
+          <div class="reaction-area" id="reaction-area" onclick="handleReactionClick()">
+            <div class="reaction-text" id="reaction-text">Click to Start!</div>
+          </div>
+          <div id="reaction-feedback" style="text-align: center; margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;"></div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI processes information in milliseconds! Self-driving cars use AI to react to road conditions in less than 0.1 seconds!</p>
+        </div>
+      </div>
+
+      <!-- Game 8: Tic-Tac-Toe (XO) -->
+      <div class="game-container" id="game-xo">
+        <div class="game-header">
+          <h2>❌ Tic-Tac-Toe</h2>
+          <p>Play against the AI! Choose your difficulty level.</p>
+        </div>
+        <div class="xo-game">
+          <div class="xo-difficulty" id="xo-difficulty">
+            <button class="xo-diff-btn active" data-diff="easy" onclick="setXODiff('easy', this)">😊 Easy</button>
+            <button class="xo-diff-btn" data-diff="medium" onclick="setXODiff('medium', this)">🤔 Medium</button>
+            <button class="xo-diff-btn" data-diff="hard" onclick="setXODiff('hard', this)">🤖 Hard</button>
+          </div>
+          <div class="xo-status" id="xo-status">Your turn (X)</div>
+          <div class="xo-board" id="xo-board"></div>
+          <div class="xo-wins" id="xo-wins">Wins: <span id="xo-win-count">0</span> | Losses: <span id="xo-loss-count">0</span></div>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button class="robot-btn run" onclick="initXOGame()">🔄 New Game</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI uses the "minimax" algorithm to look at all possible moves. On Easy, AI makes random moves. On Hard, it plays perfectly!</p>
+        </div>
+      </div>
+
+      <!-- Game 9: Simon Says -->
+      <div class="game-container" id="game-simon">
+        <div class="game-header">
+          <h2>🎵 Simon Says</h2>
+          <p>Watch the pattern and repeat it! How long can you remember?</p>
+        </div>
+        <div class="simon-game">
+          <div class="simon-status" id="simon-status">Watch the pattern!</div>
+          <div class="simon-score">Level: <span id="simon-level">0</span></div>
+          <div class="simon-pad">
+            <button class="simon-btn simon-green" data-color="green" onclick="simonClick('green')"></button>
+            <button class="simon-btn simon-red" data-color="red" onclick="simonClick('red')"></button>
+            <button class="simon-btn simon-yellow" data-color="yellow" onclick="simonClick('yellow')"></button>
+            <button class="simon-btn simon-blue" data-color="blue" onclick="simonClick('blue')"></button>
+          </div>
+          <div style="text-align: center; margin-top: 1.5rem;">
+            <button class="robot-btn run" id="simon-start" onclick="startSimon()">▶️ Start</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> Simon uses pattern recognition! Recurrent Neural Networks (RNNs) are great at remembering patterns in order.</p>
+        </div>
+      </div>
+
+      <!-- Game 10: Subway Runner -->
+      <div class="game-container" id="game-subway">
+        <div class="game-header">
+          <h2>🏃 Subway Runner</h2>
+          <p>Dodge the obstacles! Use arrow keys or buttons to move and jump.</p>
+        </div>
+        <div class="subway-game">
+          <div class="subway-stats">
+            <div class="score-item"><div class="label">Score</div><div class="value" id="subway-score">0</div></div>
+            <div class="score-item"><div class="label">High Score</div><div class="value" id="subway-high">0</div></div>
+          </div>
+          <canvas id="subway-canvas" width="400" height="250"></canvas>
+          <div class="subway-controls">
+            <button class="robot-btn" onclick="subwayMove('left')">⬅️</button>
+            <button class="robot-btn" onclick="subwayJump()">⬆️ Jump</button>
+            <button class="robot-btn" onclick="subwayMove('right')">➡️</button>
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" id="subway-start" onclick="startSubway()">▶️ Start</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI in games learns by trying millions of times! Reinforcement Learning helps AI figure out the best moves!</p>
+        </div>
+      </div>
+
+      <!-- Game 11: Whack-a-Mole -->
+      <div class="game-container" id="game-mole">
+        <div class="game-header">
+          <h2>🔨 Whack-a-Mole</h2>
+          <p>Click the moles before they hide! How many can you catch in 30 seconds?</p>
+        </div>
+        <div class="mole-game">
+          <div class="mole-stats">
+            <div class="score-item"><div class="label">Score</div><div class="value" id="mole-score">0</div></div>
+            <div class="score-item"><div class="label">Time</div><div class="value" id="mole-time">30s</div></div>
+          </div>
+          <div class="mole-grid" id="mole-grid"></div>
+          <div id="mole-feedback" style="text-align: center; margin-top: 1rem; font-size: 1.1rem; font-weight: 600;"></div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" id="mole-start" onclick="startMoleGame()">▶️ Start</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> Object detection AI can find and identify objects in images instantly — like finding all the moles!</p>
+        </div>
+      </div>
+
+      <!-- Game 12: Snake -->
+      <div class="game-container" id="game-snake">
+        <div class="game-header">
+          <h2>🐍 Snake</h2>
+          <p>Grow the snake by eating food! Don't hit the walls or yourself!</p>
+        </div>
+        <div class="snake-game">
+          <div class="snake-stats">
+            <div class="score-item"><div class="label">Score</div><div class="value" id="snake-score">0</div></div>
+            <div class="score-item"><div class="label">Length</div><div class="value" id="snake-length">3</div></div>
+          </div>
+          <canvas id="snake-canvas" width="300" height="300"></canvas>
+          <div class="snake-controls">
+            <button class="robot-btn" onclick="snakeDirection('up')">⬆️</button>
+            <div>
+              <button class="robot-btn" onclick="snakeDirection('left')">⬅️</button>
+              <button class="robot-btn" onclick="snakeDirection('right')">➡️</button>
+            </div>
+            <button class="robot-btn" onclick="snakeDirection('down')">⬇️</button>
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" id="snake-start" onclick="startSnake()">▶️ Start</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI can learn to play Snake perfectly! It uses algorithms to find the shortest path to food!</p>
+        </div>
+      </div>
+
+      <!-- Game 13: Flappy Bird -->
+      <div class="game-container" id="game-flappy">
+        <div class="game-header">
+          <h2>🐦 Flappy Bird</h2>
+          <p>Click or press Space to fly! How far can you go?</p>
+        </div>
+        <div class="flappy-game">
+          <div class="flappy-stats">
+            <div class="score-item"><div class="label">Score</div><div class="value" id="flappy-score">0</div></div>
+            <div class="score-item"><div class="label">Best</div><div class="value" id="flappy-best">0</div></div>
+          </div>
+          <canvas id="flappy-canvas" width="400" height="300"></canvas>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" id="flappy-start" onclick="startFlappy()">▶️ Start</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI can learn to play Flappy Bird using Reinforcement Learning! It tries millions of times and learns from each attempt!</p>
+        </div>
+      </div>
+
+      </div><!-- end game-play-area -->
+        <div class="game-header">
+          <h2>🎮 Sort It Like AI!</h2>
+          <p>Drag items to the correct category — just like how AI learns to classify things!</p>
+        </div>
+        <div class="sort-game">
+          <div class="sort-items" id="sort-items">
+            <!-- Items will be added by JS -->
+          </div>
+          <div class="sort-categories" id="sort-categories">
+            <!-- Categories will be added by JS -->
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button class="robot-btn run" onclick="resetSortingGame()">🔄 New Round</button>
+          </div>
+        </div>
+        <div class="fun-fact">
+          <span class="icon">💡</span>
+          <p><strong>How AI does this:</strong> AI learns to sort things by looking at thousands of examples. Like showing an AI many pictures of cats and dogs until it can tell them apart!</p>
+        </div>
+      </div>
+
+      <!-- Game 1: Sorting Game -->
+      <div class="game-container" id="game-sorting">
+
+  <!-- Result Modal -->
+  <div class="result-modal" id="result-modal">
+    <div class="result-content">
+      <div class="emoji" id="result-emoji">⭐</div>
+      <h3 id="result-title">Amazing!</h3>
+      <p id="result-message" style="color: var(--fg-muted); margin-bottom: 1.5rem;"></p>
+      <button class="robot-btn run" onclick="closeModal()">Continue Playing!</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div style="text-align: center; padding: 2rem 0;">
+        <p style="color: var(--fg-subtle); font-size: 0.9rem;">AI Explorer for Kids — Learning AI is fun! 🤖</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/lion-robot.js"></script>
+  <script>
+    // ===== GAME STATE =====
+    let totalStars = 0;
+    let gamesPlayed = 0;
+
+    // ===== GAME CARD NAVIGATION =====
+    function openGame(gameName) {
+      document.getElementById('game-play-area').style.display = 'block';
+      document.querySelectorAll('.game-category').forEach(c => c.style.display = 'none');
+      document.querySelectorAll('.game-container').forEach(g => g.classList.remove('active'));
+      const game = document.getElementById('game-' + gameName);
+      if (game) {
+        game.classList.add('active');
+        game.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      gamesPlayed++;
+      document.getElementById('games-played').textContent = gamesPlayed;
+      // Initialize specific games
+      if (gameName === 'sorting') initSortingGame();
+      if (gameName === 'pattern') newPatternRound();
+      if (gameName === 'robot') initRobotGame();
+      if (gameName === 'quiz') newQuizQuestion();
+      if (gameName === 'network') initNetwork();
+      if (gameName === 'memory') initMemoryGame();
+      if (gameName === 'xo') initXOGame();
+      if (gameName === 'simon') {}
+      if (gameName === 'subway') {}
+      if (gameName === 'mole') initMoleGrid();
+      if (gameName === 'snake') {}
+      if (gameName === 'flappy') {}
+      if (gameName === 'reaction') {}
+    }
+    function closeGame() {
+      document.querySelectorAll('.game-container').forEach(g => g.classList.remove('active'));
+      document.querySelectorAll('.game-category').forEach(c => c.style.display = '');
+      document.getElementById('game-play-area').style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ===== SORTING GAME =====
+    const sortData = {
+      animals: {
+        icon: '🐾',
+        name: 'Animals',
+        items: ['🐱 Cat', '🐕 Dog', '🐦 Bird', '🐟 Fish', '🐰 Rabbit']
+      },
+      food: {
+        icon: '🍕',
+        name: 'Food',
+        items: ['🍎 Apple', '🍕 Pizza', '🍦 Ice Cream', '🥕 Carrot', '🍞 Bread']
+      },
+      colors: {
+        icon: '🌈',
+        name: 'Colors',
+        items: ['🔴 Red', '🔵 Blue', '🟢 Green', '🟡 Yellow', '🟣 Purple']
+      }
+    };
+
+    function initSortingGame() {
+      const categories = ['animals', 'food', 'colors'];
+      const shuffled = categories.sort(() => Math.random() - 0.5).slice(0, 2);
+      
+      const itemsContainer = document.getElementById('sort-items');
+      const categoriesContainer = document.getElementById('sort-categories');
+      
+      itemsContainer.innerHTML = '';
+      categoriesContainer.innerHTML = '';
+      
+      let allItems = [];
+      shuffled.forEach(cat => {
+        const data = sortData[cat];
+        const catDiv = document.createElement('div');
+        catDiv.className = 'sort-category';
+        catDiv.dataset.category = cat;
+        catDiv.innerHTML = `
+          <div class="icon">${data.icon}</div>
+          <h4>${data.name}</h4>
+          <div class="items"></div>
+        `;
+        categoriesContainer.appendChild(catDiv);
+        
+        // Add drag events
+        catDiv.addEventListener('dragover', e => {
+          e.preventDefault();
+          catDiv.classList.add('dragover');
+        });
+        catDiv.addEventListener('dragleave', () => catDiv.classList.remove('dragover'));
+        catDiv.addEventListener('drop', e => {
+          e.preventDefault();
+          catDiv.classList.remove('dragover');
+          const itemText = e.dataTransfer.getData('text');
+          const itemCategory = e.dataTransfer.getData('category');
+          
+          if (itemCategory === cat) {
+            const item = document.createElement('div');
+            item.className = 'sort-item';
+            item.textContent = itemText;
+            item.style.background = `linear-gradient(135deg, var(--kid-green), #00cc6a)`;
+            catDiv.querySelector('.items').appendChild(item);
+            item.remove();
+            item.style.fontSize = '0.9rem';
+            item.style.padding = '0.5rem 1rem';
+            catDiv.querySelector('.items').appendChild(item);
+            addStar();
+          } else {
+            showFeedback('robot-feedback', '❌ Try again! That doesn\'t belong here.', 'var(--kid-pink)');
+          }
+        });
+        
+        // Add items
+        const items = [...data.items].sort(() => Math.random() - 0.5).slice(0, 3);
+        items.forEach(itemText => {
+          const item = document.createElement('div');
+          item.className = 'sort-item';
+          item.textContent = itemText;
+          item.draggable = true;
+          item.dataset.category = cat;
+          item.addEventListener('dragstart', e => {
+            e.dataTransfer.setData('text', itemText);
+            e.dataTransfer.setData('category', cat);
+          });
+          itemsContainer.appendChild(item);
+        });
+      });
+    }
+
+    // ===== PATTERN GAME =====
+    const patterns = [
+      { sequence: ['🐱', '🐶', '🐱', '🐶', '🐱'], answer: '🐶', options: ['🐶', '🐱', '🐰'] },
+      { sequence: ['🔴', '🔵', '🔴', '🔵', '🔴'], answer: '🔵', options: ['🔴', '🔵', '🟢'] },
+      { sequence: ['⭐', '⭐', '🌙', '⭐', '⭐'], answer: '🌙', options: ['⭐', '🌙', '☀️'] },
+      { sequence: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣'], answer: '6️⃣', options: ['5️⃣', '6️⃣', '7️⃣'] },
+      { sequence: ['🎵', '🎵', '🎶', '🎵', '🎵'], answer: '🎶', options: ['🎵', '🎶', '🎸'] },
+      { sequence: ['🍎', '🍊', '🍋', '🍎', '🍊'], answer: '🍋', options: ['🍎', '🍊', '🍋'] },
+    ];
+    let currentPattern = null;
+
+    function newPatternRound() {
+      currentPattern = patterns[Math.floor(Math.random() * patterns.length)];
+      const seq = document.getElementById('pattern-sequence');
+      const opts = document.getElementById('pattern-options');
+      const feedback = document.getElementById('pattern-feedback');
+      
+      feedback.textContent = '';
+      seq.innerHTML = '';
+      
+      currentPattern.sequence.forEach((emoji, i) => {
+        const div = document.createElement('div');
+        div.className = 'pattern-item';
+        div.textContent = emoji;
+        div.style.animationDelay = (i * 0.1) + 's';
+        seq.appendChild(div);
+      });
+      
+      // Add question mark
+      const qDiv = document.createElement('div');
+      qDiv.className = 'pattern-item question';
+      qDiv.textContent = '?';
+      seq.appendChild(qDiv);
+      
+      // Add options
+      opts.innerHTML = '';
+      currentPattern.options.sort(() => Math.random() - 0.5).forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'pattern-option';
+        btn.textContent = opt;
+        btn.onclick = () => checkPattern(opt, btn);
+        opts.appendChild(btn);
+      });
+    }
+
+    function checkPattern(answer, btn) {
+      const feedback = document.getElementById('pattern-feedback');
+      if (answer === currentPattern.answer) {
+        btn.classList.add('correct');
+        feedback.textContent = '🎉 Correct! You found the pattern!';
+        feedback.style.color = 'var(--kid-green)';
+        addStar();
+        setTimeout(newPatternRound, 1500);
+      } else {
+        btn.classList.add('wrong');
+        feedback.textContent = '❌ Not quite! Try again!';
+        feedback.style.color = 'var(--kid-pink)';
+        setTimeout(() => btn.classList.remove('wrong'), 500);
+      }
+    }
+
+    // ===== ROBOT GAME =====
+    let robotPos = { x: 0, y: 0 };
+    let robotSteps = [];
+    let robotGoal = { x: 4, y: 4 };
+
+    function initRobotGame() {
+      const grid = document.getElementById('robot-grid');
+      grid.innerHTML = '';
+      
+      robotPos = { x: 0, y: 0 };
+      robotSteps = [];
+      document.getElementById('robot-code').innerHTML = '';
+      document.getElementById('robot-feedback').textContent = '';
+      
+      for (let y = 0; y < 5; y++) {
+        for (let x = 0; x < 5; x++) {
+          const cell = document.createElement('div');
+          cell.className = 'robot-cell';
+          cell.dataset.x = x;
+          cell.dataset.y = y;
+          
+          if (x === 0 && y === 0) {
+            cell.classList.add('robot');
+            cell.textContent = '🤖';
+          } else if (x === robotGoal.x && y === robotGoal.y) {
+            cell.classList.add('goal');
+            cell.textContent = '⭐';
+          } else if (Math.random() < 0.2) {
+            cell.classList.add('wall');
+            cell.textContent = '🧱';
+          }
+          
+          grid.appendChild(cell);
+        }
+      }
+    }
+
+    function addRobotStep(direction) {
+      robotSteps.push(direction);
+      const codeDiv = document.getElementById('robot-code');
+      const step = document.createElement('span');
+      step.className = 'code-step';
+      const arrows = { up: '⬆️', down: '⬇️', left: '⬅️', right: '➡️' };
+      step.textContent = arrows[direction];
+      codeDiv.appendChild(step);
+    }
+
+    function runRobot() {
+      const feedback = document.getElementById('robot-feedback');
+      let x = robotPos.x;
+      let y = robotPos.y;
+      
+      // Reset robot position
+      document.querySelectorAll('.robot-cell').forEach(cell => {
+        if (cell.classList.contains('robot')) {
+          cell.classList.remove('robot');
+          cell.textContent = '';
+        }
+      });
+      
+      // Animate steps
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i >= robotSteps.length) {
+          clearInterval(interval);
+          if (x === robotGoal.x && y === robotGoal.y) {
+            feedback.textContent = '🎉 You did it! The robot reached the star!';
+            feedback.style.color = 'var(--kid-green)';
+            addStar();
+            showResult('🏆', 'Amazing!', 'You taught the robot to reach the goal!');
+          } else {
+            feedback.textContent = '🤖 The robot didn\'t reach the star. Try again!';
+            feedback.style.color = 'var(--kid-pink)';
+          }
+          return;
+        }
+        
+        const dir = robotSteps[i];
+        if (dir === 'up' && y > 0) y--;
+        if (dir === 'down' && y < 4) y++;
+        if (dir === 'left' && x > 0) x--;
+        if (dir === 'right' && x < 4) x++;
+        
+        // Check for wall
+        const cells = document.querySelectorAll('.robot-cell');
+        const targetCell = [...cells].find(c => parseInt(c.dataset.x) === x && parseInt(c.dataset.y) === y);
+        if (targetCell && targetCell.classList.contains('wall')) {
+          feedback.textContent = '💥 Oops! The robot hit a wall!';
+          feedback.style.color = 'var(--kid-pink)';
+          clearInterval(interval);
+          return;
+        }
+        
+        // Update robot position
+        cells.forEach(c => {
+          if (c.classList.contains('robot')) {
+            c.classList.remove('robot');
+            c.textContent = '';
+          }
+        });
+        targetCell.classList.add('robot');
+        targetCell.textContent = '🤖';
+        
+        i++;
+      }, 400);
+    }
+
+    function clearRobot() {
+      robotSteps = [];
+      document.getElementById('robot-code').innerHTML = '';
+      document.getElementById('robot-feedback').textContent = '';
+      initRobotGame();
+    }
+
+    // ===== QUIZ GAME =====
+    const quizQuestions = [
+      { content: '"The sun is a star that gives us light and warmth."', type: 'human', hint: 'This sounds like a textbook!' },
+      { content: '"In the beginning, there was code, and the code was with the server, and the code was a 404 error."', type: 'ai', hint: 'AI loves mixing styles!' },
+      { content: '🎨 A drawing of a cat with 6 legs and 3 tails', type: 'ai', hint: 'AI sometimes makes mistakes with counting!' },
+      { content: '"My grandmother always made the best apple pie on rainy Sundays."', type: 'human', hint: 'This has personal memories!' },
+      { content: 'A song: "Roses are red, violets are blue, AI is cool, and so are you"', type: 'ai', hint: 'This follows a classic pattern perfectly!' },
+      { content: '"I accidentally put salt in my coffee instead of sugar. Worst morning ever!"', type: 'human', hint: 'Everyone makes mistakes like this!' },
+      { content: 'A photo of a person with 6 fingers on one hand', type: 'ai', hint: 'AI sometimes miscounts body parts!' },
+      { content: '"The mitochondria is the powerhouse of the cell."', type: 'human', hint: 'This is a classic school fact!' },
+    ];
+    let currentQuiz = null;
+
+    function newQuizQuestion() {
+      currentQuiz = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+      const card = document.getElementById('quiz-card');
+      const feedback = document.getElementById('quiz-feedback');
+      
+      feedback.textContent = '';
+      card.innerHTML = `
+        <h3>What do you think?</h3>
+        <div class="quiz-content">${currentQuiz.content}</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="answerQuiz('ai', this)">🤖 Made by AI</button>
+          <button class="quiz-option" onclick="answerQuiz('human', this)">👨‍🎨 Made by Human</button>
+        </div>
+      `;
+    }
+
+    function answerQuiz(answer, btn) {
+      const feedback = document.getElementById('quiz-feedback');
+      const options = document.querySelectorAll('.quiz-option');
+      options.forEach(o => o.style.pointerEvents = 'none');
+      
+      if (answer === currentQuiz.type) {
+        btn.classList.add('correct');
+        feedback.innerHTML = `🎉 Correct! ${currentQuiz.hint}`;
+        feedback.style.color = 'var(--kid-green)';
+        addStar();
+      } else {
+        btn.classList.add('wrong');
+        feedback.innerHTML = `❌ Actually, it was ${currentQuiz.type === 'ai' ? 'AI' : 'a human'}! ${currentQuiz.hint}`;
+        feedback.style.color = 'var(--kid-pink)';
+      }
+    }
+
+    // ===== NEURAL NETWORK GAME =====
+    function initNeuralNetwork() {
+      const input = document.getElementById('nn-input');
+      const hidden = document.getElementById('nn-hidden');
+      const output = document.getElementById('nn-output');
+      
+      input.innerHTML = '';
+      hidden.innerHTML = '';
+      output.innerHTML = '';
+      
+      const inputEmojis = ['👁️', '👂', '👃'];
+      const hiddenEmojis = ['🤔', '💭', '⚡'];
+      const outputEmojis = ['😊', '😐', '😢'];
+      
+      inputEmojis.forEach((emoji, i) => {
+        const node = document.createElement('div');
+        node.className = 'nn-node';
+        node.textContent = emoji;
+        node.dataset.layer = 'input';
+        node.dataset.index = i;
+        node.onclick = () => toggleNode(node);
+        input.appendChild(node);
+      });
+      
+      hiddenEmojis.forEach((emoji, i) => {
+        const node = document.createElement('div');
+        node.className = 'nn-node';
+        node.textContent = emoji;
+        node.dataset.layer = 'hidden';
+        node.dataset.index = i;
+        node.onclick = () => toggleNode(node);
+        hidden.appendChild(node);
+      });
+      
+      outputEmojis.forEach((emoji, i) => {
+        const node = document.createElement('div');
+        node.className = 'nn-node';
+        node.textContent = emoji;
+        node.dataset.layer = 'output';
+        node.dataset.index = i;
+        output.appendChild(node);
+      });
+    }
+
+    function toggleNode(node) {
+      node.classList.toggle('active');
+    }
+
+    function activateNetwork() {
+      const feedback = document.getElementById('nn-feedback');
+      const inputNodes = document.querySelectorAll('#nn-input .nn-node');
+      const hiddenNodes = document.querySelectorAll('#nn-hidden .nn-node');
+      const outputNodes = document.querySelectorAll('#nn-output .nn-node');
+      
+      const activeInputs = [...inputNodes].filter(n => n.classList.contains('active')).length;
+      
+      if (activeInputs === 0) {
+        feedback.textContent = '👆 Click some input nodes first!';
+        feedback.style.color = 'var(--kid-yellow)';
+        return;
+      }
+      
+      // Activate hidden layer
+      hiddenNodes.forEach((node, i) => {
+        setTimeout(() => {
+          node.classList.add('active');
+        }, (i + 1) * 300);
+      });
+      
+      // Activate output layer
+      outputNodes.forEach((node, i) => {
+        setTimeout(() => {
+          node.classList.add('active');
+        }, (hiddenNodes.length + i + 1) * 300);
+      });
+      
+      setTimeout(() => {
+        feedback.innerHTML = '🎉 The signal traveled through the network! You activated ' + activeInputs + ' input(s) → ' + hiddenNodes.length + ' hidden neurons → ' + outputNodes.length + ' outputs!';
+        feedback.style.color = 'var(--kid-green)';
+        addStar();
+      }, (hiddenNodes.length + outputNodes.length + 1) * 300);
+    }
+
+    function resetNetwork() {
+      document.querySelectorAll('.nn-node').forEach(n => n.classList.remove('active'));
+      document.getElementById('nn-feedback').textContent = '';
+    }
+
+    // ===== MEMORY MATCH GAME =====
+    const memoryEmojis = ['🤖', '🧠', '💻', '🔮', '⚡', '🎮', '🌟', '🎯'];
+    let memoryCards = [];
+    let memoryFlipped = [];
+    let memoryMatched = [];
+    let memoryMoves = 0;
+    let memoryTimer = 0;
+    let memoryInterval = null;
+
+    function initMemoryGame() {
+      const grid = document.getElementById('memory-grid');
+      const feedback = document.getElementById('memory-feedback');
+      
+      // Reset state
+      memoryCards = [];
+      memoryFlipped = [];
+      memoryMatched = [];
+      memoryMoves = 0;
+      memoryTimer = 0;
+      if (memoryInterval) clearInterval(memoryInterval);
+      
+      document.getElementById('memory-moves').textContent = '0';
+      document.getElementById('memory-pairs').textContent = '0/8';
+      document.getElementById('memory-time').textContent = '0s';
+      feedback.textContent = '';
+      
+      // Create pairs and shuffle
+      const pairs = [...memoryEmojis, ...memoryEmojis];
+      const shuffled = pairs.sort(() => Math.random() - 0.5);
+      
+      grid.innerHTML = '';
+      shuffled.forEach((emoji, i) => {
+        const card = document.createElement('div');
+        card.className = 'memory-card';
+        card.dataset.index = i;
+        card.dataset.emoji = emoji;
+        card.innerHTML = `
+          <div class="memory-card-inner">
+            <div class="memory-card-front"></div>
+            <div class="memory-card-back">${emoji}</div>
+          </div>
+        `;
+        card.addEventListener('click', () => flipCard(card));
+        grid.appendChild(card);
+        memoryCards.push(card);
+      });
+      
+      // Start timer on first click
+      memoryInterval = null;
+    }
+
+    function flipCard(card) {
+      if (memoryFlipped.length >= 2) return;
+      if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
+      if (memoryMatched.includes(card.dataset.emoji) && memoryCards.filter(c => c.dataset.emoji === card.dataset.emoji && c.classList.contains('matched')).length >= 2) return;
+      
+      // Start timer on first flip
+      if (!memoryInterval) {
+        memoryInterval = setInterval(() => {
+          memoryTimer++;
+          document.getElementById('memory-time').textContent = memoryTimer + 's';
+        }, 1000);
+      }
+      
+      card.classList.add('flipped');
+      memoryFlipped.push(card);
+      
+      if (memoryFlipped.length === 2) {
+        memoryMoves++;
+        document.getElementById('memory-moves').textContent = memoryMoves;
+        
+        const [card1, card2] = memoryFlipped;
+        
+        if (card1.dataset.emoji === card2.dataset.emoji) {
+          // Match found!
+          setTimeout(() => {
+            card1.classList.add('matched');
+            card2.classList.add('matched');
+            memoryMatched.push(card1.dataset.emoji);
+            document.getElementById('memory-pairs').textContent = memoryMatched.length + '/8';
+            memoryFlipped = [];
+            
+            if (memoryMatched.length === 8) {
+              clearInterval(memoryInterval);
+              document.getElementById('memory-feedback').innerHTML = `🎉 You found all pairs in ${memoryMoves} moves and ${memoryTimer} seconds!`;
+              document.getElementById('memory-feedback').style.color = 'var(--kid-green)';
+              addStar();
+              showResult('🧠', 'Amazing Memory!', `You found all pairs in ${memoryMoves} moves!`);
+            }
+          }, 400);
+        } else {
+          // No match
+          setTimeout(() => {
+            card1.classList.remove('flipped');
+            card2.classList.remove('flipped');
+            memoryFlipped = [];
+          }, 800);
+        }
+      }
+    }
+
+    // ===== REACTION TIME GAME =====
+    let reactionState = 'idle'; // idle, waiting, ready, result
+    let reactionTimeout = null;
+    let reactionStartTime = 0;
+    let reactionTimes = [];
+
+    function handleReactionClick() {
+      const area = document.getElementById('reaction-area');
+      const text = document.getElementById('reaction-text');
+      const feedback = document.getElementById('reaction-feedback');
+      
+      if (reactionState === 'idle' || reactionState === 'result') {
+        // Start waiting
+        reactionState = 'waiting';
+        area.className = 'reaction-area waiting';
+        text.textContent = 'Wait for green...';
+        feedback.textContent = '';
+        
+        const delay = 1500 + Math.random() * 3500;
+        reactionTimeout = setTimeout(() => {
+          reactionState = 'ready';
+          area.className = 'reaction-area ready';
+          text.textContent = 'CLICK NOW!';
+          reactionStartTime = Date.now();
+        }, delay);
+        
+      } else if (reactionState === 'waiting') {
+        // Clicked too early!
+        clearTimeout(reactionTimeout);
+        reactionState = 'result';
+        area.className = 'reaction-area result';
+        text.textContent = 'Too early! Click to try again.';
+        feedback.textContent = '❌ You clicked too early! Wait for the green.';
+        feedback.style.color = 'var(--kid-pink)';
+        
+      } else if (reactionState === 'ready') {
+        // Got it!
+        const time = Date.now() - reactionStartTime;
+        reactionTimes.push(time);
+        reactionState = 'result';
+        area.className = 'reaction-area result';
+        
+        let emoji = '⚡';
+        let msg = '';
+        if (time < 250) { emoji = '🚀'; msg = 'Lightning fast!'; }
+        else if (time < 350) { emoji = '⚡'; msg = 'Super quick!'; }
+        else if (time < 500) { emoji = '👍'; msg = 'Good reaction!'; }
+        else { emoji = '🐢'; msg = 'Not bad, keep practicing!'; }
+        
+        text.innerHTML = `${emoji} ${time}ms<br><span style="font-size: 1rem;">${msg}</span>`;
+        feedback.textContent = `Your reaction time: ${time}ms`;
+        feedback.style.color = time < 350 ? 'var(--kid-green)' : 'var(--kid-yellow)';
+        
+        // Update stats
+        const best = Math.min(...reactionTimes);
+        const avg = Math.round(reactionTimes.reduce((a, b) => a + b, 0) / reactionTimes.length);
+        document.getElementById('reaction-best').textContent = best + 'ms';
+        document.getElementById('reaction-avg').textContent = avg + 'ms';
+        document.getElementById('reaction-count').textContent = reactionTimes.length;
+        
+        if (time < 350) addStar();
+      }
+    }
+
+// ===== TIC-TAC-TOE (XO) GAME =====
+let xoBoard = Array(9).fill('');
+let xoActive = true;
+let xoPlayer = 'X';
+let xoDifficulty = 'easy';
+let xoWins = 0, xoLosses = 0;
+
+function setXODiff(diff, btn) {
+  xoDifficulty = diff;
+  document.querySelectorAll('.xo-diff-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  initXOGame();
+}
+
+function initXOGame() {
+  xoBoard = Array(9).fill('');
+  xoActive = true;
+  xoPlayer = 'X';
+  document.getElementById('xo-status').textContent = 'Your turn (X)';
+  document.getElementById('xo-win-count').textContent = xoWins;
+  document.getElementById('xo-loss-count').textContent = xoLosses;
+  const board = document.getElementById('xo-board');
+  board.innerHTML = '';
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'xo-cell';
+    cell.dataset.index = i;
+    cell.addEventListener('click', () => xoMove(i));
+    board.appendChild(cell);
+  }
+}
+
+function xoMove(index) {
+  if (!xoActive || xoBoard[index] !== '') return;
+  xoBoard[index] = 'X';
+  updateXOBoard();
+  if (xoCheckWin('X')) { xoWins++; xoEnd('You win! 🎉', true); return; }
+  if (xoBoard.every(c => c !== '')) { xoEnd("It's a draw! 🤝", false); return; }
+  xoActive = false;
+  document.getElementById('xo-status').textContent = 'AI is thinking...';
+  setTimeout(() => { xoAIMove(); xoActive = true; }, 500);
+}
+
+function xoAIMove() {
+  // Easy: 70% random, 30% smart
+  // Medium: 50% random, 50% smart  
+  // Hard: 10% random, 90% smart (almost perfect)
+  const smartChance = xoDifficulty === 'easy' ? 0.3 : xoDifficulty === 'medium' ? 0.5 : 0.9;
+
+  if (Math.random() > smartChance) {
+    // Random move
+    const empty = xoBoard.map((c, i) => c === '' ? i : -1).filter(i => i >= 0);
+    if (empty.length) {
+      xoBoard[empty[Math.floor(Math.random() * empty.length)]] = 'O';
+      updateXOBoard();
+      if (xoCheckWin('O')) { xoLosses++; xoEnd('AI wins! 🤖', true); return; }
+      if (xoBoard.every(c => c !== '')) { xoEnd("It's a draw! 🤝", false); return; }
+      document.getElementById('xo-status').textContent = 'Your turn (X)';
+      return;
+    }
+  }
+
+  // Smart move (minimax-like)
+  // Try to win
+  for (let i = 0; i < 9; i++) { if (xoBoard[i] === '') { xoBoard[i] = 'O'; if (xoCheckWin('O')) { updateXOBoard(); xoLosses++; xoEnd('AI wins! 🤖', true); return; } xoBoard[i] = ''; } }
+  // Try to block
+  for (let i = 0; i < 9; i++) { if (xoBoard[i] === '') { xoBoard[i] = 'X'; if (xoCheckWin('X')) { xoBoard[i] = 'O'; updateXOBoard(); document.getElementById('xo-status').textContent = 'Your turn (X)'; return; } xoBoard[i] = ''; } }
+  // Take center
+  if (xoBoard[4] === '') { xoBoard[4] = 'O'; updateXOBoard(); document.getElementById('xo-status').textContent = 'Your turn (X)'; return; }
+  // Take corner
+  const corners = [0,2,6,8].filter(i => xoBoard[i] === '');
+  if (corners.length) { xoBoard[corners[Math.floor(Math.random()*corners.length)]] = 'O'; updateXOBoard(); document.getElementById('xo-status').textContent = 'Your turn (X)'; return; }
+  // Take any
+  const empty = xoBoard.map((c,i) => c === '' ? i : -1).filter(i => i >= 0);
+  if (empty.length) { xoBoard[empty[Math.floor(Math.random()*empty.length)]] = 'O'; }
+  updateXOBoard();
+  if (xoCheckWin('O')) { xoLosses++; xoEnd('AI wins! 🤖', true); return; }
+  if (xoBoard.every(c => c !== '')) { xoEnd("It's a draw! 🤝", false); return; }
+  document.getElementById('xo-status').textContent = 'Your turn (X)';
+}
+
+function xoCheckWin(player) {
+  const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  return wins.some(line => line.every(i => xoBoard[i] === player));
+}
+
+function xoUpdateWinLine(player) {
+  const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  const cells = document.querySelectorAll('.xo-cell');
+  for (const line of wins) { if (line.every(i => xoBoard[i] === player)) { line.forEach(i => cells[i].classList.add('win')); } }
+}
+
+function updateXOBoard() {
+  const cells = document.querySelectorAll('.xo-cell');
+  xoBoard.forEach((val, i) => { cells[i].textContent = val; cells[i].className = 'xo-cell ' + val.toLowerCase(); });
+}
+
+function xoEnd(msg, isGameOver) {
+  xoActive = false;
+  document.getElementById('xo-status').textContent = msg;
+  document.getElementById('xo-win-count').textContent = xoWins;
+  document.getElementById('xo-loss-count').textContent = xoLosses;
+  if (isGameOver && xoCheckWin('X')) { addStar(); xoUpdateWinLine('X'); }
+}
+
+    // ===== SIMON SAYS GAME =====
+    let simonColors = [];
+    let simonPlayerColors = [];
+    let simonLevel = 0;
+    let simonPlaying = false;
+    const simonColorsList = ['green', 'red', 'yellow', 'blue'];
+
+    function startSimon() {
+      simonColors = [];
+      simonLevel = 0;
+      simonPlaying = true;
+      document.getElementById('simon-start').disabled = true;
+      nextSimonRound();
+    }
+
+    function nextSimonRound() {
+      simonLevel++;
+      document.getElementById('simon-level').textContent = simonLevel;
+      simonPlayerColors = [];
+      simonColors.push(simonColorsList[Math.floor(Math.random() * 4)]);
+      document.getElementById('simon-status').textContent = 'Watch the pattern...';
+      playSimonSequence();
+    }
+
+    function playSimonSequence() {
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i >= simonColors.length) { clearInterval(interval); document.getElementById('simon-status').textContent = 'Your turn!'; return; }
+        lightSimonBtn(simonColors[i]);
+        i++;
+      }, 600);
+    }
+
+    function lightSimonBtn(color) {
+      const btn = document.querySelector('.simon-' + color);
+      btn.classList.add('lit');
+      setTimeout(() => btn.classList.remove('lit'), 400);
+    }
+
+    function simonClick(color) {
+      if (!simonPlaying) return;
+      lightSimonBtn(color);
+      simonPlayerColors.push(color);
+      const idx = simonPlayerColors.length - 1;
+      if (simonPlayerColors[idx] !== simonColors[idx]) {
+        document.getElementById('simon-status').textContent = `Game Over! You reached level ${simonLevel}`;
+        simonPlaying = false;
+        document.getElementById('simon-start').disabled = false;
+        if (simonLevel > 1) addStar();
+        return;
+      }
+      if (simonPlayerColors.length === simonColors.length) {
+        document.getElementById('simon-status').textContent = 'Correct! Next round...';
+        setTimeout(nextSimonRound, 1000);
+      }
+    }
+
+    // ===== SUBWAY RUNNER GAME =====
+    let subwayRunning = false, subwayScore = 0, subwayHigh = 0, subwayPlayerX, subwayLane = 1, subwayJumping = false, subwayJumpY = 0;
+    let subwayObstacles = [], subwayAnimFrame, subwaySpeed;
+
+    function startSubway() {
+      const canvas = document.getElementById('subway-canvas');
+      const ctx = canvas.getContext('2d');
+      subwayRunning = true; subwayScore = 0; subwayLane = 1; subwayJumping = false; subwayJumpY = 0;
+      subwayObstacles = []; subwaySpeed = 3;
+      subwayPlayerX = canvas.width / 2;
+      document.getElementById('subway-score').textContent = '0';
+      document.getElementById('subway-start').textContent = '⏸️ Pause';
+      document.getElementById('subway-start').onclick = () => { subwayRunning = false; cancelAnimationFrame(subwayAnimFrame); document.getElementById('subway-start').textContent = '▶️ Start'; document.getElementById('subway-start').onclick = startSubway; };
+      document.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') subwayMove('left'); if (e.key === 'ArrowRight') subwayMove('right'); if (e.key === 'ArrowUp') subwayJump(); });
+      function gameLoop() {
+        if (!subwayRunning) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Draw ground
+        ctx.fillStyle = '#0f3460'; ctx.fillRect(0, canvas.height - 30, canvas.width, 30);
+        // Draw lanes
+        for (let i = 0; i < 3; i++) { ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.beginPath(); ctx.moveTo(0, 80 + i * 60); ctx.lineTo(canvas.width, 80 + i * 60); ctx.stroke(); }
+        // Player
+        const playerY = canvas.height - 60 - subwayJumpY;
+        ctx.fillStyle = '#ff6b9d'; ctx.fillRect(subwayPlayerX - 15, playerY - 30, 30, 30);
+        ctx.fillStyle = '#fff'; ctx.font = '20px serif'; ctx.textAlign = 'center'; ctx.fillText('🏃', subwayPlayerX, playerY - 8);
+        // Jump physics
+        if (subwayJumping) { subwayJumpY += 4; if (subwayJumpY >= 80) { subwayJumpY = 80; } if (subwayJumpY > 0 && subwayJumpY < 80) {} else { subwayJumping = false; } }
+        if (subwayJumpY > 0 && !subwayJumping) { subwayJumpY -= 6; if (subwayJumpY < 0) subwayJumpY = 0; }
+        // Obstacles
+        if (Math.random() < 0.02) { subwayObstacles.push({ x: canvas.width + 20, lane: Math.floor(Math.random() * 3), type: Math.random() < 0.3 ? 'high' : 'low' }); }
+        subwayObstacles.forEach(obs => {
+          obs.x -= subwaySpeed;
+          const oy = canvas.height - 60 - (obs.lane * 0);
+          ctx.fillStyle = obs.type === 'high' ? '#ff4444' : '#ffaa00';
+          ctx.fillRect(obs.x, canvas.height - 55, 25, 25);
+          ctx.font = '18px serif'; ctx.textAlign = 'center'; ctx.fillText(obs.type === 'high' ? '🚧' : '📦', obs.x + 12, canvas.height - 35);
+        });
+        subwayObstacles = subwayObstacles.filter(o => o.x > -30);
+        // Collision
+        subwayObstacles.forEach(obs => { if (Math.abs(obs.x - subwayPlayerX) < 25 && subwayJumpY < (obs.type === 'high' ? 60 : 20)) { endSubway(); } });
+        // Score
+        subwayScore += 0.1;
+        document.getElementById('subway-score').textContent = Math.floor(subwayScore);
+        subwaySpeed = 3 + subwayScore * 0.01;
+        subwayAnimFrame = requestAnimationFrame(gameLoop);
+      }
+      gameLoop();
+    }
+
+    function subwayMove(dir) { if (!subwayRunning) return; const canvas = document.getElementById('subway-canvas'); subwayPlayerX += dir === 'left' ? -30 : 30; subwayPlayerX = Math.max(20, Math.min(canvas.width - 20, subwayPlayerX)); }
+    function subwayJump() { if (!subwayRunning || subwayJumping) return; subwayJumping = true; subwayJumpY = 1; }
+    function endSubway() { subwayRunning = false; cancelAnimationFrame(subwayAnimFrame); if (subwayScore > subwayHigh) { subwayHigh = Math.floor(subwayScore); document.getElementById('subway-high').textContent = subwayHigh; } document.getElementById('subway-start').textContent = '▶️ Start'; document.getElementById('subway-start').onclick = startSubway; addStar(); }
+
+    // ===== WHACK-A-MOLE GAME =====
+    let moleScore = 0, moleTime = 30, moleInterval, moleTimerInterval;
+
+    function startMoleGame() {
+      moleScore = 0; moleTime = 30;
+      document.getElementById('mole-score').textContent = '0';
+      document.getElementById('mole-time').textContent = '30s';
+      document.getElementById('mole-feedback').textContent = '';
+      document.getElementById('mole-start').disabled = true;
+      const grid = document.getElementById('mole-grid');
+      grid.innerHTML = '';
+      for (let i = 0; i < 9; i++) {
+        const hole = document.createElement('div');
+        hole.className = 'mole-hole';
+        hole.innerHTML = '<span class="mole">🐹</span>';
+        hole.addEventListener('click', () => whackMole(hole));
+        grid.appendChild(hole);
+      }
+      moleInterval = setInterval(() => { const holes = document.querySelectorAll('.mole-hole'); holes.forEach(h => h.classList.remove('active')); const idx = Math.floor(Math.random() * 9); holes[idx].classList.add('active'); }, 800);
+      moleTimerInterval = setInterval(() => { moleTime--; document.getElementById('mole-time').textContent = moleTime + 's'; if (moleTime <= 0) endMoleGame(); }, 1000);
+    }
+
+    function whackMole(hole) { if (hole.classList.contains('active')) { hole.classList.remove('active'); hole.classList.add('whacked'); moleScore++; document.getElementById('mole-score').textContent = moleScore; setTimeout(() => hole.classList.remove('whacked'), 300); } }
+
+    function endMoleGame() { clearInterval(moleInterval); clearInterval(moleTimerInterval); document.querySelectorAll('.mole-hole').forEach(h => h.classList.remove('active')); document.getElementById('mole-feedback').textContent = `Game Over! You whacked ${moleScore} moles!`; document.getElementById('mole-feedback').style.color = 'var(--kid-green)'; document.getElementById('mole-start').disabled = false; document.getElementById('mole-start').textContent = '▶️ Start'; addStar(); }
+
+    // ===== SNAKE GAME =====
+    let snakeRunning = false, snakeDir = 'right', snakeNextDir = 'right';
+    let snakeBody = [{x:10,y:10},{x:9,y:10},{x:8,y:10}];
+    let snakeFood = {}, snakeScore = 0, snakeAnimFrame;
+
+    function startSnake() {
+      const canvas = document.getElementById('snake-canvas');
+      const ctx = canvas.getContext('2d');
+      const grid = 15; const cols = canvas.width / grid; const rows = canvas.height / grid;
+      snakeRunning = true; snakeDir = 'right'; snakeNextDir = 'right';
+      snakeBody = [{x:10,y:10},{x:9,y:10},{x:8,y:10}]; snakeScore = 0;
+      placeSnakeFood();
+      document.getElementById('snake-score').textContent = '0';
+      document.getElementById('snake-length').textContent = '3';
+      document.getElementById('snake-start').textContent = '⏸️ Pause';
+      document.getElementById('snake-start').onclick = () => { snakeRunning = false; cancelAnimationFrame(snakeAnimFrame); document.getElementById('snake-start').textContent = '▶️ Start'; document.getElementById('snake-start').onclick = startSnake; };
+      document.addEventListener('keydown', e => { if (e.key === 'ArrowUp') snakeDirection('up'); if (e.key === 'ArrowDown') snakeDirection('down'); if (e.key === 'ArrowLeft') snakeDirection('left'); if (e.key === 'ArrowRight') snakeDirection('right'); });
+      function gameLoop() {
+        if (!snakeRunning) return;
+        snakeDir = snakeNextDir;
+        const head = { ...snakeBody[0] };
+        if (snakeDir === 'right') head.x++; if (snakeDir === 'left') head.x--; if (snakeDir === 'down') head.y++; if (snakeDir === 'up') head.y--;
+        if (head.x < 0 || head.x >= cols || head.y < 0 || head.y >= rows || snakeBody.some(s => s.x === head.x && s.y === head.y)) { endSnake(); return; }
+        snakeBody.unshift(head);
+        if (head.x === snakeFood.x && head.y === snakeFood.y) { snakeScore += 10; document.getElementById('snake-score').textContent = snakeScore; document.getElementById('snake-length').textContent = snakeBody.length; placeSnakeFood(); } else { snakeBody.pop(); }
+        // Draw
+        ctx.fillStyle = '#111'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        snakeBody.forEach((s, i) => { ctx.fillStyle = i === 0 ? '#4dff88' : '#22aa44'; ctx.fillRect(s.x * grid, s.y * grid, grid - 1, grid - 1); });
+        ctx.fillStyle = '#ff6b6b'; ctx.fillRect(snakeFood.x * grid, snakeFood.y * grid, grid - 1, grid - 1);
+        snakeAnimFrame = setTimeout(gameLoop, 120);
+      }
+      function placeSnakeFood() { do { snakeFood = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) }; } while (snakeBody.some(s => s.x === snakeFood.x && s.y === snakeFood.y)); }
+      gameLoop();
+    }
+
+    function snakeDirection(dir) {
+      const opposite = { up: 'down', down: 'up', left: 'right', right: 'left' };
+      if (dir !== opposite[snakeDir]) snakeNextDir = dir;
+    }
+
+    function endSnake() { snakeRunning = false; cancelAnimationFrame(snakeAnimFrame); document.getElementById('snake-start').textContent = '▶️ Start'; document.getElementById('snake-start').onclick = startSnake; addStar(); }
+
+    // ===== FLAPPY BIRD GAME =====
+    let flappyRunning = false, flappyBirdY = 150, flappyVel = 0, flappyScore = 0, flappyBest = 0;
+    let flappyPipes = [], flappyAnimFrame, flappyGravity = 0.4, flappyFlap = -7;
+
+    function startFlappy() {
+      const canvas = document.getElementById('flappy-canvas');
+      const ctx = canvas.getContext('2d');
+      flappyRunning = true; flappyBirdY = 150; flappyVel = 0; flappyScore = 0; flappyPipes = [];
+      document.getElementById('flappy-score').textContent = '0';
+      document.getElementById('flappy-start').textContent = '⏸️ Pause';
+      document.getElementById('flappy-start').onclick = () => { flappyRunning = false; cancelAnimationFrame(flappyAnimFrame); document.getElementById('flappy-start').textContent = '▶️ Start'; document.getElementById('flappy-start').onclick = startFlappy; };
+      document.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'ArrowUp') { e.preventDefault(); if (flappyRunning) flappyVel = flappyFlap; } });
+      
+      canvas.onclick = () => { if (flappyRunning) flappyVel = flappyFlap; };
+      
+      function gameLoop() {
+        if (!flappyRunning) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Sky
+        ctx.fillStyle = '#87CEEB'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#E0F6FF'; ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+        // Bird physics
+        flappyVel += flappyGravity; flappyBirdY += flappyVel;
+        // Bird
+        ctx.fillStyle = '#ffd94d'; ctx.beginPath(); ctx.arc(80, flappyBirdY, 15, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(85, flappyBirdY - 3, 5, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#333'; ctx.beginPath(); ctx.arc(87, flappyBirdY - 3, 2, 0, Math.PI * 2); ctx.fill();
+        // Pipes
+        if (Math.random() < 0.02) { const gap = 120; const topH = 50 + Math.random() * 100; flappyPipes.push({ x: canvas.width, topH, gap }); }
+        flappyPipes.forEach(pipe => {
+          pipe.x -= 2.5;
+          ctx.fillStyle = '#22aa44'; ctx.fillRect(pipe.x, 0, 40, pipe.topH); ctx.fillRect(pipe.x, pipe.topH + pipe.gap, 40, canvas.height);
+          ctx.fillStyle = '#44dd66'; ctx.fillRect(pipe.x + 5, 0, 8, pipe.topH); ctx.fillRect(pipe.x + 5, pipe.topH + pipe.gap, 8, canvas.height);
+          // Score
+          if (pipe.x + 40 < 80 && !pipe.scored) { pipe.scored = true; flappyScore++; document.getElementById('flappy-score').textContent = flappyScore; }
+        });
+        flappyPipes = flappyPipes.filter(p => p.x > -50);
+        // Collision
+        const hitPipe = flappyPipes.some(p => 80 + 15 > p.x && 80 - 15 < p.x + 40 && (flappyBirdY - 15 < p.topH || flappyBirdY + 15 > p.topH + p.gap));
+        if (hitPipe || flappyBirdY > canvas.height || flappyBirdY < 0) { endFlappy(); return; }
+        flappyAnimFrame = requestAnimationFrame(gameLoop);
+      }
+      gameLoop();
+    }
+
+    function endFlappy() { flappyRunning = false; cancelAnimationFrame(flappyAnimFrame); if (flappyScore > flappyBest) { flappyBest = flappyScore; document.getElementById('flappy-best').textContent = flappyBest; } document.getElementById('flappy-start').textContent = '▶️ Start'; document.getElementById('flappy-start').onclick = startFlappy; addStar(); }
+
+    // ===== UTILITY FUNCTIONS =====
+    function addStar() {
+      totalStars++;
+      document.getElementById('total-stars').textContent = totalStars;
+      document.getElementById('games-played').textContent = ++gamesPlayed;
+    }
+
+    function showResult(emoji, title, message) {
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-title').textContent = title;
+      document.getElementById('result-message').textContent = message;
+      document.getElementById('result-modal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('result-modal').classList.remove('show');
+    }
+
+    function showFeedback(elementId, message, color) {
+      const el = document.getElementById(elementId);
+      if (el) {
+        el.textContent = message;
+        el.style.color = color;
+      }
+    }
+
+    // ===== INIT ALL GAMES =====
+    document.addEventListener('DOMContentLoaded', () => {
+      initSortingGame();
+      newPatternRound();
+      initRobotGame();
+      newQuizQuestion();
+      initNeuralNetwork();
+      initMemoryGame();
+      initXOGame();
+    });
+  </script>
+</body>
+</html>

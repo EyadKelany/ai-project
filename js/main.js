@@ -247,6 +247,182 @@
     });
   }
 
+  // ===== CUSTOM CURSOR =====
+  function initCustomCursor() {
+    // Skip on touch devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+    
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    const cursorRing = document.createElement('div');
+    cursorRing.className = 'cursor-ring';
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorRing);
+    
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+    let isHovering = false;
+    let lastParticleTime = 0;
+    
+    // Track mouse position
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      // Create trail particles (throttled)
+      const now = Date.now();
+      if (now - lastParticleTime > 50) {
+        createParticle(mouseX, mouseY);
+        lastParticleTime = now;
+      }
+    });
+    
+    // Hover detection for interactive elements
+    const hoverTargets = 'a, button, .btn, .card, .faq-question, .suggestion-btn, input, textarea, [role="button"]';
+    document.addEventListener('mouseover', e => {
+      if (e.target.closest(hoverTargets)) {
+        isHovering = true;
+        document.body.classList.add('cursor-hover');
+      }
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest(hoverTargets)) {
+        isHovering = false;
+        document.body.classList.remove('cursor-hover');
+      }
+    });
+    
+    // Click animation
+    document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
+    
+    // Smooth cursor ring follow
+    function animateCursor() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top = ringY + 'px';
+      
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+    
+    // Create trail particle
+    function createParticle(x, y) {
+      const particle = document.createElement('div');
+      particle.className = 'cursor-particle';
+      particle.style.left = x + 'px';
+      particle.style.top = y + 'px';
+      document.body.appendChild(particle);
+      setTimeout(() => particle.remove(), 600);
+    }
+    
+    // Hide default cursor
+    const style = document.createElement('style');
+    style.textContent = '*, *::before, *::after { cursor: none !important; }';
+    document.head.appendChild(style);
+  }
+
+  // ===== MAGNETIC BUTTONS =====
+  function initMagneticButtons() {
+    if ('ontouchstart' in window) return;
+    
+    const magneticElements = $$('.btn-primary, .btn-secondary, .logo');
+    
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const strength = 0.3;
+        
+        el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+      });
+      
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+      });
+    });
+  }
+
+  // ===== TILT EFFECT ON CARDS =====
+  function initCardTilt() {
+    if ('ontouchstart' in window) return;
+    
+    const cards = $$('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        
+        const tiltX = (y - 0.5) * 8;
+        const tiltY = (x - 0.5) * -8;
+        
+        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-8px) scale(1.01)`;
+        
+        // Set mouse position for glow
+        card.style.setProperty('--mouse-x', (x * 100) + '%');
+        card.style.setProperty('--mouse-y', (y * 100) + '%');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // ===== ANIMATED COUNTER FOR TRUST STATS =====
+  function initTrustCounters() {
+    const statNumbers = $$('.stat-number');
+    if (!statNumbers.length) return;
+    
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    statNumbers.forEach(el => {
+      const originalText = el.textContent.trim();
+      const numMatch = originalText.match(/\d+/);
+      if (!numMatch) return;
+      
+      const finalNum = parseInt(numMatch[0]);
+      const suffix = originalText.replace(numMatch[0], '');
+      
+      if (prefersReduced) return;
+      
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const duration = 1800;
+            const start = performance.now();
+            
+            const animate = (now) => {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 4);
+              const current = Math.round(finalNum * eased);
+              el.textContent = current + suffix;
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                el.textContent = originalText;
+              }
+            };
+            
+            requestAnimationFrame(animate);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(el);
+    });
+  }
+
   // ===== DEBOUNCE =====
   function debounce(fn, ms) {
     let timer;
@@ -254,6 +430,150 @@
       clearTimeout(timer);
       timer = setTimeout(() => fn(...args), ms);
     };
+  }
+
+  // ===== HERO GRADIENT MESH BACKGROUND =====
+  function initHeroMesh() {
+    const canvas = document.getElementById('hero-mesh');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let animationId;
+    let time = 0;
+    
+    // Mesh points for organic gradient
+    const points = [
+      { x: 0.2, y: 0.3, vx: 0.0003, vy: 0.0002, color: [0, 229, 179] },  // accent
+      { x: 0.7, y: 0.6, vx: -0.0002, vy: 0.0003, color: [99, 102, 241] }, // secondary
+      { x: 0.5, y: 0.2, vx: 0.0002, vy: -0.0002, color: [34, 211, 238] }, // cyan
+      { x: 0.3, y: 0.8, vx: -0.0003, vy: -0.0001, color: [0, 229, 179] }, // accent
+      { x: 0.8, y: 0.2, vx: 0.0001, vy: 0.0002, color: [99, 102, 241] },  // secondary
+      { x: 0.1, y: 0.6, vx: 0.0002, vy: -0.0003, color: [34, 211, 238] }, // cyan
+    ];
+    
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      width = canvas.width = rect.width;
+      height = canvas.height = rect.height;
+    }
+    
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      
+      // Update point positions
+      points.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        
+        // Bounce off edges
+        if (p.x < 0 || p.x > 1) p.vx *= -1;
+        if (p.y < 0 || p.y > 1) p.vy *= -1;
+        
+        // Clamp
+        p.x = Math.max(0, Math.min(1, p.x));
+        p.y = Math.max(0, Math.min(1, p.y));
+      });
+      
+      // Draw gradient mesh
+      points.forEach(p => {
+        const gradient = ctx.createRadialGradient(
+          p.x * width, p.y * height, 0,
+          p.x * width, p.y * height, Math.min(width, height) * 0.5
+        );
+        
+        const [r, g, b] = p.color;
+        const pulse = Math.sin(time * 0.02 + p.x * 10) * 0.3 + 0.7;
+        
+        gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${0.15 * pulse})`);
+        gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${0.05 * pulse})`);
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+      });
+      
+      // Add subtle noise-like effect with small dots
+      for (let i = 0; i < 20; i++) {
+        const x = (Math.sin(time * 0.01 + i * 0.5) * 0.5 + 0.5) * width;
+        const y = (Math.cos(time * 0.015 + i * 0.7) * 0.5 + 0.5) * height;
+        const size = Math.sin(time * 0.03 + i) * 2 + 3;
+        const alpha = Math.sin(time * 0.02 + i * 0.3) * 0.3 + 0.3;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 229, 179, ${alpha})`;
+        ctx.fill();
+      }
+      
+      time++;
+      animationId = requestAnimationFrame(draw);
+    }
+    
+    // Start animation
+    resize();
+    draw();
+    
+    // Handle resize
+    window.addEventListener('resize', debounce(resize, 100));
+    
+    // Pause when not visible
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!animationId) draw();
+        } else {
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    observer.observe(canvas);
+  }
+
+  // ===== SCROLL-TRIGGERED COUNTER ANIMATIONS =====
+  function initScrollCounters() {
+    const counters = $$('.stat-number[data-target]');
+    if (!counters.length) return;
+    
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          const suffix = el.dataset.suffix || '';
+          const duration = 2000;
+          const start = performance.now();
+          
+          // Easing function for smooth animation
+          const easeOutExpo = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+          
+          const animate = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutExpo(progress);
+            const current = Math.round(target * eased);
+            
+            el.textContent = current + suffix;
+            
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+          
+          requestAnimationFrame(animate);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5, rootMargin: '0px 0px -50px 0px' });
+    
+    counters.forEach(el => observer.observe(el));
   }
 
   // ===== INIT ALL =====
@@ -267,5 +587,11 @@
     initCodeCopy();
     initParallaxOrbs();
     initThemeToggle();
+    initCustomCursor();
+    initMagneticButtons();
+    initCardTilt();
+    initTrustCounters();
+    initHeroMesh();
+    initScrollCounters();
   });
 })();
