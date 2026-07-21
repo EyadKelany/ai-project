@@ -94,8 +94,10 @@
             <div class="auth-field">
               <label for="signin-password">Password</label>
               <input type="password" id="signin-password" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="auth-forgot-btn" id="forgot-password-btn">Forgot password?</button>
             </div>
             <div class="auth-error" id="signin-error" role="alert" aria-live="polite"></div>
+            <div class="auth-success" id="signin-success" role="status" aria-live="polite"></div>
             <button type="submit" class="btn btn-primary btn-lg auth-submit" id="signin-btn">
               <span class="auth-btn-text">Sign In</span>
               <span class="auth-btn-spinner" aria-hidden="true"></span>
@@ -189,12 +191,21 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.min.js"></script>
   <script src="js/supabase-config.js"></script>
   <script src="js/main.js"></script>
   <script src="js/auth.js"></script>
   <script>
     (function() {
+      if (typeof supabaseClient === 'undefined' || !supabaseClient || !supabaseClient.auth) {
+        console.error('Supabase client not loaded.');
+        document.querySelectorAll('.auth-error').forEach(el => {
+          el.textContent = 'Failed to connect. Please refresh the page.';
+        });
+        return;
+      }
+      console.log('Supabase client ready');
+
       const tabs = document.querySelectorAll('.auth-tab');
       const panels = document.querySelectorAll('.auth-panel');
       const switchBtns = document.querySelectorAll('.auth-switch-btn');
@@ -226,22 +237,27 @@
         btn.classList.add('loading');
         btn.disabled = true;
 
-        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+        try {
+          const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
-        btn.classList.remove('loading');
-        btn.disabled = false;
-
-        if (error) {
-          if (error.message.includes('Invalid login')) {
-            errorEl.textContent = 'Invalid email or password. Please try again.';
-          } else if (error.message.includes('not confirmed')) {
-            errorEl.textContent = 'Please confirm your email first. Check your inbox for the confirmation link.';
-          } else {
-            errorEl.textContent = error.message;
+          if (error) {
+            if (error.message.includes('Invalid login')) {
+              errorEl.textContent = 'Invalid email or password. Please try again.';
+            } else if (error.message.includes('not confirmed')) {
+              errorEl.textContent = 'Please confirm your email first. Check your inbox for the confirmation link.';
+            } else {
+              errorEl.textContent = error.message;
+            }
+            return;
           }
-          return;
+          window.location.href = 'index.html';
+        } catch (err) {
+          errorEl.textContent = 'Connection error. Please check your internet and try again.';
+          console.error('Signin failed:', err.message || err);
+        } finally {
+          btn.classList.remove('loading');
+          btn.disabled = false;
         }
-        window.location.href = 'index.html';
       });
 
       document.getElementById('signup-form').addEventListener('submit', async (e) => {
@@ -262,41 +278,41 @@
         btn.classList.add('loading');
         btn.disabled = true;
 
-        const { data, error } = await supabase.auth.signUp({ email, password });
+        try {
+          const { data, error } = await supabaseClient.auth.signUp({ email, password });
 
-        if (error) {
-          btn.classList.remove('loading');
-          btn.disabled = false;
-          if (error.message.includes('already') || error.message.includes('registered')) {
-            errorEl.textContent = 'An account with this email already exists. Try signing in instead.';
-          } else {
-            errorEl.textContent = error.message;
+          if (error) {
+            if (error.message.includes('already') || error.message.includes('registered')) {
+              errorEl.textContent = 'An account with this email already exists. Try signing in instead.';
+            } else {
+              errorEl.textContent = error.message;
+            }
+            return;
           }
-          return;
-        }
 
-        if (data.user && data.user.identities && data.user.identities.length === 0) {
+          if (data.user && data.user.identities && data.user.identities.length === 0) {
+            errorEl.textContent = 'An account with this email already exists. Try signing in instead.';
+            return;
+          }
+
+          if (data.session) {
+            window.location.href = 'index.html';
+            return;
+          }
+
+          successEl.textContent = 'Account created! Check your email for a confirmation link, then sign in.';
+          e.target.reset();
+        } catch (err) {
+          errorEl.textContent = 'Connection error. Please check your internet and try again.';
+          console.error('Signup failed:', err.message || err);
+        } finally {
           btn.classList.remove('loading');
           btn.disabled = false;
-          errorEl.textContent = 'An account with this email already exists. Try signing in instead.';
-          return;
         }
-
-        if (data.session) {
-          btn.classList.remove('loading');
-          btn.disabled = false;
-          window.location.href = 'index.html';
-          return;
-        }
-
-        btn.classList.remove('loading');
-        btn.disabled = false;
-        successEl.textContent = 'Account created! Check your email for a confirmation link, then sign in.';
-        e.target.reset();
       });
 
       async function handleGoogleAuth() {
-        const { error } = await supabase.auth.signInWithOAuth({
+        const { error } = await supabaseClient.auth.signInWithOAuth({
           provider: 'google',
           options: { redirectTo: window.location.origin + '/index.html' }
         });
@@ -305,6 +321,29 @@
 
       document.getElementById('google-signin-btn').addEventListener('click', handleGoogleAuth);
       document.getElementById('google-signup-btn').addEventListener('click', handleGoogleAuth);
+
+      document.getElementById('forgot-password-btn').addEventListener('click', async () => {
+        const email = document.getElementById('signin-email').value.trim();
+        const errorEl = document.getElementById('signin-error');
+        const successEl = document.getElementById('signin-success');
+        errorEl.textContent = '';
+        successEl.textContent = '';
+
+        if (!email) {
+          errorEl.textContent = 'Enter your email above first, then click "Forgot password?".';
+          return;
+        }
+
+        const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+          redirectTo: window.location.origin + '/reset-password.html'
+        });
+
+        if (error) {
+          errorEl.textContent = error.message;
+        } else {
+          successEl.textContent = 'Password reset link sent! Check your inbox.';
+        }
+      });
     })();
   </script>
 </body>
